@@ -2,15 +2,14 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8"/>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
   <title>Dotino</title>
   <link href="style.css" rel="stylesheet">
-  <!--Google Fonts-->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <!--Google Fonts-->
 </head>
 
 <body>
+  <div id="wrapper">
 	<div class="fullscreen-bg">
     <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
         <source src="images/background.mp4" type="video/mp4">
@@ -18,38 +17,20 @@
 	</div>
 
   <div class="search" id="users">
-    <img src="images/logo.svg" style="height: 400px">
+    <img src="images/logo.svg" style="height: 400px; padding-top: 3em;">
 		<div class="s-bar">
-			<form>
-			<input class="search" type="text" placeholder="Search by Address, Neighborhood, City, or ZIP code">
-			<button class="sort" data-sort="name">
-				Search
-			</button>
-			</form>
-      <a class="alignleft">Powered by <img src="images/yelp.png" style="top: 10px"></a>
-      <a class="alignright">Implemented with <img src="images/reddit.png" style="top: 10px"></a>
-		</div>
-    <ul class="list">
-      <li>
-        <h3 class="name">Jonny Stromberg</h3>
-        <p class="born">1986</p>
-      </li>
-      <li>
-        <h3 class="name">Jonas Arnklint</h3>
-        <p class="born">1985</p>
-     </li>
-      <li>
-        <h3 class="name">Martina Elm</h3>
-        <p class="born">1986</p>
-      </li>
-      <li>
-        <h3 class="name">Gustaf Lindqvist</h3>
-        <p class="born">1983</p>
-      </li>
-    </ul>
+			<input class="search" type="text" placeholder="Search by Address, Neighborhood, City, or ZIP code" id="user_input" onclick="smoothScroll(document.getElementById('display'));">
+			<button type="submit" onclick="process();">Search</button>
+      <img src="images/logo_wide.svg" style="height: 50px; position: fixed; top: 10px; left: 10px; z-index: 9002; opacity: 0;" id="logowide">
+      <a class="alignleft" id="reddit">Implemented with <img src="images/reddit.png" style="top: 10px" ></a>
+      <a class="alignright" id="yelp">Powered by <img src="images/yelp.png" style="top: 10px"></a>
+	  </div>
+  </div>
+  <div class="results" id="display"></div>
   </div>
 
-  <script src="http://listjs.com/assets/javascripts/list.min.js"></script>
+  <script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+  <script src="list.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
