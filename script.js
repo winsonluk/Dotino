@@ -65,7 +65,7 @@ window.onbeforeunload = function() {
 var reached = true;
 if (reached) {
 $(document).on('scroll', function() {
-  if ($(this).scrollTop() >= $(window).height() / 2 && reached) {
+  if ($(this).scrollTop() >= 100 && reached) {
       reached = false;
       $("#user_input").click();
   }
