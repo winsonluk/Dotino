@@ -28,7 +28,7 @@ body {
   font-family: 'Arial', Helvetica, sans-serif;
   font-size: 100%;
 }
-.search {
+.searchClass {
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -98,8 +98,8 @@ button {
   width: 100px;
   position: relative;
 }
-.search i {
-  background: url(../images/search.png)no-repeat;
+.searchClass i {
+  background: url(../images/searchClass.png)no-repeat;
   width: 31px;
   height: 31px;
   display: block;
@@ -108,7 +108,7 @@ button {
   left: 32.2%;
   cursor: pointer;
 }
-.search a {
+.searchClass a {
   font-size: 1em;
   font-weight: 400;
   color: #fff;
@@ -125,7 +125,7 @@ button {
 	padding: 0 20px 0 0;
 }
 
-.search img {
+.searchClass img {
   position: relative;
   height: 40px;
   padding: 0 0 0 5px;
@@ -133,7 +133,7 @@ button {
 
 /*--meadia quiries start here--*/
 @media(max-width:1440px){
-.search i {
+.searchClass i {
   left: 29.2%;
 }
 .s-bar {
@@ -147,7 +147,7 @@ button {
 .s-bar input[type="text"] {
   width: 63%;
 }
-.search i {
+.searchClass i {
   left: 30.2%;
 }
 }
@@ -155,18 +155,18 @@ button {
 .s-bar {
   width: 50%;
 }
-.search i {
+.searchClass i {
   left: 25.2%;
 }
 }
 @media(max-width:768px){
-.search {
+.searchClass {
   margin: 22em 0em 0em 0em;
 }
 .s-bar {
   width: 58%;
 }
-.search i {
+.searchClass i {
   left: 19.5%;
 }
 .s-bar input[type="text"] {
@@ -174,7 +174,7 @@ button {
 }
 }
 @media(max-width:667px){
-.search i {
+.searchClass i {
   left: 18.5%;
 }	
 }
@@ -182,12 +182,12 @@ button {
 .s-bar {
   width: 65%;
 }
-.search i {
+.searchClass i {
   left: 15.5%;
 }	
 }
 @media(max-width:600px){
-.search i {
+.searchClass i {
   left: 14.5%;
 }	
 }
@@ -201,28 +201,28 @@ button {
   width: 55%;
   font-size: 0.8em;	
 }
-.search i {
+.searchClass i {
   top: 17%;
 }
 }
 @media(max-width:414px){
-.search i {
+.searchClass i {
   top: 16%;
   left: 13.5%;
 }	
 }
 @media(max-width:320px){
-.search {
+.searchClass {
   margin: 11.25em 0em 0em 0em;
 }
 .s-bar {
   width: 100%;
 }
-.search i {
+.searchClass i {
   left: 43%;
   top: -36%;
 }
-.search p {
+.searchClass p {
   font-size: 0.72em;
 }
 }
@@ -277,8 +277,9 @@ button {
   background: #000;
   opacity: 0.8;
   position: relative;
-  height: 100%;
+  height: 120%;
   min-height: 100%;
   width: 100%;
   z-index: 1000;
+	overflow: scroll;
 }

@@ -1,8 +1,12 @@
+$(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+});
+
 var options = {
   valueNames: [ 'name', 'zip' ]
 };
 
-var userList = new List('users', options);
+var userList = new List('wrapper', options);
 
 function process() {
 		var xhttp = new XMLHttpRequest();
@@ -73,5 +77,3 @@ $(function() {
         $(window).scrollTop() < scrollPoint && scrolledPast == true ? $(window).scrollTop(scrollPoint) : '';
     }).scroll();
 });
-
-$( document ).ready(function() { $.get("cities.htm", function(data) { $('#userz').html(data.documentElement.outerHTML); }); });
