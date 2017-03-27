@@ -1,9 +1,5 @@
-$(window).on('beforeunload', function() {
-    $(window).scrollTop(0);
-});
-
 var options = {
-  valueNames: [ 'name', 'zip' ]
+  valueNames: [ 'city', 'state' ]
 };
 
 var userList = new List('wrapper', options);
@@ -21,6 +17,7 @@ function process() {
 }
 
 window.smoothScroll = function(target) {
+    document.getElementById("user_input").focus();
     reddit.style.display = 'none';
     yelp.style.display = 'none';
     var scrollContainer = target;
@@ -59,21 +56,29 @@ $(document).ready(function() {
     });
 });
 
-var flag = true;
-if (flag) {
-	$(document).on('scroll', function() {
-			if ($(this).scrollTop() >= $(window).height() / 2 && flag) {
-					flag = false;
-					$("#user_input").click();
-			}
-	});
+var toScroll = true;
+window.onbeforeunload = function() {
+    toScroll = false;
+    $(window).scrollTop(0);
+}
+
+var reached = true;
+if (reached) {
+$(document).on('scroll', function() {
+  if ($(this).scrollTop() >= $(window).height() / 2 && reached) {
+      reached = false;
+      $("#user_input").click();
+  }
+});
 }
 
 $(function() {
     var scrollPoint = $(window).height();
     var scrolledPast = false;
     $(window).scroll(function() {
+        if (toScroll) {
         $(window).scrollTop() > scrollPoint ? scrolledPast = true : '';
         $(window).scrollTop() < scrollPoint && scrolledPast == true ? $(window).scrollTop(scrollPoint) : '';
+        }
     }).scroll();
 });
