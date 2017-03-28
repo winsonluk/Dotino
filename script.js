@@ -1,19 +1,14 @@
 var options = {
-  valueNames: [ 'city', 'state' ]
+    valueNames: [ 'city', 'state' ],
+    page: 10
 };
 
 var userList = new List('wrapper', options);
 
 function process() {
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("display").innerHTML =
-              this.responseText;
-			}
-		};
-		xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
-  	xhttp.send();
+    if (userList.visibleItems.length == 0) {
+        $( "#error_message" ).fadeTo(2000, 1);
+    }
 }
 
 window.smoothScroll = function(target) {
@@ -51,8 +46,8 @@ $(document).ready(function() {
         $div.animate({
             top: '0%',
             marginBottom: - $div.height()
-        }, 1600 );
-        $( "#logowide" ).fadeTo(3000, 1);
+        }, 1000 );
+        $( "#logowide" ).fadeTo(2000, 1);
     });
 });
 
@@ -79,6 +74,30 @@ $(function() {
         if (toScroll) {
         $(window).scrollTop() > scrollPoint ? scrolledPast = true : '';
         $(window).scrollTop() < scrollPoint && scrolledPast == true ? $(window).scrollTop(scrollPoint) : '';
+        $(window).scrollTop() > scrollPoint && scrolledPast == true ? $(window).scrollTop(scrollPoint) : '';
         }
     }).scroll();
 });
+
+$('table.table-fill tr').each(function(n, row) {
+    var $row = $(row);
+    var domRow = $(row)[0];
+    var city = "window.document.location='city.html?city=" + $row.find('td:eq(0)').text().replace(/\s+/g, '') + "';";
+    row.setAttribute("class", "clickable-row");
+    row.setAttribute("onclick", city);
+});
+
+$( "#user_input " ).keypress(function() {
+$('table.table-fill tr').each(function(n, row) {
+    var $row = $(row);
+    var domRow = $(row)[0];
+    var city = "window.document.location='city.html?city=" + $row.find('td:eq(0)').text().replace(/\s+/g, '') + "';";
+    row.setAttribute("class", "clickable-row");
+    row.setAttribute("onclick", city);
+});
+});
+
+/*
+$row.find('th:last').after('<th>Enquire</th>');
+$row.find('td:last').after('<td><a class="mailenquiry" href="mailto:foo@foo.co.uk?subject=Enquiry about ' + module + ' on ' + date + '">Enquire</a></td>');
+*/
