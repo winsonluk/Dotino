@@ -13,7 +13,7 @@ function process() {
     $('table.table-fill tr').each(function(n, row) {
         var $row = $(row);
         var domRow = $(row)[0];
-        var city = "window.document.location='city.html?city=" + $row.find('td:eq(0)').text().replace(/\s+/g, '') + "';";
+        var city = "window.document.location='city.html?" + $row.find('td:eq(1)').text().replace(/\s+/g, '').substring(3) + "';";
         row.setAttribute("class", "clickable-row");
         row.setAttribute("onclick", city);
     });
@@ -50,6 +50,7 @@ window.smoothScroll = function(target) {
 
 // Fade-in logo and animate search bar movement to top
 $(document).ready(function() {
+    process();
     $("input").on("click", function(e) {
         e.preventDefault();
         var $div = $('div.s-bar');
