@@ -1,6 +1,6 @@
 // Initialize List for list.js
 var options = {
-    valueNames: [ 'city', 'state' ],
+    valueNames: [ 'city', 'sub' ],
     page: 7
 };
 var userList = new List('wrapper', options);
@@ -21,6 +21,7 @@ function process() {
 
 // Scroll in list of cities
 window.smoothScroll = function(target) {
+    $( "#error_message" )[0].style.opacity = '0';
     document.getElementById("user_input").focus();
     reddit.style.display = 'none';
     yelp.style.display = 'none';
@@ -91,16 +92,8 @@ $(function() {
 });
 
 // Link to corresponding city page for cities in list
-$('table.table-fill tr').each(function(n, row) {
-    var $row = $(row);
-    var domRow = $(row)[0];
-    var city = "window.document.location='city.html?city=" + $row.find('td:eq(0)').text().replace(/\s+/g, '') + "';";
-    row.setAttribute("class", "clickable-row");
-    row.setAttribute("onclick", city);
-});
-
-// Refresh city page as search updates
-$( "#user_input" ).keypress(function() {
+$(function() {
+    userList.on("updated", function() {
     $('table.table-fill tr').each(function(n, row) {
         var $row = $(row);
         var domRow = $(row)[0];
@@ -108,5 +101,5 @@ $( "#user_input" ).keypress(function() {
         row.setAttribute("class", "clickable-row");
         row.setAttribute("onclick", city);
     });
-    $( "#error_message" )[0].style.opacity = '0';
+    });
 });
