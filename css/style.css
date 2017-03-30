@@ -181,29 +181,34 @@ body {
     bottom: 0;
     left: 0;
     display: table-cell;
-    text-align: center;
     vertical-align: middle;
     border-radius: 50%;
     background-size: contain;
     color: #fff;
-    padding: 5%;
+    opacity: 0.8;
+    font-family: "Lucida Console", Monaco, monospace;
 }
 
 .container .circle .text-top {
-    top: 10%;
-    padding-left: 20%;
-    padding-right: 20%;
-    position: absolute;
+    padding-top: 10%;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .container .circle .text-middle {
-    top: 30%;
+    top: 20%;
+    padding: 10%;
+    text-align: justify;
     position: absolute;
+    overflow: scroll;
 }
 
 .container .circle .text-bottom {
-    top: 50%;
-    position: absolute;
+    padding-top: 60%;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .fullscreen-bg {

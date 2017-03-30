@@ -5,12 +5,7 @@ $(document).ready(function() {
             return row['subreddit'] == location.search.split('?')[1].toLowerCase();
         })
         length = csv.length;
-        var temp;
         for (i = 0; i < length; i++) {
-            temp = document.createElement('div');
-            temp.className = 'dotrow';
-            temp.innerHTML = csv[i];
-
             tempRow = document.createElement('div');
             tempRow.className = 'dotrow';
             var rowId = 'dotrow' + i;
@@ -23,7 +18,6 @@ $(document).ready(function() {
                 tempContainer.id = containerId;
                 tempDot = document.createElement('div');
                 tempDot.className = 'circle';
-                tempDot.style.opacity = "0.3";
                 switch (j) {
                     case 0:
                         tempDot.style.backgroundImage = 'url(img/circle_question.png)';
@@ -43,10 +37,35 @@ $(document).ready(function() {
                     switch (k) {
                         case 0:
                             tempText.className = 'text-top';
+                            tempText.innerHTML = 'SCORE:\<br\>' + csv[i]['score'];
+                            break;
                         case 1:
                             tempText.className = 'text-middle';
+                            var comment = removeLink(csv[i]['comment']);
+                            var totalChars = 300;
+                            var halfNumChars = totalChars / 2;
+                            var yelpIndex = comment.indexOf("yelp.com/biz/");
+                            var lower = yelpIndex - halfNumChars;
+                            var upper = yelpIndex + halfNumChars;
+                            if (upper > comment.length) {
+                                lower = lower - (upper - comment.length);
+                                upper = comment.length;
+                            } else if (lower < 0) {
+                                upper = upper + Math.min(comment.length - upper, Math.abs(lower));
+                            }
+                            if (lower < 0) {
+                                comment = "..." + comment.substring(3);
+                            }
+                            if (upper == totalChars) {
+                                comment = comment.substring(0, upper - 3) + "...";
+                            }
+                            lower = Math.max(0, lower);
+                            tempText.innerHTML = comment.substring(lower, upper);
+                            break;
                         case 2:
                             tempText.className = 'text-bottom';
+                            tempText.innerHTML = 'POSTED:\<br\>' + timeConverter(csv[i]['time']);
+                            break;
                     }
                     tempDot.appendChild(tempText);
                 }
@@ -56,3 +75,20 @@ $(document).ready(function() {
         }
     });
 });
+
+function timeConverter(UNIX_timestamp) {
+    var a = new Date(UNIX_timestamp * 1000);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes() < 10 ? '0' + a.getMinutes() : a.getMinutes();
+    var sec = a.getSeconds() < 10 ? '0' + a.getSeconds() : a.getSeconds();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
+}
+
+function removeLink(link) {
+    return link.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '').replace(/\[|\]|\(|\)/g, ' ');
+}
