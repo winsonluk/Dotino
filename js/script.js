@@ -98,7 +98,7 @@ $(function() {
     $('table.table-fill tr').each(function(n, row) {
         var $row = $(row);
         var domRow = $(row)[0];
-        var city = "window.document.location='city.html?city=" + $row.find('td:eq(0)').text().replace(/\s+/g, '') + "';";
+        var city = "window.document.location='city.html?" + $row.find('td:eq(0)').text().replace(/\s+/g, '') + "';";
         row.setAttribute("class", "clickable-row");
         row.setAttribute("onclick", city);
     });

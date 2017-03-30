@@ -130,6 +130,34 @@ body {
     color:    #fff;
 }
 
+#title {
+    top: 5px;
+    font-size: 200%;
+    position: fixed;
+    width: 40%;
+    margin: 0 30%;
+    padding: 0.5em 0em 0.5em 0em;
+    z-index: 9001;
+    color: #ff4444;
+    text-align: center;
+}
+
+.menu {
+    top: 30px;
+    font-size: 100%;
+    position: fixed;
+    width: 90%;
+    margin: 0 7%;
+    padding: 0.5em 0em 0.5em 0em;
+    z-index: 9001;
+    color: #fff;
+    text-align: right;
+}
+
+.menu a {
+    color: #999;
+}
+
 .dotrow {
     margin: 5%;
 }
@@ -386,9 +414,6 @@ td.state {
 /*--table styles end here--*/
 
 /*--media queries start here--*/
-@media(max-width:1366px){
-}
-
 @media(max-width:1280px){
   .s-bar input[type="text"] {
     width: 63%;
@@ -398,12 +423,15 @@ td.state {
   }
 }
 
-@media(max-width:1024px){
+@media(max-width:1023px){
   .s-bar {
     width: 60%;
     margin: 0 20%;
   }
-  .s-bar .logo_wide {
+  .menu {
+    display: none !important;
+  }
+  #logo_wide {
     display: none !important;
   }
 }
@@ -431,6 +459,9 @@ td.state {
   .searchClass i {
     left: 14.5%;
   }	
+  #title {
+    font-size: 100%;
+  }
 }
 
 @media(max-width:568px){
