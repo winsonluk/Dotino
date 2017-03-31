@@ -9,2143 +9,2143 @@
 </head>
 
 <body>
-<div class="search" id="wrapper">
+    <div class="search" id="wrapper">
 
-    <div class="fullscreen-bg">
-        <video loop muted autoplay class="fullscreen-bg__video">
-            <source src="img/background.mp4" type="video/mp4">
-        </video>
-    </div>
+        <div class="fullscreen-bg">
+            <video loop muted autoplay class="fullscreen-bg__video">
+                <source src="img/background.mp4" type="video/mp4">
+            </video>
+        </div>
 
-    <div class="error_message" id="error_message">Sorry, your city is not in our database.<br><br>Try searching for a nearby city instead.</div>
-    <div class="searchClass" id="users">
-        <img src="img/logo.svg" class="logo">
-        <div class="s-bar">
-            <input class="search" type="text" autocomplete="off" placeholder="Search by City or Region" id="user_input" onclick="smoothScroll(document.getElementById('display'));">
-            <button type="submit" onclick="process();">Search</button>
-            <img src="img/logo_wide.svg" class="logo_wide" id="logo_wide">
-            <a class="alignleft" id="reddit">Implemented with <img src="img/reddit.png" style="top: 10px" ></a>
-            <a class="alignright" id="yelp">Powered by <img src="img/yelp.png" style="top: 10px"></a>
+        <div class="error_message" id="error_message">Sorry, your city is not in our database.<br><br>Try searching for a nearby city instead.</div>
+        <div class="searchClass" id="users">
+            <img src="img/logo.svg" class="logo">
+            <div class="s-bar">
+                <input class="search" type="text" autocomplete="off" placeholder="Search by City or Region" id="user_input" onclick="smoothScroll(document.getElementById('display'));">
+                <button type="submit" onclick="process();">Search</button>
+                <img src="img/logo_wide.svg" class="logo_wide" id="logo_wide">
+                <a class="alignleft" id="reddit">Implemented with <img src="img/reddit.png" style="top: 10px" ></a>
+                <a class="alignright" id="yelp">Powered by <img src="img/yelp.png" style="top: 10px"></a>
+            </div>
+        </div>
+
+        <div class="results" id="display">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <table class="table-fill"><tbody class="list">
+                <tr>
+                  <td class="city">Cascadia</td>
+                  <td class="sub">/r/cascadia</td>
+                </tr>
+                <tr>
+                  <td class="city">Canada</td>
+                  <td class="sub">/r/canada</td>
+                </tr>
+                <tr>
+                  <td class="city">Calgary</td>
+                  <td class="sub">/r/calgary</td>
+                </tr>
+                <tr>
+                  <td class="city">Edmonton</td>
+                  <td class="sub">/r/edmonton</td>
+                </tr>
+                <tr>
+                  <td class="city">Vancouver</td>
+                  <td class="sub">/r/vancouver</td>
+                </tr>
+                <tr>
+                  <td class="city">Victoria</td>
+                  <td class="sub">/r/victoriabc</td>
+                </tr>
+                <tr>
+                  <td class="city">Winnipeg</td>
+                  <td class="sub">/r/winnipeg</td>
+                </tr>
+                <tr>
+                  <td class="city">Halifax</td>
+                  <td class="sub">/r/halifax</td>
+                </tr>
+                <tr>
+                  <td class="city">Ontario</td>
+                  <td class="sub">/r/ontario</td>
+                </tr>
+                <tr>
+                  <td class="city">Brampton</td>
+                  <td class="sub">/r/brampton</td>
+                </tr>
+                <tr>
+                  <td class="city">Kingston</td>
+                  <td class="sub">/r/kingstonontario</td>
+                </tr>
+                <tr>
+                  <td class="city">London</td>
+                  <td class="sub">/r/londonontario</td>
+                </tr>
+                <tr>
+                  <td class="city">Mississauga</td>
+                  <td class="sub">/r/mississauga</td>
+                </tr>
+                <tr>
+                  <td class="city">Ottawa</td>
+                  <td class="sub">/r/ottawa</td>
+                </tr>
+                <tr>
+                  <td class="city">Toronto</td>
+                  <td class="sub">/r/toronto</td>
+                </tr>
+                <tr>
+                  <td class="city">Windsor</td>
+                  <td class="sub">/r/windsorontario</td>
+                </tr>
+                <tr>
+                  <td class="city">Montr̩al</td>
+                  <td class="sub">/r/montreal</td>
+                </tr>
+                <tr>
+                  <td class="city">Estados Unidos</td>
+                  <td class="sub">/r/estadosunidos</td>
+                </tr>
+                <tr>
+                  <td class="city">New England</td>
+                  <td class="sub">/r/newengland</td>
+                </tr>
+                <tr>
+                  <td class="city">Alabama</td>
+                  <td class="sub">/r/alabama</td>
+                </tr>
+                <tr>
+                  <td class="city">Auburn</td>
+                  <td class="sub">/r/auburn</td>
+                </tr>
+                <tr>
+                  <td class="city">Birmingham</td>
+                  <td class="sub">/r/birmingham</td>
+                </tr>
+                <tr>
+                  <td class="city">Huntsville</td>
+                  <td class="sub">/r/huntsvillealabama</td>
+                </tr>
+                <tr>
+                  <td class="city">Mobile</td>
+                  <td class="sub">/r/mobileal</td>
+                </tr>
+                <tr>
+                  <td class="city">Montgomery</td>
+                  <td class="sub">/r/montgomery</td>
+                </tr>
+                <tr>
+                  <td class="city">Tuscaloosa</td>
+                  <td class="sub">/r/tuscaloosa</td>
+                </tr>
+                <tr>
+                  <td class="city">Alaska</td>
+                  <td class="sub">/r/alaska</td>
+                </tr>
+                <tr>
+                  <td class="city">Anchorage</td>
+                  <td class="sub">/r/anchorage</td>
+                </tr>
+                <tr>
+                  <td class="city">Fairbanks</td>
+                  <td class="sub">/r/fairbanks</td>
+                </tr>
+                <tr>
+                  <td class="city">Juneau</td>
+                  <td class="sub">/r/juneau</td>
+                </tr>
+                <tr>
+                  <td class="city">Arizona</td>
+                  <td class="sub">/r/arizona</td>
+                </tr>
+                <tr>
+                  <td class="city">Avondale</td>
+                  <td class="sub">/r/avondaleaz</td>
+                </tr>
+                <tr>
+                  <td class="city">Flagstaff</td>
+                  <td class="sub">/r/flagstaff</td>
+                </tr>
+                <tr>
+                  <td class="city">Phoenix</td>
+                  <td class="sub">/r/phoenix</td>
+                </tr>
+                <tr>
+                  <td class="city">Phoenix (PHX</td>
+                  <td class="sub">/r/phx</td>
+                </tr>
+                <tr>
+                  <td class="city">Scottsdale</td>
+                  <td class="sub">/r/scottsdale</td>
+                </tr>
+                <tr>
+                  <td class="city">Tempe</td>
+                  <td class="sub">/r/tempe</td>
+                </tr>
+                <tr>
+                  <td class="city">Tucson</td>
+                  <td class="sub">/r/tucson</td>
+                </tr>
+                <tr>
+                  <td class="city">Yuma</td>
+                  <td class="sub">/r/yuma</td>
+                </tr>
+                <tr>
+                  <td class="city">Arkansas</td>
+                  <td class="sub">/r/arkansas</td>
+                </tr>
+                <tr>
+                  <td class="city">Fayetteville</td>
+                  <td class="sub">/r/fayetteville</td>
+                </tr>
+                <tr>
+                  <td class="city">Little Rock</td>
+                  <td class="sub">/r/littlerock</td>
+                </tr>
+                <tr>
+                  <td class="city">California</td>
+                  <td class="sub">/r/california</td>
+                </tr>
+                <tr>
+                  <td class="city">Alameda</td>
+                  <td class="sub">/r/alameda</td>
+                </tr>
+                <tr>
+                  <td class="city">Bay Area</td>
+                  <td class="sub">/r/bayarea</td>
+                </tr>
+                <tr>
+                  <td class="city">Berkeley</td>
+                  <td class="sub">/r/berkeley</td>
+                </tr>
+                <tr>
+                  <td class="city">Berkeley CA</td>
+                  <td class="sub">/r/berkeleyca</td>
+                </tr>
+                <tr>
+                  <td class="city">Campbell</td>
+                  <td class="sub">/r/campbell</td>
+                </tr>
+                <tr>
+                  <td class="city">Chico</td>
+                  <td class="sub">/r/chicoca</td>
+                </tr>
+                <tr>
+                  <td class="city">Davis</td>
+                  <td class="sub">/r/davisca</td>
+                </tr>
+                <tr>
+                  <td class="city">East Bay</td>
+                  <td class="sub">/r/eastbay</td>
+                </tr>
+                <tr>
+                  <td class="city">Elk Grove</td>
+                  <td class="sub">/r/elkgrove</td>
+                </tr>
+                <tr>
+                  <td class="city">Folsom</td>
+                  <td class="sub">/r/folsom</td>
+                </tr>
+                <tr>
+                  <td class="city">Fremont</td>
+                  <td class="sub">/r/fremont</td>
+                </tr>
+                <tr>
+                  <td class="city">Gilroy</td>
+                  <td class="sub">/r/gilroy</td>
+                </tr>
+                <tr>
+                  <td class="city">Humboldt</td>
+                  <td class="sub">/r/humboldt</td>
+                </tr>
+                <tr>
+                  <td class="city">Lake County</td>
+                  <td class="sub">/r/lakecounty</td>
+                </tr>
+                <tr>
+                  <td class="city">Livermore</td>
+                  <td class="sub">/r/livermore</td>
+                </tr>
+                <tr>
+                  <td class="city">Monterey Bay</td>
+                  <td class="sub">/r/montereybay</td>
+                </tr>
+                <tr>
+                  <td class="city">Napa</td>
+                  <td class="sub">/r/napa</td>
+                </tr>
+                <tr>
+                  <td class="city">Napa Valley</td>
+                  <td class="sub">/r/napavalley</td>
+                </tr>
+                <tr>
+                  <td class="city">Oakland</td>
+                  <td class="sub">/r/oakland</td>
+                </tr>
+                <tr>
+                  <td class="city">Pacifica</td>
+                  <td class="sub">/r/pacifica</td>
+                </tr>
+                <tr>
+                  <td class="city">Palo Alto</td>
+                  <td class="sub">/r/paloalto</td>
+                </tr>
+                <tr>
+                  <td class="city">Pleasanton</td>
+                  <td class="sub">/r/pleasanton</td>
+                </tr>
+                <tr>
+                  <td class="city">Redding</td>
+                  <td class="sub">/r/redding</td>
+                </tr>
+                <tr>
+                  <td class="city">Roseville</td>
+                  <td class="sub">/r/roseville</td>
+                </tr>
+                <tr>
+                  <td class="city">Sacramento</td>
+                  <td class="sub">/r/sacramento</td>
+                </tr>
+                <tr>
+                  <td class="city">San Francisco</td>
+                  <td class="sub">/r/sanfrancisco</td>
+                </tr>
+                <tr>
+                  <td class="city">San Jos̩</td>
+                  <td class="sub">/r/sanjose</td>
+                </tr>
+                <tr>
+                  <td class="city">San Mateo</td>
+                  <td class="sub">/r/sanmateo</td>
+                </tr>
+                <tr>
+                  <td class="city">Santa Clara</td>
+                  <td class="sub">/r/santaclara</td>
+                </tr>
+                <tr>
+                  <td class="city">Santa Cruz</td>
+                  <td class="sub">/r/santacruz</td>
+                </tr>
+                <tr>
+                  <td class="city">Santa Cruz (locals</td>
+                  <td class="sub">/r/santacruzlocals</td>
+                </tr>
+                <tr>
+                  <td class="city">Santa Rosa</td>
+                  <td class="sub">/r/santarosa</td>
+                </tr>
+                <tr>
+                  <td class="city">Silicon Valley</td>
+                  <td class="sub">/r/siliconvalley</td>
+                </tr>
+                <tr>
+                  <td class="city">Sunnyvale</td>
+                  <td class="sub">/r/sunnyvale</td>
+                </tr>
+                <tr>
+                  <td class="city">Tahoe</td>
+                  <td class="sub">/r/tahoe</td>
+                </tr>
+                <tr>
+                  <td class="city">Vacaville</td>
+                  <td class="sub">/r/vacaville</td>
+                </tr>
+                <tr>
+                  <td class="city">Walnut Creek</td>
+                  <td class="sub">/r/walnutcreek</td>
+                </tr>
+                <tr>
+                  <td class="city">Woodland</td>
+                  <td class="sub">/r/woodland</td>
+                </tr>
+                <tr>
+                  <td class="city">Bakersfield</td>
+                  <td class="sub">/r/bakersfield</td>
+                </tr>
+                <tr>
+                  <td class="city">Fresno</td>
+                  <td class="sub">/r/fresno</td>
+                </tr>
+                <tr>
+                  <td class="city">Merced</td>
+                  <td class="sub">/r/merced</td>
+                </tr>
+                <tr>
+                  <td class="city">Modesto</td>
+                  <td class="sub">/r/modesto</td>
+                </tr>
+                <tr>
+                  <td class="city">San Luis Obispo</td>
+                  <td class="sub">/r/slo</td>
+                </tr>
+                <tr>
+                  <td class="city">Santa Maria</td>
+                  <td class="sub">/r/santamaria</td>
+                </tr>
+                <tr>
+                  <td class="city">Stockton</td>
+                  <td class="sub">/r/stocktonca</td>
+                </tr>
+                <tr>
+                  <td class="city">Vacaville</td>
+                  <td class="sub">/r/vacaville</td>
+                </tr>
+                <tr>
+                  <td class="city">Yosemite National Park</td>
+                  <td class="sub">/r/yosemite</td>
+                </tr>
+                <tr>
+                  <td class="city">Southern California (SolCal</td>
+                  <td class="sub">/r/socal</td>
+                </tr>
+                <tr>
+                  <td class="city">Agoura Hills</td>
+                  <td class="sub">/r/agourahills</td>
+                </tr>
+                <tr>
+                  <td class="city">Anaheim</td>
+                  <td class="sub">/r/anaheim</td>
+                </tr>
+                <tr>
+                  <td class="city">Big Bear</td>
+                  <td class="sub">/r/bigbear</td>
+                </tr>
+                <tr>
+                  <td class="city">Buena Park</td>
+                  <td class="sub">/r/buenapark</td>
+                </tr>
+                <tr>
+                  <td class="city">Burbank</td>
+                  <td class="sub">/r/burbank</td>
+                </tr>
+                <tr>
+                  <td class="city">Camarillo</td>
+                  <td class="sub">/r/camarillo</td>
+                </tr>
+                <tr>
+                  <td class="city">Coachella Valley</td>
+                  <td class="sub">/r/coachellavalley</td>
+                </tr>
+                <tr>
+                  <td class="city">Corona</td>
+                  <td class="sub">/r/corona</td>
+                </tr>
+                <tr>
+                  <td class="city">Culver City</td>
+                  <td class="sub">/r/culvercity</td>
+                </tr>
+                <tr>
+                  <td class="city">Eagle Rock</td>
+                  <td class="sub">/r/eaglerock</td>
+                </tr>
+                <tr>
+                  <td class="city">East County</td>
+                  <td class="sub">/r/eastcounty</td>
+                </tr>
+                <tr>
+                  <td class="city">Glendale</td>
+                  <td class="sub">/r/glendale</td>
+                </tr>
+                <tr>
+                  <td class="city">High Desert</td>
+                  <td class="sub">/r/highdesert</td>
+                </tr>
+                <tr>
+                  <td class="city">Huntington Beach</td>
+                  <td class="sub">/r/huntingtonbeach</td>
+                </tr>
+                <tr>
+                  <td class="city">Inland Empire</td>
+                  <td class="sub">/r/inlandempire</td>
+                </tr>
+                <tr>
+                  <td class="city">Irvine</td>
+                  <td class="sub">/r/irvine</td>
+                </tr>
+                <tr>
+                  <td class="city">Joshua Tree National Park</td>
+                  <td class="sub">/r/joshuatree</td>
+                </tr>
+                <tr>
+                  <td class="city">La Mesa</td>
+                  <td class="sub">/r/lamesa</td>
+                </tr>
+                <tr>
+                  <td class="city">Long Beach</td>
+                  <td class="sub">/r/longbeach</td>
+                </tr>
+                <tr>
+                  <td class="city">Los Angeles</td>
+                  <td class="sub">/r/losangeles</td>
+                </tr>
+                <tr>
+                  <td class="city">Moreno Valley</td>
+                  <td class="sub">/r/morenovalley</td>
+                </tr>
+                <tr>
+                  <td class="city">North County</td>
+                  <td class="sub">/r/northcounty</td>
+                </tr>
+                <tr>
+                  <td class="city">Orange County</td>
+                  <td class="sub">/r/orangecounty</td>
+                </tr>
+                <tr>
+                  <td class="city">Oxnard</td>
+                  <td class="sub">/r/oxnard</td>
+                </tr>
+                <tr>
+                  <td class="city">Palm Springs</td>
+                  <td class="sub">/r/palmsprings</td>
+                </tr>
+                <tr>
+                  <td class="city">Pasadena</td>
+                  <td class="sub">/r/pasadena</td>
+                </tr>
+                <tr>
+                  <td class="city">Redlands</td>
+                  <td class="sub">/r/redlands</td>
+                </tr>
+                <tr>
+                  <td class="city">San Diego</td>
+                  <td class="sub">/r/sandiego</td>
+                </tr>
+                <tr>
+                  <td class="city">San Fernando Valley</td>
+                  <td class="sub">/r/sfv</td>
+                </tr>
+                <tr>
+                  <td class="city">San Gabriel Valley</td>
+                  <td class="sub">/r/sgv</td>
+                </tr>
+                <tr>
+                  <td class="city">San Pedro</td>
+                  <td class="sub">/r/sanpedro</td>
+                </tr>
+                <tr>
+                  <td class="city">Santa Barbara</td>
+                  <td class="sub">/r/santabarbara</td>
+                </tr>
+                <tr>
+                  <td class="city">Santa Clarita</td>
+                  <td class="sub">/r/santaclarita</td>
+                </tr>
+                <tr>
+                  <td class="city">Santa Clarita Valley</td>
+                  <td class="sub">/r/santaclaritavalley</td>
+                </tr>
+                <tr>
+                  <td class="city">Santa Monica</td>
+                  <td class="sub">/r/santamonica</td>
+                </tr>
+                <tr>
+                  <td class="city">Simi Valley</td>
+                  <td class="sub">/r/simivalley</td>
+                </tr>
+                <tr>
+                  <td class="city">South Bay</td>
+                  <td class="sub">/r/southbayla</td>
+                </tr>
+                <tr>
+                  <td class="city">Temecula</td>
+                  <td class="sub">/r/temecula</td>
+                </tr>
+                <tr>
+                  <td class="city">Thousand Oaks</td>
+                  <td class="sub">/r/thousandoaks</td>
+                </tr>
+                <tr>
+                  <td class="city">Tustin</td>
+                  <td class="sub">/r/tustin</td>
+                </tr>
+                <tr>
+                  <td class="city">Venice</td>
+                  <td class="sub">/r/venice</td>
+                </tr>
+                <tr>
+                  <td class="city">Ventura</td>
+                  <td class="sub">/r/ventura</td>
+                </tr>
+                <tr>
+                  <td class="city">Ventura County</td>
+                  <td class="sub">/r/venturacounty</td>
+                </tr>
+                <tr>
+                  <td class="city">Colorado</td>
+                  <td class="sub">/r/colorado</td>
+                </tr>
+                <tr>
+                  <td class="city">Aurora</td>
+                  <td class="sub">/r/auroraco</td>
+                </tr>
+                <tr>
+                  <td class="city">Boulder</td>
+                  <td class="sub">/r/boulder</td>
+                </tr>
+                <tr>
+                  <td class="city">Colorado Springs</td>
+                  <td class="sub">/r/coloradosprings</td>
+                </tr>
+                <tr>
+                  <td class="city">Denver</td>
+                  <td class="sub">/r/denver</td>
+                </tr>
+                <tr>
+                  <td class="city">Fort Collins</td>
+                  <td class="sub">/r/fortcollins</td>
+                </tr>
+                <tr>
+                  <td class="city">Grand Junction</td>
+                  <td class="sub">/r/grandjunction</td>
+                </tr>
+                <tr>
+                  <td class="city">Greeley</td>
+                  <td class="sub">/r/greeley</td>
+                </tr>
+                <tr>
+                  <td class="city">Longmont</td>
+                  <td class="sub">/r/longmont</td>
+                </tr>
+                <tr>
+                  <td class="city">Loveland</td>
+                  <td class="sub">/r/loveland</td>
+                </tr>
+                <tr>
+                  <td class="city">Thornton Westminster Northglenn</td>
+                  <td class="sub">/r/twn</td>
+                </tr>
+                <tr>
+                  <td class="city">Connecticut</td>
+                  <td class="sub">/r/connecticut</td>
+                </tr>
+                <tr>
+                  <td class="city">Farmington Valley</td>
+                  <td class="sub">/r/farmingtonvalley</td>
+                </tr>
+                <tr>
+                  <td class="city">Hartford</td>
+                  <td class="sub">/r/hartford</td>
+                </tr>
+                <tr>
+                  <td class="city">New Haven</td>
+                  <td class="sub">/r/newhaven</td>
+                </tr>
+                <tr>
+                  <td class="city">Stamford CT</td>
+                  <td class="sub">/r/stamfordct</td>
+                </tr>
+                <tr>
+                  <td class="city">Delaware</td>
+                  <td class="sub">/r/delaware</td>
+                </tr>
+                <tr>
+                  <td class="city">Wilmington</td>
+                  <td class="sub">/r/wilmingtonde</td>
+                </tr>
+                <tr>
+                  <td class="city">Washington DC</td>
+                  <td class="sub">/r/washingtondc</td>
+                </tr>
+                <tr>
+                  <td class="city">Brookland</td>
+                  <td class="sub">/r/brookland</td>
+                </tr>
+                <tr>
+                  <td class="city">Georgetown</td>
+                  <td class="sub">/r/georgetown</td>
+                </tr>
+                <tr>
+                  <td class="city">Florida</td>
+                  <td class="sub">/r/florida</td>
+                </tr>
+                <tr>
+                  <td class="city">Bradenton</td>
+                  <td class="sub">/r/bradenton</td>
+                </tr>
+                <tr>
+                  <td class="city">Broward</td>
+                  <td class="sub">/r/broward</td>
+                </tr>
+                <tr>
+                  <td class="city">Central Florida</td>
+                  <td class="sub">/r/centralflorida</td>
+                </tr>
+                <tr>
+                  <td class="city">Clearwater</td>
+                  <td class="sub">/r/clearwaterfl</td>
+                </tr>
+                <tr>
+                  <td class="city">Daytona Beach</td>
+                  <td class="sub">/r/daytonabeach</td>
+                </tr>
+                <tr>
+                  <td class="city">Delray Beach</td>
+                  <td class="sub">/r/delraybeach</td>
+                </tr>
+                <tr>
+                  <td class="city">Florida Keys</td>
+                  <td class="sub">/r/floridakeys</td>
+                </tr>
+                <tr>
+                  <td class="city">Fort Lauderdale</td>
+                  <td class="sub">/r/fortlauderdale</td>
+                </tr>
+                <tr>
+                  <td class="city">Fort Myers</td>
+                  <td class="sub">/r/fortmyers</td>
+                </tr>
+                <tr>
+                  <td class="city">Gainesville</td>
+                  <td class="sub">/r/gnv</td>
+                </tr>
+                <tr>
+                  <td class="city">Jacksonville</td>
+                  <td class="sub">/r/jacksonville</td>
+                </tr>
+                <tr>
+                  <td class="city">Key West</td>
+                  <td class="sub">/r/keywest</td>
+                </tr>
+                <tr>
+                  <td class="city">Lakeland</td>
+                  <td class="sub">/r/lakeland</td>
+                </tr>
+                <tr>
+                  <td class="city">Miami</td>
+                  <td class="sub">/r/miami</td>
+                </tr>
+                <tr>
+                  <td class="city">Naples</td>
+                  <td class="sub">/r/naples_fl</td>
+                </tr>
+                <tr>
+                  <td class="city">Orlando</td>
+                  <td class="sub">/r/orlando</td>
+                </tr>
+                <tr>
+                  <td class="city">Panama City</td>
+                  <td class="sub">/r/panamacity</td>
+                </tr>
+                <tr>
+                  <td class="city">Pasco County</td>
+                  <td class="sub">/r/pasco</td>
+                </tr>
+                <tr>
+                  <td class="city">Pensacola</td>
+                  <td class="sub">/r/pensacola</td>
+                </tr>
+                <tr>
+                  <td class="city">Port St. Lucie</td>
+                  <td class="sub">/r/portstlucie</td>
+                </tr>
+                <tr>
+                  <td class="city">Sanibel Island</td>
+                  <td class="sub">/r/sanibel</td>
+                </tr>
+                <tr>
+                  <td class="city">Sarasota</td>
+                  <td class="sub">/r/sarasota</td>
+                </tr>
+                <tr>
+                  <td class="city">South Florida</td>
+                  <td class="sub">/r/southflorida</td>
+                </tr>
+                <tr>
+                  <td class="city">St. Augustine</td>
+                  <td class="sub">/r/staugustine</td>
+                </tr>
+                <tr>
+                  <td class="city">St. Petersburg</td>
+                  <td class="sub">/r/stpetersburgfl</td>
+                </tr>
+                <tr>
+                  <td class="city">Southwest Florida</td>
+                  <td class="sub">/r/swfl</td>
+                </tr>
+                <tr>
+                  <td class="city">Tampa</td>
+                  <td class="sub">/r/tampa</td>
+                </tr>
+                <tr>
+                  <td class="city">Tallahassee</td>
+                  <td class="sub">/r/tallahassee</td>
+                </tr>
+                <tr>
+                  <td class="city">Georgia</td>
+                  <td class="sub">/r/georgia</td>
+                </tr>
+                <tr>
+                  <td class="city">Albany</td>
+                  <td class="sub">/r/albanyga</td>
+                </tr>
+                <tr>
+                  <td class="city">Alpharetta</td>
+                  <td class="sub">/r/alpharetta</td>
+                </tr>
+                <tr>
+                  <td class="city">Athens</td>
+                  <td class="sub">/r/athens</td>
+                </tr>
+                <tr>
+                  <td class="city">Atlanta</td>
+                  <td class="sub">/r/atlanta</td>
+                </tr>
+                <tr>
+                  <td class="city">Augusta</td>
+                  <td class="sub">/r/augusta</td>
+                </tr>
+                <tr>
+                  <td class="city">Columbus</td>
+                  <td class="sub">/r/columbusga</td>
+                </tr>
+                <tr>
+                  <td class="city">Gwinnett County</td>
+                  <td class="sub">/r/gwinnett</td>
+                </tr>
+                <tr>
+                  <td class="city">Kennesaw</td>
+                  <td class="sub">/r/kennesaw</td>
+                </tr>
+                <tr>
+                  <td class="city">Macon</td>
+                  <td class="sub">/r/macon</td>
+                </tr>
+                <tr>
+                  <td class="city">Marietta</td>
+                  <td class="sub">/r/marietta</td>
+                </tr>
+                <tr>
+                  <td class="city">Roswell</td>
+                  <td class="sub">/r/roswell</td>
+                </tr>
+                <tr>
+                  <td class="city">Savannah</td>
+                  <td class="sub">/r/savannah</td>
+                </tr>
+                <tr>
+                  <td class="city">Hawaii</td>
+                  <td class="sub">/r/hawaii</td>
+                </tr>
+                <tr>
+                  <td class="city">Big Island</td>
+                  <td class="sub">/r/bigisland</td>
+                </tr>
+                <tr>
+                  <td class="city">Honolulu</td>
+                  <td class="sub">/r/honolulu</td>
+                </tr>
+                <tr>
+                  <td class="city">Kauai</td>
+                  <td class="sub">/r/kauai</td>
+                </tr>
+                <tr>
+                  <td class="city">Maui</td>
+                  <td class="sub">/r/maui</td>
+                </tr>
+                <tr>
+                  <td class="city">Idaho</td>
+                  <td class="sub">/r/idaho</td>
+                </tr>
+                <tr>
+                  <td class="city">Boise</td>
+                  <td class="sub">/r/boise</td>
+                </tr>
+                <tr>
+                  <td class="city">Idaho Falls</td>
+                  <td class="sub">/r/idahofalls</td>
+                </tr>
+                <tr>
+                  <td class="city">Illinois</td>
+                  <td class="sub">/r/illinois</td>
+                </tr>
+                <tr>
+                  <td class="city">Bloomington-Normal</td>
+                  <td class="sub">/r/bloomingtonnormal</td>
+                </tr>
+                <tr>
+                  <td class="city">Central Illinois</td>
+                  <td class="sub">/r/centralillinois</td>
+                </tr>
+                <tr>
+                  <td class="city">Chicago</td>
+                  <td class="sub">/r/chicago</td>
+                </tr>
+                <tr>
+                  <td class="city">Chicago Suburbs</td>
+                  <td class="sub">/r/chicagosuburbs</td>
+                </tr>
+                <tr>
+                  <td class="city">Chicago Near West Suburbs</td>
+                  <td class="sub">/r/nearwestsuburbs</td>
+                </tr>
+                <tr>
+                  <td class="city">Evanston</td>
+                  <td class="sub">/r/evanston</td>
+                </tr>
+                <tr>
+                  <td class="city">Lake County</td>
+                  <td class="sub">/r/lakecounty</td>
+                </tr>
+                <tr>
+                  <td class="city">Naperville</td>
+                  <td class="sub">/r/naperville</td>
+                </tr>
+                <tr>
+                  <td class="city">Peoria IL</td>
+                  <td class="sub">/r/peoriail</td>
+                </tr>
+                <tr>
+                  <td class="city">Rockford</td>
+                  <td class="sub">/r/rockford</td>
+                </tr>
+                <tr>
+                  <td class="city">Springfield</td>
+                  <td class="sub">/r/springfieldil</td>
+                </tr>
+                <tr>
+                  <td class="city">Indiana</td>
+                  <td class="sub">/r/indiana</td>
+                </tr>
+                <tr>
+                  <td class="city">Bloomington</td>
+                  <td class="sub">/r/bloomington</td>
+                </tr>
+                <tr>
+                  <td class="city">Elkhart</td>
+                  <td class="sub">/r/elkhart</td>
+                </tr>
+                <tr>
+                  <td class="city">Fort Wayne</td>
+                  <td class="sub">/r/fortwayne</td>
+                </tr>
+                <tr>
+                  <td class="city">Indianapolis</td>
+                  <td class="sub">/r/indianapolis</td>
+                </tr>
+                <tr>
+                  <td class="city">Kokomo</td>
+                  <td class="sub">/r/kokomo</td>
+                </tr>
+                <tr>
+                  <td class="city">Lafayette</td>
+                  <td class="sub">/r/lafayette</td>
+                </tr>
+                <tr>
+                  <td class="city">Muncie</td>
+                  <td class="sub">/r/muncie</td>
+                </tr>
+                <tr>
+                  <td class="city">Northwest Indiana (NWI</td>
+                  <td class="sub">/r/nwi</td>
+                </tr>
+                <tr>
+                  <td class="city">South Bend</td>
+                  <td class="sub">/r/southbend</td>
+                </tr>
+                <tr>
+                  <td class="city">Terre Haute</td>
+                  <td class="sub">/r/terrehaute</td>
+                </tr>
+                <tr>
+                  <td class="city">Valparaiso</td>
+                  <td class="sub">/r/valparaiso</td>
+                </tr>
+                <tr>
+                  <td class="city">Iowa</td>
+                  <td class="sub">/r/iowa</td>
+                </tr>
+                <tr>
+                  <td class="city">Ames</td>
+                  <td class="sub">/r/ames</td>
+                </tr>
+                <tr>
+                  <td class="city">Cedar Rapids</td>
+                  <td class="sub">/r/cedarrapids</td>
+                </tr>
+                <tr>
+                  <td class="city">Des Moines</td>
+                  <td class="sub">/r/desmoines</td>
+                </tr>
+                <tr>
+                  <td class="city">Iowa City</td>
+                  <td class="sub">/r/iowacity</td>
+                </tr>
+                <tr>
+                  <td class="city">Quad Cities Area</td>
+                  <td class="sub">/r/quadcities</td>
+                </tr>
+                <tr>
+                  <td class="city">Kansas</td>
+                  <td class="sub">/r/kansas</td>
+                </tr>
+                <tr>
+                  <td class="city">Kansas City</td>
+                  <td class="sub">/r/kansascity</td>
+                </tr>
+                <tr>
+                  <td class="city">Lawrence</td>
+                  <td class="sub">/r/lawrence</td>
+                </tr>
+                <tr>
+                  <td class="city">Wichita</td>
+                  <td class="sub">/r/wichita</td>
+                </tr>
+                <tr>
+                  <td class="city">Kentucky</td>
+                  <td class="sub">/r/kentucky</td>
+                </tr>
+                <tr>
+                  <td class="city">Covington</td>
+                  <td class="sub">/r/covington</td>
+                </tr>
+                <tr>
+                  <td class="city">Lexington</td>
+                  <td class="sub">/r/lexington</td>
+                </tr>
+                <tr>
+                  <td class="city">Louisville</td>
+                  <td class="sub">/r/louisville</td>
+                </tr>
+                <tr>
+                  <td class="city">New Port</td>
+                  <td class="sub">/r/newportky</td>
+                </tr>
+                <tr>
+                  <td class="city">Louisiana</td>
+                  <td class="sub">/r/louisiana</td>
+                </tr>
+                <tr>
+                  <td class="city">Acadiana</td>
+                  <td class="sub">/r/acadiana</td>
+                </tr>
+                <tr>
+                  <td class="city">Baton Rouge</td>
+                  <td class="sub">/r/batonrouge</td>
+                </tr>
+                <tr>
+                  <td class="city">New Orleans</td>
+                  <td class="sub">/r/neworleans</td>
+                </tr>
+                <tr>
+                  <td class="city">Shreveport</td>
+                  <td class="sub">/r/shreveport</td>
+                </tr>
+                <tr>
+                  <td class="city">Maine</td>
+                  <td class="sub">/r/maine</td>
+                </tr>
+                <tr>
+                  <td class="city">Portland ME</td>
+                  <td class="sub">/r/portlandme</td>
+                </tr>
+                <tr>
+                  <td class="city">Maryland</td>
+                  <td class="sub">/r/maryland</td>
+                </tr>
+                <tr>
+                  <td class="city">Annapolis</td>
+                  <td class="sub">/r/annapolis</td>
+                </tr>
+                <tr>
+                  <td class="city">Baltimore</td>
+                  <td class="sub">/r/baltimore</td>
+                </tr>
+                <tr>
+                  <td class="city">Bethesda</td>
+                  <td class="sub">/r/bethesda</td>
+                </tr>
+                <tr>
+                  <td class="city">Columbia</td>
+                  <td class="sub">/r/columbiamd</td>
+                </tr>
+                <tr>
+                  <td class="city">Frederick</td>
+                  <td class="sub">/r/frederickmd</td>
+                </tr>
+                <tr>
+                  <td class="city">Montgomery County MD</td>
+                  <td class="sub">/r/montgomerycountymd</td>
+                </tr>
+                <tr>
+                  <td class="city">Ocean City</td>
+                  <td class="sub">/r/oceancity</td>
+                </tr>
+                <tr>
+                  <td class="city">Rockville MD</td>
+                  <td class="sub">/r/rockvillemd</td>
+                </tr>
+                <tr>
+                  <td class="city">Silver Spring</td>
+                  <td class="sub">/r/silverspring</td>
+                </tr>
+                <tr>
+                  <td class="city">Massachusetts</td>
+                  <td class="sub">/r/massachusetts</td>
+                </tr>
+                <tr>
+                  <td class="city">Amherst</td>
+                  <td class="sub">/r/amherst</td>
+                </tr>
+                <tr>
+                  <td class="city">Boston</td>
+                  <td class="sub">/r/boston</td>
+                </tr>
+                <tr>
+                  <td class="city">Cambridge</td>
+                  <td class="sub">/r/cambridgema</td>
+                </tr>
+                <tr>
+                  <td class="city">Cape Cod</td>
+                  <td class="sub">/r/capecod</td>
+                </tr>
+                <tr>
+                  <td class="city">Dorchester</td>
+                  <td class="sub">/r/dorchester</td>
+                </tr>
+                <tr>
+                  <td class="city">Gaithersburg</td>
+                  <td class="sub">/r/gaithersburg</td>
+                </tr>
+                <tr>
+                  <td class="city">Lowell MA</td>
+                  <td class="sub">/r/lowellma</td>
+                </tr>
+                <tr>
+                  <td class="city">Medford MA</td>
+                  <td class="sub">/r/medfordma</td>
+                </tr>
+                <tr>
+                  <td class="city">Medford</td>
+                  <td class="sub">/r/medfordmass</td>
+                </tr>
+                <tr>
+                  <td class="city">Somerville</td>
+                  <td class="sub">/r/somerville</td>
+                </tr>
+                <tr>
+                  <td class="city">South Coast</td>
+                  <td class="sub">/r/southcoast</td>
+                </tr>
+                <tr>
+                  <td class="city">Waltham</td>
+                  <td class="sub">/r/waltham</td>
+                </tr>
+                <tr>
+                  <td class="city">Worcester</td>
+                  <td class="sub">/r/worcesterma</td>
+                </tr>
+                <tr>
+                  <td class="city">Michigan</td>
+                  <td class="sub">/r/michigan</td>
+                </tr>
+                <tr>
+                  <td class="city">Ann Arbor</td>
+                  <td class="sub">/r/annarbor</td>
+                </tr>
+                <tr>
+                  <td class="city">Detroit</td>
+                  <td class="sub">/r/detroit</td>
+                </tr>
+                <tr>
+                  <td class="city">Downriver Area</td>
+                  <td class="sub">/r/downriver</td>
+                </tr>
+                <tr>
+                  <td class="city">Ferndale</td>
+                  <td class="sub">/r/ferndale</td>
+                </tr>
+                <tr>
+                  <td class="city">Flint</td>
+                  <td class="sub">/r/flint</td>
+                </tr>
+                <tr>
+                  <td class="city">Grand Rapids</td>
+                  <td class="sub">/r/grandrapids</td>
+                </tr>
+                <tr>
+                  <td class="city">Hamtramck</td>
+                  <td class="sub">/r/hamtramck</td>
+                </tr>
+                <tr>
+                  <td class="city">Holland</td>
+                  <td class="sub">/r/hollandmichigan</td>
+                </tr>
+                <tr>
+                  <td class="city">Jackson</td>
+                  <td class="sub">/r/jacksonmi</td>
+                </tr>
+                <tr>
+                  <td class="city">Kalamazoo</td>
+                  <td class="sub">/r/kzoo</td>
+                </tr>
+                <tr>
+                  <td class="city">Lansing</td>
+                  <td class="sub">/r/lansing</td>
+                </tr>
+                <tr>
+                  <td class="city">Royal Oak</td>
+                  <td class="sub">/r/royaloak</td>
+                </tr>
+                <tr>
+                  <td class="city">South Bend</td>
+                  <td class="sub">/r/southbend</td>
+                </tr>
+                <tr>
+                  <td class="city">Ypsilanti (YPSI</td>
+                  <td class="sub">/r/ypsi</td>
+                </tr>
+                <tr>
+                  <td class="city">Minnesota</td>
+                  <td class="sub">/r/minnesota</td>
+                </tr>
+                <tr>
+                  <td class="city">Brainerd</td>
+                  <td class="sub">/r/brainerd</td>
+                </tr>
+                <tr>
+                  <td class="city">Duluth</td>
+                  <td class="sub">/r/duluth</td>
+                </tr>
+                <tr>
+                  <td class="city">Eagan</td>
+                  <td class="sub">/r/eaganmn</td>
+                </tr>
+                <tr>
+                  <td class="city">Minneapolis</td>
+                  <td class="sub">/r/minneapolis</td>
+                </tr>
+                <tr>
+                  <td class="city">Rochester</td>
+                  <td class="sub">/r/rochestermn</td>
+                </tr>
+                <tr>
+                  <td class="city">Saint Paul</td>
+                  <td class="sub">/r/saintpaul</td>
+                </tr>
+                <tr>
+                  <td class="city">Twin Cities</td>
+                  <td class="sub">/r/twincities</td>
+                </tr>
+                <tr>
+                  <td class="city">Twin Cities Social</td>
+                  <td class="sub">/r/twincitiessocial</td>
+                </tr>
+                <tr>
+                  <td class="city">Winona</td>
+                  <td class="sub">/r/winona</td>
+                </tr>
+                <tr>
+                  <td class="city">Mississippi</td>
+                  <td class="sub">/r/mississippi</td>
+                </tr>
+                <tr>
+                  <td class="city">Biloxi</td>
+                  <td class="sub">/r/biloxi</td>
+                </tr>
+                <tr>
+                  <td class="city">Jackson</td>
+                  <td class="sub">/r/jacksonms</td>
+                </tr>
+                <tr>
+                  <td class="city">Missouri</td>
+                  <td class="sub">/r/missouri</td>
+                </tr>
+                <tr>
+                  <td class="city">Branson</td>
+                  <td class="sub">/r/bransonmo</td>
+                </tr>
+                <tr>
+                  <td class="city">Columbia</td>
+                  <td class="sub">/r/columbiamo</td>
+                </tr>
+                <tr>
+                  <td class="city">Kansas City</td>
+                  <td class="sub">/r/kansascity</td>
+                </tr>
+                <tr>
+                  <td class="city">Springfield</td>
+                  <td class="sub">/r/springfieldmo</td>
+                </tr>
+                <tr>
+                  <td class="city">St. Louis</td>
+                  <td class="sub">/r/stlouis</td>
+                </tr>
+                <tr>
+                  <td class="city">Montana</td>
+                  <td class="sub">/r/montana</td>
+                </tr>
+                <tr>
+                  <td class="city">Bozeman</td>
+                  <td class="sub">/r/bozeman</td>
+                </tr>
+                <tr>
+                  <td class="city">Great Falls</td>
+                  <td class="sub">/r/greatfalls</td>
+                </tr>
+                <tr>
+                  <td class="city">Kalispell</td>
+                  <td class="sub">/r/kalispell</td>
+                </tr>
+                <tr>
+                  <td class="city">Missoula</td>
+                  <td class="sub">/r/missoula</td>
+                </tr>
+                <tr>
+                  <td class="city">Nebraska</td>
+                  <td class="sub">/r/nebraska</td>
+                </tr>
+                <tr>
+                  <td class="city">Lincoln</td>
+                  <td class="sub">/r/lincoln</td>
+                </tr>
+                <tr>
+                  <td class="city">Omaha</td>
+                  <td class="sub">/r/omaha</td>
+                </tr>
+                <tr>
+                  <td class="city">Las Vegas</td>
+                  <td class="sub">/r/lasvegas</td>
+                </tr>
+                <tr>
+                  <td class="city">(Las Vegas</td>
+                  <td class="sub">/r/vegas</td>
+                </tr>
+                <tr>
+                  <td class="city">Reno</td>
+                  <td class="sub">/r/reno</td>
+                </tr>
+                <tr>
+                  <td class="city">Tahoe</td>
+                  <td class="sub">/r/tahoe</td>
+                </tr>
+                <tr>
+                  <td class="city">New Hampshire</td>
+                  <td class="sub">/r/newhampshire</td>
+                </tr>
+                <tr>
+                  <td class="city">Keene</td>
+                  <td class="sub">/r/keene</td>
+                </tr>
+                <tr>
+                  <td class="city">Nashua</td>
+                  <td class="sub">/r/nashua</td>
+                </tr>
+                <tr>
+                  <td class="city">Portsmouth</td>
+                  <td class="sub">/r/portsmouthnh</td>
+                </tr>
+                <tr>
+                  <td class="city">New Jersey</td>
+                  <td class="sub">/r/newjersey</td>
+                </tr>
+                <tr>
+                  <td class="city">Alantic City</td>
+                  <td class="sub">/r/atlanticcity</td>
+                </tr>
+                <tr>
+                  <td class="city">Cape May</td>
+                  <td class="sub">/r/capemay</td>
+                </tr>
+                <tr>
+                  <td class="city">Hoboken</td>
+                  <td class="sub">/r/hoboken</td>
+                </tr>
+                <tr>
+                  <td class="city">Jersey City</td>
+                  <td class="sub">/r/jerseycity</td>
+                </tr>
+                <tr>
+                  <td class="city">Newark</td>
+                  <td class="sub">/r/newark</td>
+                </tr>
+                <tr>
+                  <td class="city">Northern New Jersey</td>
+                  <td class="sub">/r/northernnewjersey</td>
+                </tr>
+                <tr>
+                  <td class="city">South Jersey</td>
+                  <td class="sub">/r/southjersey</td>
+                </tr>
+                <tr>
+                  <td class="city">New Mexico</td>
+                  <td class="sub">/r/newmexico</td>
+                </tr>
+                <tr>
+                  <td class="city">Albuquerque</td>
+                  <td class="sub">/r/albuquerque</td>
+                </tr>
+                <tr>
+                  <td class="city">Las Cruces</td>
+                  <td class="sub">/r/lascruces</td>
+                </tr>
+                <tr>
+                  <td class="city">Santa Fe</td>
+                  <td class="sub">/r/santafe</td>
+                </tr>
+                <tr>
+                  <td class="city">New York</td>
+                  <td class="sub">/r/newyork</td>
+                </tr>
+                <tr>
+                  <td class="city">Adirondack Park</td>
+                  <td class="sub">/r/adirondacks</td>
+                </tr>
+                <tr>
+                  <td class="city">Albany</td>
+                  <td class="sub">/r/albany</td>
+                </tr>
+                <tr>
+                  <td class="city">Astoria</td>
+                  <td class="sub">/r/astoria</td>
+                </tr>
+                <tr>
+                  <td class="city">Binghamton</td>
+                  <td class="sub">/r/binghamton</td>
+                </tr>
+                <tr>
+                  <td class="city">Bronx</td>
+                  <td class="sub">/r/bronx</td>
+                </tr>
+                <tr>
+                  <td class="city">Brooklyn</td>
+                  <td class="sub">/r/brooklyn</td>
+                </tr>
+                <tr>
+                  <td class="city">Buffalo</td>
+                  <td class="sub">/r/buffalo</td>
+                </tr>
+                <tr>
+                  <td class="city">Bushwick</td>
+                  <td class="sub">/r/bushwick</td>
+                </tr>
+                <tr>
+                  <td class="city">Forest Hills</td>
+                  <td class="sub">/r/foresthills</td>
+                </tr>
+                <tr>
+                  <td class="city">Glens Falls</td>
+                  <td class="sub">/r/glensfalls</td>
+                </tr>
+                <tr>
+                  <td class="city">Hudson Valley</td>
+                  <td class="sub">/r/hudsonvalley</td>
+                </tr>
+                <tr>
+                  <td class="city">Ithaca</td>
+                  <td class="sub">/r/ithaca</td>
+                </tr>
+                <tr>
+                  <td class="city">Long Island</td>
+                  <td class="sub">/r/longisland</td>
+                </tr>
+                <tr>
+                  <td class="city">Manhattan</td>
+                  <td class="sub">/r/manhattan</td>
+                </tr>
+                <tr>
+                  <td class="city">New York City</td>
+                  <td class="sub">/r/nyc</td>
+                </tr>
+                <tr>
+                  <td class="city">Queens</td>
+                  <td class="sub">/r/queens</td>
+                </tr>
+                <tr>
+                  <td class="city">Rochester</td>
+                  <td class="sub">/r/rochester</td>
+                </tr>
+                <tr>
+                  <td class="city">Rockland County</td>
+                  <td class="sub">/r/rockland</td>
+                </tr>
+                <tr>
+                  <td class="city">Staten Island</td>
+                  <td class="sub">/r/statenisland</td>
+                </tr>
+                <tr>
+                  <td class="city">Syracuse</td>
+                  <td class="sub">/r/syracuse</td>
+                </tr>
+                <tr>
+                  <td class="city">Troy</td>
+                  <td class="sub">/r/troy</td>
+                </tr>
+                <tr>
+                  <td class="city">Upstate New York</td>
+                  <td class="sub">/r/upstate_new_york</td>
+                </tr>
+                <tr>
+                  <td class="city">Utica</td>
+                  <td class="sub">/r/utica</td>
+                </tr>
+                <tr>
+                  <td class="city">Westchester County</td>
+                  <td class="sub">/r/westchester</td>
+                </tr>
+                <tr>
+                  <td class="city">Williamsburg</td>
+                  <td class="sub">/r/williamsburg</td>
+                </tr>
+                <tr>
+                  <td class="city">Yonkers</td>
+                  <td class="sub">/r/yonkers</td>
+                </tr>
+                <tr>
+                  <td class="city">North Carolina</td>
+                  <td class="sub">/r/northcarolina</td>
+                </tr>
+                <tr>
+                  <td class="city">Asheville</td>
+                  <td class="sub">/r/asheville</td>
+                </tr>
+                <tr>
+                  <td class="city">Chapel Hill</td>
+                  <td class="sub">/r/chapelhill</td>
+                </tr>
+                <tr>
+                  <td class="city">Charlotte</td>
+                  <td class="sub">/r/charlotte</td>
+                </tr>
+                <tr>
+                  <td class="city">Durham</td>
+                  <td class="sub">/r/bullcity</td>
+                </tr>
+                <tr>
+                  <td class="city">Fayetteville</td>
+                  <td class="sub">/r/fayettenam</td>
+                </tr>
+                <tr>
+                  <td class="city">Greensboro</td>
+                  <td class="sub">/r/gso</td>
+                </tr>
+                <tr>
+                  <td class="city">Huntersville</td>
+                  <td class="sub">/r/huntersville</td>
+                </tr>
+                <tr>
+                  <td class="city">Lake Norman Area</td>
+                  <td class="sub">/r/lkn</td>
+                </tr>
+                <tr>
+                  <td class="city">Outer Banks</td>
+                  <td class="sub">/r/obx</td>
+                </tr>
+                <tr>
+                  <td class="city">Raleigh</td>
+                  <td class="sub">/r/raleigh</td>
+                </tr>
+                <tr>
+                  <td class="city">Triangle</td>
+                  <td class="sub">/r/triangle</td>
+                </tr>
+                <tr>
+                  <td class="city">Wilmington</td>
+                  <td class="sub">/r/wilmington</td>
+                </tr>
+                <tr>
+                  <td class="city">Winston-Salem</td>
+                  <td class="sub">/r/winstonsalem</td>
+                </tr>
+                <tr>
+                  <td class="city">North Dakota</td>
+                  <td class="sub">/r/northdakota</td>
+                </tr>
+                <tr>
+                  <td class="city">Bismarck</td>
+                  <td class="sub">/r/bismarck</td>
+                </tr>
+                <tr>
+                  <td class="city">Fargo</td>
+                  <td class="sub">/r/fargo</td>
+                </tr>
+                <tr>
+                  <td class="city">Ohio</td>
+                  <td class="sub">/r/ohio</td>
+                </tr>
+                <tr>
+                  <td class="city">Akron</td>
+                  <td class="sub">/r/akron</td>
+                </tr>
+                <tr>
+                  <td class="city">Athens</td>
+                  <td class="sub">/r/athensohio</td>
+                </tr>
+                <tr>
+                  <td class="city">Canton</td>
+                  <td class="sub">/r/canton</td>
+                </tr>
+                <tr>
+                  <td class="city">Cincinnati</td>
+                  <td class="sub">/r/cincinnati</td>
+                </tr>
+                <tr>
+                  <td class="city">Cleveland</td>
+                  <td class="sub">/r/cleveland</td>
+                </tr>
+                <tr>
+                  <td class="city">Columbus</td>
+                  <td class="sub">/r/columbus</td>
+                </tr>
+                <tr>
+                  <td class="city">Dayton</td>
+                  <td class="sub">/r/dayton</td>
+                </tr>
+                <tr>
+                  <td class="city">Lakewood</td>
+                  <td class="sub">/r/lakewood</td>
+                </tr>
+                <tr>
+                  <td class="city">Toledo</td>
+                  <td class="sub">/r/toledo</td>
+                </tr>
+                <tr>
+                  <td class="city">Oklahoma</td>
+                  <td class="sub">/r/oklahoma</td>
+                </tr>
+                <tr>
+                  <td class="city">Bartlesville</td>
+                  <td class="sub">/r/bville</td>
+                </tr>
+                <tr>
+                  <td class="city">Norman</td>
+                  <td class="sub">/r/normanok</td>
+                </tr>
+                <tr>
+                  <td class="city">Oklahoma City (OKC</td>
+                  <td class="sub">/r/okc</td>
+                </tr>
+                <tr>
+                  <td class="city">Oklahoma City</td>
+                  <td class="sub">/r/oklahomacity</td>
+                </tr>
+                <tr>
+                  <td class="city">Tulsa</td>
+                  <td class="sub">/r/tulsa</td>
+                </tr>
+                <tr>
+                  <td class="city">Oregon</td>
+                  <td class="sub">/r/oregon</td>
+                </tr>
+                <tr>
+                  <td class="city">Ashland</td>
+                  <td class="sub">/r/ashland</td>
+                </tr>
+                <tr>
+                  <td class="city">Beaverton</td>
+                  <td class="sub">/r/beaverton</td>
+                </tr>
+                <tr>
+                  <td class="city">Bend</td>
+                  <td class="sub">/r/bend</td>
+                </tr>
+                <tr>
+                  <td class="city">Corvallis</td>
+                  <td class="sub">/r/corvallis</td>
+                </tr>
+                <tr>
+                  <td class="city">Eugene</td>
+                  <td class="sub">/r/eugene</td>
+                </tr>
+                <tr>
+                  <td class="city">Hillsboro</td>
+                  <td class="sub">/r/hillsboro</td>
+                </tr>
+                <tr>
+                  <td class="city">Medford</td>
+                  <td class="sub">/r/medford</td>
+                </tr>
+                <tr>
+                  <td class="city">Oregon City</td>
+                  <td class="sub">/r/oregoncity</td>
+                </tr>
+                <tr>
+                  <td class="city">Oregon Coast</td>
+                  <td class="sub">/r/oregoncoast</td>
+                </tr>
+                <tr>
+                  <td class="city">Portland</td>
+                  <td class="sub">/r/portland</td>
+                </tr>
+                <tr>
+                  <td class="city">Salem</td>
+                  <td class="sub">/r/salem</td>
+                </tr>
+                <tr>
+                  <td class="city">Pennsylvania</td>
+                  <td class="sub">/r/pennsylvania</td>
+                </tr>
+                <tr>
+                  <td class="city">Bucks County</td>
+                  <td class="sub">/r/buckscountypa</td>
+                </tr>
+                <tr>
+                  <td class="city">Carlisle</td>
+                  <td class="sub">/r/carlisle</td>
+                </tr>
+                <tr>
+                  <td class="city">Central Pennsylvania</td>
+                  <td class="sub">/r/centralpa</td>
+                </tr>
+                <tr>
+                  <td class="city">Downingtown</td>
+                  <td class="sub">/r/downingtown</td>
+                </tr>
+                <tr>
+                  <td class="city">Erie</td>
+                  <td class="sub">/r/erie</td>
+                </tr>
+                <tr>
+                  <td class="city">Harrisburg</td>
+                  <td class="sub">/r/harrisburg</td>
+                </tr>
+                <tr>
+                  <td class="city">Lancaster</td>
+                  <td class="sub">/r/lancaster</td>
+                </tr>
+                <tr>
+                  <td class="city">Lehigh Valley</td>
+                  <td class="sub">/r/lehighvalley</td>
+                </tr>
+                <tr>
+                  <td class="city">Montgomery County</td>
+                  <td class="sub">/r/montco</td>
+                </tr>
+                <tr>
+                  <td class="city">Pittsburgh</td>
+                  <td class="sub">/r/pittsburgh</td>
+                </tr>
+                <tr>
+                  <td class="city">Philadelphia</td>
+                  <td class="sub">/r/philadelphia</td>
+                </tr>
+                <tr>
+                  <td class="city">West Chester</td>
+                  <td class="sub">/r/westchesterpa</td>
+                </tr>
+                <tr>
+                  <td class="city">Rhode Island</td>
+                  <td class="sub">/r/rhodeisland</td>
+                </tr>
+                <tr>
+                  <td class="city">Newport</td>
+                  <td class="sub">/r/newport</td>
+                </tr>
+                <tr>
+                  <td class="city">Pawtucket</td>
+                  <td class="sub">/r/pawtucket</td>
+                </tr>
+                <tr>
+                  <td class="city">Providence</td>
+                  <td class="sub">/r/providence</td>
+                </tr>
+                <tr>
+                  <td class="city">South Carolina</td>
+                  <td class="sub">/r/southcarolina</td>
+                </tr>
+                <tr>
+                  <td class="city">Charleston</td>
+                  <td class="sub">/r/charleston</td>
+                </tr>
+                <tr>
+                  <td class="city">Clemson</td>
+                  <td class="sub">/r/clemson</td>
+                </tr>
+                <tr>
+                  <td class="city">Greenville</td>
+                  <td class="sub">/r/greenville</td>
+                </tr>
+                <tr>
+                  <td class="city">Myrtle Beach</td>
+                  <td class="sub">/r/myrtlebeach</td>
+                </tr>
+                <tr>
+                  <td class="city">Sioux Falls</td>
+                  <td class="sub">/r/siouxfalls</td>
+                </tr>
+                <tr>
+                  <td class="city">Tennessee</td>
+                  <td class="sub">/r/tennessee</td>
+                </tr>
+                <tr>
+                  <td class="city">Chattanooga</td>
+                  <td class="sub">/r/chattanooga</td>
+                </tr>
+                <tr>
+                  <td class="city">Knoxville</td>
+                  <td class="sub">/r/knoxville</td>
+                </tr>
+                <tr>
+                  <td class="city">Memphis</td>
+                  <td class="sub">/r/memphis</td>
+                </tr>
+                <tr>
+                  <td class="city">Murfreesboro</td>
+                  <td class="sub">/r/murfreesboro</td>
+                </tr>
+                <tr>
+                  <td class="city">Nashville</td>
+                  <td class="sub">/r/nashville</td>
+                </tr>
+                <tr>
+                  <td class="city">Texas</td>
+                  <td class="sub">/r/texas</td>
+                </tr>
+                <tr>
+                  <td class="city">Amarillo</td>
+                  <td class="sub">/r/amarillo</td>
+                </tr>
+                <tr>
+                  <td class="city">Arlington</td>
+                  <td class="sub">/r/arlington</td>
+                </tr>
+                <tr>
+                  <td class="city">Austin</td>
+                  <td class="sub">/r/austin</td>
+                </tr>
+                <tr>
+                  <td class="city">Beaumont</td>
+                  <td class="sub">/r/beaumont</td>
+                </tr>
+                <tr>
+                  <td class="city">Bedford</td>
+                  <td class="sub">/r/bedford</td>
+                </tr>
+                <tr>
+                  <td class="city">Cedar Park</td>
+                  <td class="sub">/r/cedarpark</td>
+                </tr>
+                <tr>
+                  <td class="city">Clearlake</td>
+                  <td class="sub">/r/clearlake</td>
+                </tr>
+                <tr>
+                  <td class="city">Conroe</td>
+                  <td class="sub">/r/conroe</td>
+                </tr>
+                <tr>
+                  <td class="city">Corpus (Christi</td>
+                  <td class="sub">/r/corpus</td>
+                </tr>
+                <tr>
+                  <td class="city">Dallas</td>
+                  <td class="sub">/r/dallas</td>
+                </tr>
+                <tr>
+                  <td class="city">Denton</td>
+                  <td class="sub">/r/denton</td>
+                </tr>
+                <tr>
+                  <td class="city">East Texas</td>
+                  <td class="sub">/r/easttexas</td>
+                </tr>
+                <tr>
+                  <td class="city">El Paso</td>
+                  <td class="sub">/r/elpaso</td>
+                </tr>
+                <tr>
+                  <td class="city">Fort Worth</td>
+                  <td class="sub">/r/fortworth</td>
+                </tr>
+                <tr>
+                  <td class="city">Frisco</td>
+                  <td class="sub">/r/frisco</td>
+                </tr>
+                <tr>
+                  <td class="city">Galveston</td>
+                  <td class="sub">/r/galveston</td>
+                </tr>
+                <tr>
+                  <td class="city">Houston</td>
+                  <td class="sub">/r/houston</td>
+                </tr>
+                <tr>
+                  <td class="city">Las Cruces</td>
+                  <td class="sub">/r/lascruces</td>
+                </tr>
+                <tr>
+                  <td class="city">Lubbock</td>
+                  <td class="sub">/r/lubbock</td>
+                </tr>
+                <tr>
+                  <td class="city">McKinney</td>
+                  <td class="sub">/r/mckinney</td>
+                </tr>
+                <tr>
+                  <td class="city">Midland Odessa</td>
+                  <td class="sub">/r/midessa</td>
+                </tr>
+                <tr>
+                  <td class="city">Pflugerville</td>
+                  <td class="sub">/r/pflugerville</td>
+                </tr>
+                <tr>
+                  <td class="city">Plano</td>
+                  <td class="sub">/r/plano</td>
+                </tr>
+                <tr>
+                  <td class="city">Rio Grande Valley</td>
+                  <td class="sub">/r/riograndevalley</td>
+                </tr>
+                <tr>
+                  <td class="city">Round Rock</td>
+                  <td class="sub">/r/roundrock</td>
+                </tr>
+                <tr>
+                  <td class="city">San Angelo</td>
+                  <td class="sub">/r/san_angelo</td>
+                </tr>
+                <tr>
+                  <td class="city">San Antonio</td>
+                  <td class="sub">/r/sanantonio</td>
+                </tr>
+                <tr>
+                  <td class="city">San Marcos</td>
+                  <td class="sub">/r/sanmarcos</td>
+                </tr>
+                <tr>
+                  <td class="city">Spring Branch</td>
+                  <td class="sub">/r/springbranch</td>
+                </tr>
+                <tr>
+                  <td class="city">Southeast Texas</td>
+                  <td class="sub">/r/setx</td>
+                </tr>
+                <tr>
+                  <td class="city">The Woodlands</td>
+                  <td class="sub">/r/thewoodlands</td>
+                </tr>
+                <tr>
+                  <td class="city">Waco</td>
+                  <td class="sub">/r/waco</td>
+                </tr>
+                <tr>
+                  <td class="city">Utah</td>
+                  <td class="sub">/r/utah</td>
+                </tr>
+                <tr>
+                  <td class="city">Logan</td>
+                  <td class="sub">/r/logan</td>
+                </tr>
+                <tr>
+                  <td class="city">Moab</td>
+                  <td class="sub">/r/moab</td>
+                </tr>
+                <tr>
+                  <td class="city">Ogden</td>
+                  <td class="sub">/r/ogden</td>
+                </tr>
+                <tr>
+                  <td class="city">Provo</td>
+                  <td class="sub">/r/provoutah</td>
+                </tr>
+                <tr>
+                  <td class="city">Salt Lake City</td>
+                  <td class="sub">/r/saltlakecity</td>
+                </tr>
+                <tr>
+                  <td class="city">Southern Utah</td>
+                  <td class="sub">/r/southernutah</td>
+                </tr>
+                <tr>
+                  <td class="city">Utah Valley</td>
+                  <td class="sub">/r/utahvalley</td>
+                </tr>
+                <tr>
+                  <td class="city">Vermont</td>
+                  <td class="sub">/r/vermont</td>
+                </tr>
+                <tr>
+                  <td class="city">Burlington</td>
+                  <td class="sub">/r/burlington</td>
+                </tr>
+                <tr>
+                  <td class="city">Virginia</td>
+                  <td class="sub">/r/virginia</td>
+                </tr>
+                <tr>
+                  <td class="city">Blacksburg</td>
+                  <td class="sub">/r/blacksburg</td>
+                </tr>
+                <tr>
+                  <td class="city">Charlottesville</td>
+                  <td class="sub">/r/charlottesville</td>
+                </tr>
+                <tr>
+                  <td class="city">Hampton Roads</td>
+                  <td class="sub">/r/hamptonroads</td>
+                </tr>
+                <tr>
+                  <td class="city">Fredericksburg</td>
+                  <td class="sub">/r/fredericksburg</td>
+                </tr>
+                <tr>
+                  <td class="city">Northern Virginia (NOVA</td>
+                  <td class="sub">/r/nova</td>
+                </tr>
+                <tr>
+                  <td class="city">Norfolk</td>
+                  <td class="sub">/r/norfolk</td>
+                </tr>
+                <tr>
+                  <td class="city">Richmond</td>
+                  <td class="sub">/r/rva</td>
+                </tr>
+                <tr>
+                  <td class="city">Roanoke</td>
+                  <td class="sub">/r/roanoke</td>
+                </tr>
+                <tr>
+                  <td class="city">Virginia Beach</td>
+                  <td class="sub">/r/virginiabeach</td>
+                </tr>
+                <tr>
+                  <td class="city">Winchester</td>
+                  <td class="sub">/r/winchester</td>
+                </tr>
+                <tr>
+                  <td class="city">Washington</td>
+                  <td class="sub">/r/washington</td>
+                </tr>
+                <tr>
+                  <td class="city">Bellevue</td>
+                  <td class="sub">/r/bellevue</td>
+                </tr>
+                <tr>
+                  <td class="city">Bellingham</td>
+                  <td class="sub">/r/bellingham</td>
+                </tr>
+                <tr>
+                  <td class="city">Eastside</td>
+                  <td class="sub">/r/eastside</td>
+                </tr>
+                <tr>
+                  <td class="city">Everett</td>
+                  <td class="sub">/r/everett</td>
+                </tr>
+                <tr>
+                  <td class="city">Federal Way</td>
+                  <td class="sub">/r/federalway</td>
+                </tr>
+                <tr>
+                  <td class="city">Issaquah</td>
+                  <td class="sub">/r/issaquah</td>
+                </tr>
+                <tr>
+                  <td class="city">Kitsap</td>
+                  <td class="sub">/r/kitsap</td>
+                </tr>
+                <tr>
+                  <td class="city">Lynnwood WA</td>
+                  <td class="sub">/r/lynnwoodwa</td>
+                </tr>
+                <tr>
+                  <td class="city">Olympia</td>
+                  <td class="sub">/r/olympia</td>
+                </tr>
+                <tr>
+                  <td class="city">Redmond</td>
+                  <td class="sub">/r/redmond</td>
+                </tr>
+                <tr>
+                  <td class="city">Renton</td>
+                  <td class="sub">/r/renton</td>
+                </tr>
+                <tr>
+                  <td class="city">Seattle</td>
+                  <td class="sub">/r/seattle</td>
+                </tr>
+                <tr>
+                  <td class="city">SeattleWA</td>
+                  <td class="sub">/r/seattlewa</td>
+                </tr>
+                <tr>
+                  <td class="city">Shoreline</td>
+                  <td class="sub">/r/shoreline</td>
+                </tr>
+                <tr>
+                  <td class="city">Snohomish County</td>
+                  <td class="sub">/r/snohomishcounty</td>
+                </tr>
+                <tr>
+                  <td class="city">Spokane</td>
+                  <td class="sub">/r/spokane</td>
+                </tr>
+                <tr>
+                  <td class="city">Tacoma</td>
+                  <td class="sub">/r/tacoma</td>
+                </tr>
+                <tr>
+                  <td class="city">Tricities</td>
+                  <td class="sub">/r/tricitieswa</td>
+                </tr>
+                <tr>
+                  <td class="city">Vancouver</td>
+                  <td class="sub">/r/vancouverwa</td>
+                </tr>
+                <tr>
+                  <td class="city">West Virginia</td>
+                  <td class="sub">/r/westvirginia</td>
+                </tr>
+                <tr>
+                  <td class="city">Morgantown</td>
+                  <td class="sub">/r/morgantownwv</td>
+                </tr>
+                <tr>
+                  <td class="city">Wisconsin</td>
+                  <td class="sub">/r/wisconsin</td>
+                </tr>
+                <tr>
+                  <td class="city">Door County</td>
+                  <td class="sub">/r/doorcounty</td>
+                </tr>
+                <tr>
+                  <td class="city">Eau_Claire</td>
+                  <td class="sub">/r/eau_claire</td>
+                </tr>
+                <tr>
+                  <td class="city">Green Bay</td>
+                  <td class="sub">/r/greenbay</td>
+                </tr>
+                <tr>
+                  <td class="city">Madison</td>
+                  <td class="sub">/r/madisonwi</td>
+                </tr>
+                <tr>
+                  <td class="city">Milwaukee</td>
+                  <td class="sub">/r/milwaukee</td>
+                </tr>
+                <tr>
+                  <td class="city">Waukesha</td>
+                  <td class="sub">/r/waukesha</td>
+                </tr>
+                <tr>
+                  <td class="city">Wyoming</td>
+                  <td class="sub">/r/wyoming</td>
+                </tr>
+            </tbody></table>
         </div>
     </div>
 
-    <div class="results" id="display">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <table class="table-fill"><tbody class="list">
-						<tr>
-							<td class="city">Cascadia</td>
-							<td class="sub">/r/cascadia</td>
-						</tr>
-						<tr>
-							<td class="city">Canada</td>
-							<td class="sub">/r/canada</td>
-						</tr>
-						<tr>
-							<td class="city">Calgary</td>
-							<td class="sub">/r/calgary</td>
-						</tr>
-						<tr>
-							<td class="city">Edmonton</td>
-							<td class="sub">/r/edmonton</td>
-						</tr>
-						<tr>
-							<td class="city">Vancouver</td>
-							<td class="sub">/r/vancouver</td>
-						</tr>
-						<tr>
-							<td class="city">Victoria</td>
-							<td class="sub">/r/victoriabc</td>
-						</tr>
-						<tr>
-							<td class="city">Winnipeg</td>
-							<td class="sub">/r/winnipeg</td>
-						</tr>
-						<tr>
-							<td class="city">Halifax</td>
-							<td class="sub">/r/halifax</td>
-						</tr>
-						<tr>
-							<td class="city">Ontario</td>
-							<td class="sub">/r/ontario</td>
-						</tr>
-						<tr>
-							<td class="city">Brampton</td>
-							<td class="sub">/r/brampton</td>
-						</tr>
-						<tr>
-							<td class="city">Kingston</td>
-							<td class="sub">/r/kingstonontario</td>
-						</tr>
-						<tr>
-							<td class="city">London</td>
-							<td class="sub">/r/londonontario</td>
-						</tr>
-						<tr>
-							<td class="city">Mississauga</td>
-							<td class="sub">/r/mississauga</td>
-						</tr>
-						<tr>
-							<td class="city">Ottawa</td>
-							<td class="sub">/r/ottawa</td>
-						</tr>
-						<tr>
-							<td class="city">Toronto</td>
-							<td class="sub">/r/toronto</td>
-						</tr>
-						<tr>
-							<td class="city">Windsor</td>
-							<td class="sub">/r/windsorontario</td>
-						</tr>
-						<tr>
-							<td class="city">Montr̩al</td>
-							<td class="sub">/r/montreal</td>
-						</tr>
-						<tr>
-							<td class="city">Estados Unidos</td>
-							<td class="sub">/r/estadosunidos</td>
-						</tr>
-						<tr>
-							<td class="city">New England</td>
-							<td class="sub">/r/newengland</td>
-						</tr>
-						<tr>
-							<td class="city">Alabama</td>
-							<td class="sub">/r/alabama</td>
-						</tr>
-						<tr>
-							<td class="city">Auburn</td>
-							<td class="sub">/r/auburn</td>
-						</tr>
-						<tr>
-							<td class="city">Birmingham</td>
-							<td class="sub">/r/birmingham</td>
-						</tr>
-						<tr>
-							<td class="city">Huntsville</td>
-							<td class="sub">/r/huntsvillealabama</td>
-						</tr>
-						<tr>
-							<td class="city">Mobile</td>
-							<td class="sub">/r/mobileal</td>
-						</tr>
-						<tr>
-							<td class="city">Montgomery</td>
-							<td class="sub">/r/montgomery</td>
-						</tr>
-						<tr>
-							<td class="city">Tuscaloosa</td>
-							<td class="sub">/r/tuscaloosa</td>
-						</tr>
-						<tr>
-							<td class="city">Alaska</td>
-							<td class="sub">/r/alaska</td>
-						</tr>
-						<tr>
-							<td class="city">Anchorage</td>
-							<td class="sub">/r/anchorage</td>
-						</tr>
-						<tr>
-							<td class="city">Fairbanks</td>
-							<td class="sub">/r/fairbanks</td>
-						</tr>
-						<tr>
-							<td class="city">Juneau</td>
-							<td class="sub">/r/juneau</td>
-						</tr>
-						<tr>
-							<td class="city">Arizona</td>
-							<td class="sub">/r/arizona</td>
-						</tr>
-						<tr>
-							<td class="city">Avondale</td>
-							<td class="sub">/r/avondaleaz</td>
-						</tr>
-						<tr>
-							<td class="city">Flagstaff</td>
-							<td class="sub">/r/flagstaff</td>
-						</tr>
-						<tr>
-							<td class="city">Phoenix</td>
-							<td class="sub">/r/phoenix</td>
-						</tr>
-						<tr>
-							<td class="city">Phoenix (PHX</td>
-							<td class="sub">/r/phx</td>
-						</tr>
-						<tr>
-							<td class="city">Scottsdale</td>
-							<td class="sub">/r/scottsdale</td>
-						</tr>
-						<tr>
-							<td class="city">Tempe</td>
-							<td class="sub">/r/tempe</td>
-						</tr>
-						<tr>
-							<td class="city">Tucson</td>
-							<td class="sub">/r/tucson</td>
-						</tr>
-						<tr>
-							<td class="city">Yuma</td>
-							<td class="sub">/r/yuma</td>
-						</tr>
-						<tr>
-							<td class="city">Arkansas</td>
-							<td class="sub">/r/arkansas</td>
-						</tr>
-						<tr>
-							<td class="city">Fayetteville</td>
-							<td class="sub">/r/fayetteville</td>
-						</tr>
-						<tr>
-							<td class="city">Little Rock</td>
-							<td class="sub">/r/littlerock</td>
-						</tr>
-						<tr>
-							<td class="city">California</td>
-							<td class="sub">/r/california</td>
-						</tr>
-						<tr>
-							<td class="city">Alameda</td>
-							<td class="sub">/r/alameda</td>
-						</tr>
-						<tr>
-							<td class="city">Bay Area</td>
-							<td class="sub">/r/bayarea</td>
-						</tr>
-						<tr>
-							<td class="city">Berkeley</td>
-							<td class="sub">/r/berkeley</td>
-						</tr>
-						<tr>
-							<td class="city">Berkeley CA</td>
-							<td class="sub">/r/berkeleyca</td>
-						</tr>
-						<tr>
-							<td class="city">Campbell</td>
-							<td class="sub">/r/campbell</td>
-						</tr>
-						<tr>
-							<td class="city">Chico</td>
-							<td class="sub">/r/chicoca</td>
-						</tr>
-						<tr>
-							<td class="city">Davis</td>
-							<td class="sub">/r/davisca</td>
-						</tr>
-						<tr>
-							<td class="city">East Bay</td>
-							<td class="sub">/r/eastbay</td>
-						</tr>
-						<tr>
-							<td class="city">Elk Grove</td>
-							<td class="sub">/r/elkgrove</td>
-						</tr>
-						<tr>
-							<td class="city">Folsom</td>
-							<td class="sub">/r/folsom</td>
-						</tr>
-						<tr>
-							<td class="city">Fremont</td>
-							<td class="sub">/r/fremont</td>
-						</tr>
-						<tr>
-							<td class="city">Gilroy</td>
-							<td class="sub">/r/gilroy</td>
-						</tr>
-						<tr>
-							<td class="city">Humboldt</td>
-							<td class="sub">/r/humboldt</td>
-						</tr>
-						<tr>
-							<td class="city">Lake County</td>
-							<td class="sub">/r/lakecounty</td>
-						</tr>
-						<tr>
-							<td class="city">Livermore</td>
-							<td class="sub">/r/livermore</td>
-						</tr>
-						<tr>
-							<td class="city">Monterey Bay</td>
-							<td class="sub">/r/montereybay</td>
-						</tr>
-						<tr>
-							<td class="city">Napa</td>
-							<td class="sub">/r/napa</td>
-						</tr>
-						<tr>
-							<td class="city">Napa Valley</td>
-							<td class="sub">/r/napavalley</td>
-						</tr>
-						<tr>
-							<td class="city">Oakland</td>
-							<td class="sub">/r/oakland</td>
-						</tr>
-						<tr>
-							<td class="city">Pacifica</td>
-							<td class="sub">/r/pacifica</td>
-						</tr>
-						<tr>
-							<td class="city">Palo Alto</td>
-							<td class="sub">/r/paloalto</td>
-						</tr>
-						<tr>
-							<td class="city">Pleasanton</td>
-							<td class="sub">/r/pleasanton</td>
-						</tr>
-						<tr>
-							<td class="city">Redding</td>
-							<td class="sub">/r/redding</td>
-						</tr>
-						<tr>
-							<td class="city">Roseville</td>
-							<td class="sub">/r/roseville</td>
-						</tr>
-						<tr>
-							<td class="city">Sacramento</td>
-							<td class="sub">/r/sacramento</td>
-						</tr>
-						<tr>
-							<td class="city">San Francisco</td>
-							<td class="sub">/r/sanfrancisco</td>
-						</tr>
-						<tr>
-							<td class="city">San Jos̩</td>
-							<td class="sub">/r/sanjose</td>
-						</tr>
-						<tr>
-							<td class="city">San Mateo</td>
-							<td class="sub">/r/sanmateo</td>
-						</tr>
-						<tr>
-							<td class="city">Santa Clara</td>
-							<td class="sub">/r/santaclara</td>
-						</tr>
-						<tr>
-							<td class="city">Santa Cruz</td>
-							<td class="sub">/r/santacruz</td>
-						</tr>
-						<tr>
-							<td class="city">Santa Cruz (locals</td>
-							<td class="sub">/r/santacruzlocals</td>
-						</tr>
-						<tr>
-							<td class="city">Santa Rosa</td>
-							<td class="sub">/r/santarosa</td>
-						</tr>
-						<tr>
-							<td class="city">Silicon Valley</td>
-							<td class="sub">/r/siliconvalley</td>
-						</tr>
-						<tr>
-							<td class="city">Sunnyvale</td>
-							<td class="sub">/r/sunnyvale</td>
-						</tr>
-						<tr>
-							<td class="city">Tahoe</td>
-							<td class="sub">/r/tahoe</td>
-						</tr>
-						<tr>
-							<td class="city">Vacaville</td>
-							<td class="sub">/r/vacaville</td>
-						</tr>
-						<tr>
-							<td class="city">Walnut Creek</td>
-							<td class="sub">/r/walnutcreek</td>
-						</tr>
-						<tr>
-							<td class="city">Woodland</td>
-							<td class="sub">/r/woodland</td>
-						</tr>
-						<tr>
-							<td class="city">Bakersfield</td>
-							<td class="sub">/r/bakersfield</td>
-						</tr>
-						<tr>
-							<td class="city">Fresno</td>
-							<td class="sub">/r/fresno</td>
-						</tr>
-						<tr>
-							<td class="city">Merced</td>
-							<td class="sub">/r/merced</td>
-						</tr>
-						<tr>
-							<td class="city">Modesto</td>
-							<td class="sub">/r/modesto</td>
-						</tr>
-						<tr>
-							<td class="city">San Luis Obispo</td>
-							<td class="sub">/r/slo</td>
-						</tr>
-						<tr>
-							<td class="city">Santa Maria</td>
-							<td class="sub">/r/santamaria</td>
-						</tr>
-						<tr>
-							<td class="city">Stockton</td>
-							<td class="sub">/r/stocktonca</td>
-						</tr>
-						<tr>
-							<td class="city">Vacaville</td>
-							<td class="sub">/r/vacaville</td>
-						</tr>
-						<tr>
-							<td class="city">Yosemite National Park</td>
-							<td class="sub">/r/yosemite</td>
-						</tr>
-						<tr>
-							<td class="city">Southern California (SolCal</td>
-							<td class="sub">/r/socal</td>
-						</tr>
-						<tr>
-							<td class="city">Agoura Hills</td>
-							<td class="sub">/r/agourahills</td>
-						</tr>
-						<tr>
-							<td class="city">Anaheim</td>
-							<td class="sub">/r/anaheim</td>
-						</tr>
-						<tr>
-							<td class="city">Big Bear</td>
-							<td class="sub">/r/bigbear</td>
-						</tr>
-						<tr>
-							<td class="city">Buena Park</td>
-							<td class="sub">/r/buenapark</td>
-						</tr>
-						<tr>
-							<td class="city">Burbank</td>
-							<td class="sub">/r/burbank</td>
-						</tr>
-						<tr>
-							<td class="city">Camarillo</td>
-							<td class="sub">/r/camarillo</td>
-						</tr>
-						<tr>
-							<td class="city">Coachella Valley</td>
-							<td class="sub">/r/coachellavalley</td>
-						</tr>
-						<tr>
-							<td class="city">Corona</td>
-							<td class="sub">/r/corona</td>
-						</tr>
-						<tr>
-							<td class="city">Culver City</td>
-							<td class="sub">/r/culvercity</td>
-						</tr>
-						<tr>
-							<td class="city">Eagle Rock</td>
-							<td class="sub">/r/eaglerock</td>
-						</tr>
-						<tr>
-							<td class="city">East County</td>
-							<td class="sub">/r/eastcounty</td>
-						</tr>
-						<tr>
-							<td class="city">Glendale</td>
-							<td class="sub">/r/glendale</td>
-						</tr>
-						<tr>
-							<td class="city">High Desert</td>
-							<td class="sub">/r/highdesert</td>
-						</tr>
-						<tr>
-							<td class="city">Huntington Beach</td>
-							<td class="sub">/r/huntingtonbeach</td>
-						</tr>
-						<tr>
-							<td class="city">Inland Empire</td>
-							<td class="sub">/r/inlandempire</td>
-						</tr>
-						<tr>
-							<td class="city">Irvine</td>
-							<td class="sub">/r/irvine</td>
-						</tr>
-						<tr>
-							<td class="city">Joshua Tree National Park</td>
-							<td class="sub">/r/joshuatree</td>
-						</tr>
-						<tr>
-							<td class="city">La Mesa</td>
-							<td class="sub">/r/lamesa</td>
-						</tr>
-						<tr>
-							<td class="city">Long Beach</td>
-							<td class="sub">/r/longbeach</td>
-						</tr>
-						<tr>
-							<td class="city">Los Angeles</td>
-							<td class="sub">/r/losangeles</td>
-						</tr>
-						<tr>
-							<td class="city">Moreno Valley</td>
-							<td class="sub">/r/morenovalley</td>
-						</tr>
-						<tr>
-							<td class="city">North County</td>
-							<td class="sub">/r/northcounty</td>
-						</tr>
-						<tr>
-							<td class="city">Orange County</td>
-							<td class="sub">/r/orangecounty</td>
-						</tr>
-						<tr>
-							<td class="city">Oxnard</td>
-							<td class="sub">/r/oxnard</td>
-						</tr>
-						<tr>
-							<td class="city">Palm Springs</td>
-							<td class="sub">/r/palmsprings</td>
-						</tr>
-						<tr>
-							<td class="city">Pasadena</td>
-							<td class="sub">/r/pasadena</td>
-						</tr>
-						<tr>
-							<td class="city">Redlands</td>
-							<td class="sub">/r/redlands</td>
-						</tr>
-						<tr>
-							<td class="city">San Diego</td>
-							<td class="sub">/r/sandiego</td>
-						</tr>
-						<tr>
-							<td class="city">San Fernando Valley</td>
-							<td class="sub">/r/sfv</td>
-						</tr>
-						<tr>
-							<td class="city">San Gabriel Valley</td>
-							<td class="sub">/r/sgv</td>
-						</tr>
-						<tr>
-							<td class="city">San Pedro</td>
-							<td class="sub">/r/sanpedro</td>
-						</tr>
-						<tr>
-							<td class="city">Santa Barbara</td>
-							<td class="sub">/r/santabarbara</td>
-						</tr>
-						<tr>
-							<td class="city">Santa Clarita</td>
-							<td class="sub">/r/santaclarita</td>
-						</tr>
-						<tr>
-							<td class="city">Santa Clarita Valley</td>
-							<td class="sub">/r/santaclaritavalley</td>
-						</tr>
-						<tr>
-							<td class="city">Santa Monica</td>
-							<td class="sub">/r/santamonica</td>
-						</tr>
-						<tr>
-							<td class="city">Simi Valley</td>
-							<td class="sub">/r/simivalley</td>
-						</tr>
-						<tr>
-							<td class="city">South Bay</td>
-							<td class="sub">/r/southbayla</td>
-						</tr>
-						<tr>
-							<td class="city">Temecula</td>
-							<td class="sub">/r/temecula</td>
-						</tr>
-						<tr>
-							<td class="city">Thousand Oaks</td>
-							<td class="sub">/r/thousandoaks</td>
-						</tr>
-						<tr>
-							<td class="city">Tustin</td>
-							<td class="sub">/r/tustin</td>
-						</tr>
-						<tr>
-							<td class="city">Venice</td>
-							<td class="sub">/r/venice</td>
-						</tr>
-						<tr>
-							<td class="city">Ventura</td>
-							<td class="sub">/r/ventura</td>
-						</tr>
-						<tr>
-							<td class="city">Ventura County</td>
-							<td class="sub">/r/venturacounty</td>
-						</tr>
-						<tr>
-							<td class="city">Colorado</td>
-							<td class="sub">/r/colorado</td>
-						</tr>
-						<tr>
-							<td class="city">Aurora</td>
-							<td class="sub">/r/auroraco</td>
-						</tr>
-						<tr>
-							<td class="city">Boulder</td>
-							<td class="sub">/r/boulder</td>
-						</tr>
-						<tr>
-							<td class="city">Colorado Springs</td>
-							<td class="sub">/r/coloradosprings</td>
-						</tr>
-						<tr>
-							<td class="city">Denver</td>
-							<td class="sub">/r/denver</td>
-						</tr>
-						<tr>
-							<td class="city">Fort Collins</td>
-							<td class="sub">/r/fortcollins</td>
-						</tr>
-						<tr>
-							<td class="city">Grand Junction</td>
-							<td class="sub">/r/grandjunction</td>
-						</tr>
-						<tr>
-							<td class="city">Greeley</td>
-							<td class="sub">/r/greeley</td>
-						</tr>
-						<tr>
-							<td class="city">Longmont</td>
-							<td class="sub">/r/longmont</td>
-						</tr>
-						<tr>
-							<td class="city">Loveland</td>
-							<td class="sub">/r/loveland</td>
-						</tr>
-						<tr>
-							<td class="city">Thornton Westminster Northglenn</td>
-							<td class="sub">/r/twn</td>
-						</tr>
-						<tr>
-							<td class="city">Connecticut</td>
-							<td class="sub">/r/connecticut</td>
-						</tr>
-						<tr>
-							<td class="city">Farmington Valley</td>
-							<td class="sub">/r/farmingtonvalley</td>
-						</tr>
-						<tr>
-							<td class="city">Hartford</td>
-							<td class="sub">/r/hartford</td>
-						</tr>
-						<tr>
-							<td class="city">New Haven</td>
-							<td class="sub">/r/newhaven</td>
-						</tr>
-						<tr>
-							<td class="city">Stamford CT</td>
-							<td class="sub">/r/stamfordct</td>
-						</tr>
-						<tr>
-							<td class="city">Delaware</td>
-							<td class="sub">/r/delaware</td>
-						</tr>
-						<tr>
-							<td class="city">Wilmington</td>
-							<td class="sub">/r/wilmingtonde</td>
-						</tr>
-						<tr>
-							<td class="city">Washington DC</td>
-							<td class="sub">/r/washingtondc</td>
-						</tr>
-						<tr>
-							<td class="city">Brookland</td>
-							<td class="sub">/r/brookland</td>
-						</tr>
-						<tr>
-							<td class="city">Georgetown</td>
-							<td class="sub">/r/georgetown</td>
-						</tr>
-						<tr>
-							<td class="city">Florida</td>
-							<td class="sub">/r/florida</td>
-						</tr>
-						<tr>
-							<td class="city">Bradenton</td>
-							<td class="sub">/r/bradenton</td>
-						</tr>
-						<tr>
-							<td class="city">Broward</td>
-							<td class="sub">/r/broward</td>
-						</tr>
-						<tr>
-							<td class="city">Central Florida</td>
-							<td class="sub">/r/centralflorida</td>
-						</tr>
-						<tr>
-							<td class="city">Clearwater</td>
-							<td class="sub">/r/clearwaterfl</td>
-						</tr>
-						<tr>
-							<td class="city">Daytona Beach</td>
-							<td class="sub">/r/daytonabeach</td>
-						</tr>
-						<tr>
-							<td class="city">Delray Beach</td>
-							<td class="sub">/r/delraybeach</td>
-						</tr>
-						<tr>
-							<td class="city">Florida Keys</td>
-							<td class="sub">/r/floridakeys</td>
-						</tr>
-						<tr>
-							<td class="city">Fort Lauderdale</td>
-							<td class="sub">/r/fortlauderdale</td>
-						</tr>
-						<tr>
-							<td class="city">Fort Myers</td>
-							<td class="sub">/r/fortmyers</td>
-						</tr>
-						<tr>
-							<td class="city">Gainesville</td>
-							<td class="sub">/r/gnv</td>
-						</tr>
-						<tr>
-							<td class="city">Jacksonville</td>
-							<td class="sub">/r/jacksonville</td>
-						</tr>
-						<tr>
-							<td class="city">Key West</td>
-							<td class="sub">/r/keywest</td>
-						</tr>
-						<tr>
-							<td class="city">Lakeland</td>
-							<td class="sub">/r/lakeland</td>
-						</tr>
-						<tr>
-							<td class="city">Miami</td>
-							<td class="sub">/r/miami</td>
-						</tr>
-						<tr>
-							<td class="city">Naples</td>
-							<td class="sub">/r/naples_fl</td>
-						</tr>
-						<tr>
-							<td class="city">Orlando</td>
-							<td class="sub">/r/orlando</td>
-						</tr>
-						<tr>
-							<td class="city">Panama City</td>
-							<td class="sub">/r/panamacity</td>
-						</tr>
-						<tr>
-							<td class="city">Pasco County</td>
-							<td class="sub">/r/pasco</td>
-						</tr>
-						<tr>
-							<td class="city">Pensacola</td>
-							<td class="sub">/r/pensacola</td>
-						</tr>
-						<tr>
-							<td class="city">Port St. Lucie</td>
-							<td class="sub">/r/portstlucie</td>
-						</tr>
-						<tr>
-							<td class="city">Sanibel Island</td>
-							<td class="sub">/r/sanibel</td>
-						</tr>
-						<tr>
-							<td class="city">Sarasota</td>
-							<td class="sub">/r/sarasota</td>
-						</tr>
-						<tr>
-							<td class="city">South Florida</td>
-							<td class="sub">/r/southflorida</td>
-						</tr>
-						<tr>
-							<td class="city">St. Augustine</td>
-							<td class="sub">/r/staugustine</td>
-						</tr>
-						<tr>
-							<td class="city">St. Petersburg</td>
-							<td class="sub">/r/stpetersburgfl</td>
-						</tr>
-						<tr>
-							<td class="city">Southwest Florida</td>
-							<td class="sub">/r/swfl</td>
-						</tr>
-						<tr>
-							<td class="city">Tampa</td>
-							<td class="sub">/r/tampa</td>
-						</tr>
-						<tr>
-							<td class="city">Tallahassee</td>
-							<td class="sub">/r/tallahassee</td>
-						</tr>
-						<tr>
-							<td class="city">Georgia</td>
-							<td class="sub">/r/georgia</td>
-						</tr>
-						<tr>
-							<td class="city">Albany</td>
-							<td class="sub">/r/albanyga</td>
-						</tr>
-						<tr>
-							<td class="city">Alpharetta</td>
-							<td class="sub">/r/alpharetta</td>
-						</tr>
-						<tr>
-							<td class="city">Athens</td>
-							<td class="sub">/r/athens</td>
-						</tr>
-						<tr>
-							<td class="city">Atlanta</td>
-							<td class="sub">/r/atlanta</td>
-						</tr>
-						<tr>
-							<td class="city">Augusta</td>
-							<td class="sub">/r/augusta</td>
-						</tr>
-						<tr>
-							<td class="city">Columbus</td>
-							<td class="sub">/r/columbusga</td>
-						</tr>
-						<tr>
-							<td class="city">Gwinnett County</td>
-							<td class="sub">/r/gwinnett</td>
-						</tr>
-						<tr>
-							<td class="city">Kennesaw</td>
-							<td class="sub">/r/kennesaw</td>
-						</tr>
-						<tr>
-							<td class="city">Macon</td>
-							<td class="sub">/r/macon</td>
-						</tr>
-						<tr>
-							<td class="city">Marietta</td>
-							<td class="sub">/r/marietta</td>
-						</tr>
-						<tr>
-							<td class="city">Roswell</td>
-							<td class="sub">/r/roswell</td>
-						</tr>
-						<tr>
-							<td class="city">Savannah</td>
-							<td class="sub">/r/savannah</td>
-						</tr>
-						<tr>
-							<td class="city">Hawaii</td>
-							<td class="sub">/r/hawaii</td>
-						</tr>
-						<tr>
-							<td class="city">Big Island</td>
-							<td class="sub">/r/bigisland</td>
-						</tr>
-						<tr>
-							<td class="city">Honolulu</td>
-							<td class="sub">/r/honolulu</td>
-						</tr>
-						<tr>
-							<td class="city">Kauai</td>
-							<td class="sub">/r/kauai</td>
-						</tr>
-						<tr>
-							<td class="city">Maui</td>
-							<td class="sub">/r/maui</td>
-						</tr>
-						<tr>
-							<td class="city">Idaho</td>
-							<td class="sub">/r/idaho</td>
-						</tr>
-						<tr>
-							<td class="city">Boise</td>
-							<td class="sub">/r/boise</td>
-						</tr>
-						<tr>
-							<td class="city">Idaho Falls</td>
-							<td class="sub">/r/idahofalls</td>
-						</tr>
-						<tr>
-							<td class="city">Illinois</td>
-							<td class="sub">/r/illinois</td>
-						</tr>
-						<tr>
-							<td class="city">Bloomington-Normal</td>
-							<td class="sub">/r/bloomingtonnormal</td>
-						</tr>
-						<tr>
-							<td class="city">Central Illinois</td>
-							<td class="sub">/r/centralillinois</td>
-						</tr>
-						<tr>
-							<td class="city">Chicago</td>
-							<td class="sub">/r/chicago</td>
-						</tr>
-						<tr>
-							<td class="city">Chicago Suburbs</td>
-							<td class="sub">/r/chicagosuburbs</td>
-						</tr>
-						<tr>
-							<td class="city">Chicago Near West Suburbs</td>
-							<td class="sub">/r/nearwestsuburbs</td>
-						</tr>
-						<tr>
-							<td class="city">Evanston</td>
-							<td class="sub">/r/evanston</td>
-						</tr>
-						<tr>
-							<td class="city">Lake County</td>
-							<td class="sub">/r/lakecounty</td>
-						</tr>
-						<tr>
-							<td class="city">Naperville</td>
-							<td class="sub">/r/naperville</td>
-						</tr>
-						<tr>
-							<td class="city">Peoria IL</td>
-							<td class="sub">/r/peoriail</td>
-						</tr>
-						<tr>
-							<td class="city">Rockford</td>
-							<td class="sub">/r/rockford</td>
-						</tr>
-						<tr>
-							<td class="city">Springfield</td>
-							<td class="sub">/r/springfieldil</td>
-						</tr>
-						<tr>
-							<td class="city">Indiana</td>
-							<td class="sub">/r/indiana</td>
-						</tr>
-						<tr>
-							<td class="city">Bloomington</td>
-							<td class="sub">/r/bloomington</td>
-						</tr>
-						<tr>
-							<td class="city">Elkhart</td>
-							<td class="sub">/r/elkhart</td>
-						</tr>
-						<tr>
-							<td class="city">Fort Wayne</td>
-							<td class="sub">/r/fortwayne</td>
-						</tr>
-						<tr>
-							<td class="city">Indianapolis</td>
-							<td class="sub">/r/indianapolis</td>
-						</tr>
-						<tr>
-							<td class="city">Kokomo</td>
-							<td class="sub">/r/kokomo</td>
-						</tr>
-						<tr>
-							<td class="city">Lafayette</td>
-							<td class="sub">/r/lafayette</td>
-						</tr>
-						<tr>
-							<td class="city">Muncie</td>
-							<td class="sub">/r/muncie</td>
-						</tr>
-						<tr>
-							<td class="city">Northwest Indiana (NWI</td>
-							<td class="sub">/r/nwi</td>
-						</tr>
-						<tr>
-							<td class="city">South Bend</td>
-							<td class="sub">/r/southbend</td>
-						</tr>
-						<tr>
-							<td class="city">Terre Haute</td>
-							<td class="sub">/r/terrehaute</td>
-						</tr>
-						<tr>
-							<td class="city">Valparaiso</td>
-							<td class="sub">/r/valparaiso</td>
-						</tr>
-						<tr>
-							<td class="city">Iowa</td>
-							<td class="sub">/r/iowa</td>
-						</tr>
-						<tr>
-							<td class="city">Ames</td>
-							<td class="sub">/r/ames</td>
-						</tr>
-						<tr>
-							<td class="city">Cedar Rapids</td>
-							<td class="sub">/r/cedarrapids</td>
-						</tr>
-						<tr>
-							<td class="city">Des Moines</td>
-							<td class="sub">/r/desmoines</td>
-						</tr>
-						<tr>
-							<td class="city">Iowa City</td>
-							<td class="sub">/r/iowacity</td>
-						</tr>
-						<tr>
-							<td class="city">Quad Cities Area</td>
-							<td class="sub">/r/quadcities</td>
-						</tr>
-						<tr>
-							<td class="city">Kansas</td>
-							<td class="sub">/r/kansas</td>
-						</tr>
-						<tr>
-							<td class="city">Kansas City</td>
-							<td class="sub">/r/kansascity</td>
-						</tr>
-						<tr>
-							<td class="city">Lawrence</td>
-							<td class="sub">/r/lawrence</td>
-						</tr>
-						<tr>
-							<td class="city">Wichita</td>
-							<td class="sub">/r/wichita</td>
-						</tr>
-						<tr>
-							<td class="city">Kentucky</td>
-							<td class="sub">/r/kentucky</td>
-						</tr>
-						<tr>
-							<td class="city">Covington</td>
-							<td class="sub">/r/covington</td>
-						</tr>
-						<tr>
-							<td class="city">Lexington</td>
-							<td class="sub">/r/lexington</td>
-						</tr>
-						<tr>
-							<td class="city">Louisville</td>
-							<td class="sub">/r/louisville</td>
-						</tr>
-						<tr>
-							<td class="city">New Port</td>
-							<td class="sub">/r/newportky</td>
-						</tr>
-						<tr>
-							<td class="city">Louisiana</td>
-							<td class="sub">/r/louisiana</td>
-						</tr>
-						<tr>
-							<td class="city">Acadiana</td>
-							<td class="sub">/r/acadiana</td>
-						</tr>
-						<tr>
-							<td class="city">Baton Rouge</td>
-							<td class="sub">/r/batonrouge</td>
-						</tr>
-						<tr>
-							<td class="city">New Orleans</td>
-							<td class="sub">/r/neworleans</td>
-						</tr>
-						<tr>
-							<td class="city">Shreveport</td>
-							<td class="sub">/r/shreveport</td>
-						</tr>
-						<tr>
-							<td class="city">Maine</td>
-							<td class="sub">/r/maine</td>
-						</tr>
-						<tr>
-							<td class="city">Portland ME</td>
-							<td class="sub">/r/portlandme</td>
-						</tr>
-						<tr>
-							<td class="city">Maryland</td>
-							<td class="sub">/r/maryland</td>
-						</tr>
-						<tr>
-							<td class="city">Annapolis</td>
-							<td class="sub">/r/annapolis</td>
-						</tr>
-						<tr>
-							<td class="city">Baltimore</td>
-							<td class="sub">/r/baltimore</td>
-						</tr>
-						<tr>
-							<td class="city">Bethesda</td>
-							<td class="sub">/r/bethesda</td>
-						</tr>
-						<tr>
-							<td class="city">Columbia</td>
-							<td class="sub">/r/columbiamd</td>
-						</tr>
-						<tr>
-							<td class="city">Frederick</td>
-							<td class="sub">/r/frederickmd</td>
-						</tr>
-						<tr>
-							<td class="city">Montgomery County MD</td>
-							<td class="sub">/r/montgomerycountymd</td>
-						</tr>
-						<tr>
-							<td class="city">Ocean City</td>
-							<td class="sub">/r/oceancity</td>
-						</tr>
-						<tr>
-							<td class="city">Rockville MD</td>
-							<td class="sub">/r/rockvillemd</td>
-						</tr>
-						<tr>
-							<td class="city">Silver Spring</td>
-							<td class="sub">/r/silverspring</td>
-						</tr>
-						<tr>
-							<td class="city">Massachusetts</td>
-							<td class="sub">/r/massachusetts</td>
-						</tr>
-						<tr>
-							<td class="city">Amherst</td>
-							<td class="sub">/r/amherst</td>
-						</tr>
-						<tr>
-							<td class="city">Boston</td>
-							<td class="sub">/r/boston</td>
-						</tr>
-						<tr>
-							<td class="city">Cambridge</td>
-							<td class="sub">/r/cambridgema</td>
-						</tr>
-						<tr>
-							<td class="city">Cape Cod</td>
-							<td class="sub">/r/capecod</td>
-						</tr>
-						<tr>
-							<td class="city">Dorchester</td>
-							<td class="sub">/r/dorchester</td>
-						</tr>
-						<tr>
-							<td class="city">Gaithersburg</td>
-							<td class="sub">/r/gaithersburg</td>
-						</tr>
-						<tr>
-							<td class="city">Lowell MA</td>
-							<td class="sub">/r/lowellma</td>
-						</tr>
-						<tr>
-							<td class="city">Medford MA</td>
-							<td class="sub">/r/medfordma</td>
-						</tr>
-						<tr>
-							<td class="city">Medford</td>
-							<td class="sub">/r/medfordmass</td>
-						</tr>
-						<tr>
-							<td class="city">Somerville</td>
-							<td class="sub">/r/somerville</td>
-						</tr>
-						<tr>
-							<td class="city">South Coast</td>
-							<td class="sub">/r/southcoast</td>
-						</tr>
-						<tr>
-							<td class="city">Waltham</td>
-							<td class="sub">/r/waltham</td>
-						</tr>
-						<tr>
-							<td class="city">Worcester</td>
-							<td class="sub">/r/worcesterma</td>
-						</tr>
-						<tr>
-							<td class="city">Michigan</td>
-							<td class="sub">/r/michigan</td>
-						</tr>
-						<tr>
-							<td class="city">Ann Arbor</td>
-							<td class="sub">/r/annarbor</td>
-						</tr>
-						<tr>
-							<td class="city">Detroit</td>
-							<td class="sub">/r/detroit</td>
-						</tr>
-						<tr>
-							<td class="city">Downriver Area</td>
-							<td class="sub">/r/downriver</td>
-						</tr>
-						<tr>
-							<td class="city">Ferndale</td>
-							<td class="sub">/r/ferndale</td>
-						</tr>
-						<tr>
-							<td class="city">Flint</td>
-							<td class="sub">/r/flint</td>
-						</tr>
-						<tr>
-							<td class="city">Grand Rapids</td>
-							<td class="sub">/r/grandrapids</td>
-						</tr>
-						<tr>
-							<td class="city">Hamtramck</td>
-							<td class="sub">/r/hamtramck</td>
-						</tr>
-						<tr>
-							<td class="city">Holland</td>
-							<td class="sub">/r/hollandmichigan</td>
-						</tr>
-						<tr>
-							<td class="city">Jackson</td>
-							<td class="sub">/r/jacksonmi</td>
-						</tr>
-						<tr>
-							<td class="city">Kalamazoo</td>
-							<td class="sub">/r/kzoo</td>
-						</tr>
-						<tr>
-							<td class="city">Lansing</td>
-							<td class="sub">/r/lansing</td>
-						</tr>
-						<tr>
-							<td class="city">Royal Oak</td>
-							<td class="sub">/r/royaloak</td>
-						</tr>
-						<tr>
-							<td class="city">South Bend</td>
-							<td class="sub">/r/southbend</td>
-						</tr>
-						<tr>
-							<td class="city">Ypsilanti (YPSI</td>
-							<td class="sub">/r/ypsi</td>
-						</tr>
-						<tr>
-							<td class="city">Minnesota</td>
-							<td class="sub">/r/minnesota</td>
-						</tr>
-						<tr>
-							<td class="city">Brainerd</td>
-							<td class="sub">/r/brainerd</td>
-						</tr>
-						<tr>
-							<td class="city">Duluth</td>
-							<td class="sub">/r/duluth</td>
-						</tr>
-						<tr>
-							<td class="city">Eagan</td>
-							<td class="sub">/r/eaganmn</td>
-						</tr>
-						<tr>
-							<td class="city">Minneapolis</td>
-							<td class="sub">/r/minneapolis</td>
-						</tr>
-						<tr>
-							<td class="city">Rochester</td>
-							<td class="sub">/r/rochestermn</td>
-						</tr>
-						<tr>
-							<td class="city">Saint Paul</td>
-							<td class="sub">/r/saintpaul</td>
-						</tr>
-						<tr>
-							<td class="city">Twin Cities</td>
-							<td class="sub">/r/twincities</td>
-						</tr>
-						<tr>
-							<td class="city">Twin Cities Social</td>
-							<td class="sub">/r/twincitiessocial</td>
-						</tr>
-						<tr>
-							<td class="city">Winona</td>
-							<td class="sub">/r/winona</td>
-						</tr>
-						<tr>
-							<td class="city">Mississippi</td>
-							<td class="sub">/r/mississippi</td>
-						</tr>
-						<tr>
-							<td class="city">Biloxi</td>
-							<td class="sub">/r/biloxi</td>
-						</tr>
-						<tr>
-							<td class="city">Jackson</td>
-							<td class="sub">/r/jacksonms</td>
-						</tr>
-						<tr>
-							<td class="city">Missouri</td>
-							<td class="sub">/r/missouri</td>
-						</tr>
-						<tr>
-							<td class="city">Branson</td>
-							<td class="sub">/r/bransonmo</td>
-						</tr>
-						<tr>
-							<td class="city">Columbia</td>
-							<td class="sub">/r/columbiamo</td>
-						</tr>
-						<tr>
-							<td class="city">Kansas City</td>
-							<td class="sub">/r/kansascity</td>
-						</tr>
-						<tr>
-							<td class="city">Springfield</td>
-							<td class="sub">/r/springfieldmo</td>
-						</tr>
-						<tr>
-							<td class="city">St. Louis</td>
-							<td class="sub">/r/stlouis</td>
-						</tr>
-						<tr>
-							<td class="city">Montana</td>
-							<td class="sub">/r/montana</td>
-						</tr>
-						<tr>
-							<td class="city">Bozeman</td>
-							<td class="sub">/r/bozeman</td>
-						</tr>
-						<tr>
-							<td class="city">Great Falls</td>
-							<td class="sub">/r/greatfalls</td>
-						</tr>
-						<tr>
-							<td class="city">Kalispell</td>
-							<td class="sub">/r/kalispell</td>
-						</tr>
-						<tr>
-							<td class="city">Missoula</td>
-							<td class="sub">/r/missoula</td>
-						</tr>
-						<tr>
-							<td class="city">Nebraska</td>
-							<td class="sub">/r/nebraska</td>
-						</tr>
-						<tr>
-							<td class="city">Lincoln</td>
-							<td class="sub">/r/lincoln</td>
-						</tr>
-						<tr>
-							<td class="city">Omaha</td>
-							<td class="sub">/r/omaha</td>
-						</tr>
-						<tr>
-							<td class="city">Las Vegas</td>
-							<td class="sub">/r/lasvegas</td>
-						</tr>
-						<tr>
-							<td class="city">(Las Vegas</td>
-							<td class="sub">/r/vegas</td>
-						</tr>
-						<tr>
-							<td class="city">Reno</td>
-							<td class="sub">/r/reno</td>
-						</tr>
-						<tr>
-							<td class="city">Tahoe</td>
-							<td class="sub">/r/tahoe</td>
-						</tr>
-						<tr>
-							<td class="city">New Hampshire</td>
-							<td class="sub">/r/newhampshire</td>
-						</tr>
-						<tr>
-							<td class="city">Keene</td>
-							<td class="sub">/r/keene</td>
-						</tr>
-						<tr>
-							<td class="city">Nashua</td>
-							<td class="sub">/r/nashua</td>
-						</tr>
-						<tr>
-							<td class="city">Portsmouth</td>
-							<td class="sub">/r/portsmouthnh</td>
-						</tr>
-						<tr>
-							<td class="city">New Jersey</td>
-							<td class="sub">/r/newjersey</td>
-						</tr>
-						<tr>
-							<td class="city">Alantic City</td>
-							<td class="sub">/r/atlanticcity</td>
-						</tr>
-						<tr>
-							<td class="city">Cape May</td>
-							<td class="sub">/r/capemay</td>
-						</tr>
-						<tr>
-							<td class="city">Hoboken</td>
-							<td class="sub">/r/hoboken</td>
-						</tr>
-						<tr>
-							<td class="city">Jersey City</td>
-							<td class="sub">/r/jerseycity</td>
-						</tr>
-						<tr>
-							<td class="city">Newark</td>
-							<td class="sub">/r/newark</td>
-						</tr>
-						<tr>
-							<td class="city">Northern New Jersey</td>
-							<td class="sub">/r/northernnewjersey</td>
-						</tr>
-						<tr>
-							<td class="city">South Jersey</td>
-							<td class="sub">/r/southjersey</td>
-						</tr>
-						<tr>
-							<td class="city">New Mexico</td>
-							<td class="sub">/r/newmexico</td>
-						</tr>
-						<tr>
-							<td class="city">Albuquerque</td>
-							<td class="sub">/r/albuquerque</td>
-						</tr>
-						<tr>
-							<td class="city">Las Cruces</td>
-							<td class="sub">/r/lascruces</td>
-						</tr>
-						<tr>
-							<td class="city">Santa Fe</td>
-							<td class="sub">/r/santafe</td>
-						</tr>
-						<tr>
-							<td class="city">New York</td>
-							<td class="sub">/r/newyork</td>
-						</tr>
-						<tr>
-							<td class="city">Adirondack Park</td>
-							<td class="sub">/r/adirondacks</td>
-						</tr>
-						<tr>
-							<td class="city">Albany</td>
-							<td class="sub">/r/albany</td>
-						</tr>
-						<tr>
-							<td class="city">Astoria</td>
-							<td class="sub">/r/astoria</td>
-						</tr>
-						<tr>
-							<td class="city">Binghamton</td>
-							<td class="sub">/r/binghamton</td>
-						</tr>
-						<tr>
-							<td class="city">Bronx</td>
-							<td class="sub">/r/bronx</td>
-						</tr>
-						<tr>
-							<td class="city">Brooklyn</td>
-							<td class="sub">/r/brooklyn</td>
-						</tr>
-						<tr>
-							<td class="city">Buffalo</td>
-							<td class="sub">/r/buffalo</td>
-						</tr>
-						<tr>
-							<td class="city">Bushwick</td>
-							<td class="sub">/r/bushwick</td>
-						</tr>
-						<tr>
-							<td class="city">Forest Hills</td>
-							<td class="sub">/r/foresthills</td>
-						</tr>
-						<tr>
-							<td class="city">Glens Falls</td>
-							<td class="sub">/r/glensfalls</td>
-						</tr>
-						<tr>
-							<td class="city">Hudson Valley</td>
-							<td class="sub">/r/hudsonvalley</td>
-						</tr>
-						<tr>
-							<td class="city">Ithaca</td>
-							<td class="sub">/r/ithaca</td>
-						</tr>
-						<tr>
-							<td class="city">Long Island</td>
-							<td class="sub">/r/longisland</td>
-						</tr>
-						<tr>
-							<td class="city">Manhattan</td>
-							<td class="sub">/r/manhattan</td>
-						</tr>
-						<tr>
-							<td class="city">New York City</td>
-							<td class="sub">/r/nyc</td>
-						</tr>
-						<tr>
-							<td class="city">Queens</td>
-							<td class="sub">/r/queens</td>
-						</tr>
-						<tr>
-							<td class="city">Rochester</td>
-							<td class="sub">/r/rochester</td>
-						</tr>
-						<tr>
-							<td class="city">Rockland County</td>
-							<td class="sub">/r/rockland</td>
-						</tr>
-						<tr>
-							<td class="city">Staten Island</td>
-							<td class="sub">/r/statenisland</td>
-						</tr>
-						<tr>
-							<td class="city">Syracuse</td>
-							<td class="sub">/r/syracuse</td>
-						</tr>
-						<tr>
-							<td class="city">Troy</td>
-							<td class="sub">/r/troy</td>
-						</tr>
-						<tr>
-							<td class="city">Upstate New York</td>
-							<td class="sub">/r/upstate_new_york</td>
-						</tr>
-						<tr>
-							<td class="city">Utica</td>
-							<td class="sub">/r/utica</td>
-						</tr>
-						<tr>
-							<td class="city">Westchester County</td>
-							<td class="sub">/r/westchester</td>
-						</tr>
-						<tr>
-							<td class="city">Williamsburg</td>
-							<td class="sub">/r/williamsburg</td>
-						</tr>
-						<tr>
-							<td class="city">Yonkers</td>
-							<td class="sub">/r/yonkers</td>
-						</tr>
-						<tr>
-							<td class="city">North Carolina</td>
-							<td class="sub">/r/northcarolina</td>
-						</tr>
-						<tr>
-							<td class="city">Asheville</td>
-							<td class="sub">/r/asheville</td>
-						</tr>
-						<tr>
-							<td class="city">Chapel Hill</td>
-							<td class="sub">/r/chapelhill</td>
-						</tr>
-						<tr>
-							<td class="city">Charlotte</td>
-							<td class="sub">/r/charlotte</td>
-						</tr>
-						<tr>
-							<td class="city">Durham</td>
-							<td class="sub">/r/bullcity</td>
-						</tr>
-						<tr>
-							<td class="city">Fayetteville</td>
-							<td class="sub">/r/fayettenam</td>
-						</tr>
-						<tr>
-							<td class="city">Greensboro</td>
-							<td class="sub">/r/gso</td>
-						</tr>
-						<tr>
-							<td class="city">Huntersville</td>
-							<td class="sub">/r/huntersville</td>
-						</tr>
-						<tr>
-							<td class="city">Lake Norman Area</td>
-							<td class="sub">/r/lkn</td>
-						</tr>
-						<tr>
-							<td class="city">Outer Banks</td>
-							<td class="sub">/r/obx</td>
-						</tr>
-						<tr>
-							<td class="city">Raleigh</td>
-							<td class="sub">/r/raleigh</td>
-						</tr>
-						<tr>
-							<td class="city">Triangle</td>
-							<td class="sub">/r/triangle</td>
-						</tr>
-						<tr>
-							<td class="city">Wilmington</td>
-							<td class="sub">/r/wilmington</td>
-						</tr>
-						<tr>
-							<td class="city">Winston-Salem</td>
-							<td class="sub">/r/winstonsalem</td>
-						</tr>
-						<tr>
-							<td class="city">North Dakota</td>
-							<td class="sub">/r/northdakota</td>
-						</tr>
-						<tr>
-							<td class="city">Bismarck</td>
-							<td class="sub">/r/bismarck</td>
-						</tr>
-						<tr>
-							<td class="city">Fargo</td>
-							<td class="sub">/r/fargo</td>
-						</tr>
-						<tr>
-							<td class="city">Ohio</td>
-							<td class="sub">/r/ohio</td>
-						</tr>
-						<tr>
-							<td class="city">Akron</td>
-							<td class="sub">/r/akron</td>
-						</tr>
-						<tr>
-							<td class="city">Athens</td>
-							<td class="sub">/r/athensohio</td>
-						</tr>
-						<tr>
-							<td class="city">Canton</td>
-							<td class="sub">/r/canton</td>
-						</tr>
-						<tr>
-							<td class="city">Cincinnati</td>
-							<td class="sub">/r/cincinnati</td>
-						</tr>
-						<tr>
-							<td class="city">Cleveland</td>
-							<td class="sub">/r/cleveland</td>
-						</tr>
-						<tr>
-							<td class="city">Columbus</td>
-							<td class="sub">/r/columbus</td>
-						</tr>
-						<tr>
-							<td class="city">Dayton</td>
-							<td class="sub">/r/dayton</td>
-						</tr>
-						<tr>
-							<td class="city">Lakewood</td>
-							<td class="sub">/r/lakewood</td>
-						</tr>
-						<tr>
-							<td class="city">Toledo</td>
-							<td class="sub">/r/toledo</td>
-						</tr>
-						<tr>
-							<td class="city">Oklahoma</td>
-							<td class="sub">/r/oklahoma</td>
-						</tr>
-						<tr>
-							<td class="city">Bartlesville</td>
-							<td class="sub">/r/bville</td>
-						</tr>
-						<tr>
-							<td class="city">Norman</td>
-							<td class="sub">/r/normanok</td>
-						</tr>
-						<tr>
-							<td class="city">Oklahoma City (OKC</td>
-							<td class="sub">/r/okc</td>
-						</tr>
-						<tr>
-							<td class="city">Oklahoma City</td>
-							<td class="sub">/r/oklahomacity</td>
-						</tr>
-						<tr>
-							<td class="city">Tulsa</td>
-							<td class="sub">/r/tulsa</td>
-						</tr>
-						<tr>
-							<td class="city">Oregon</td>
-							<td class="sub">/r/oregon</td>
-						</tr>
-						<tr>
-							<td class="city">Ashland</td>
-							<td class="sub">/r/ashland</td>
-						</tr>
-						<tr>
-							<td class="city">Beaverton</td>
-							<td class="sub">/r/beaverton</td>
-						</tr>
-						<tr>
-							<td class="city">Bend</td>
-							<td class="sub">/r/bend</td>
-						</tr>
-						<tr>
-							<td class="city">Corvallis</td>
-							<td class="sub">/r/corvallis</td>
-						</tr>
-						<tr>
-							<td class="city">Eugene</td>
-							<td class="sub">/r/eugene</td>
-						</tr>
-						<tr>
-							<td class="city">Hillsboro</td>
-							<td class="sub">/r/hillsboro</td>
-						</tr>
-						<tr>
-							<td class="city">Medford</td>
-							<td class="sub">/r/medford</td>
-						</tr>
-						<tr>
-							<td class="city">Oregon City</td>
-							<td class="sub">/r/oregoncity</td>
-						</tr>
-						<tr>
-							<td class="city">Oregon Coast</td>
-							<td class="sub">/r/oregoncoast</td>
-						</tr>
-						<tr>
-							<td class="city">Portland</td>
-							<td class="sub">/r/portland</td>
-						</tr>
-						<tr>
-							<td class="city">Salem</td>
-							<td class="sub">/r/salem</td>
-						</tr>
-						<tr>
-							<td class="city">Pennsylvania</td>
-							<td class="sub">/r/pennsylvania</td>
-						</tr>
-						<tr>
-							<td class="city">Bucks County</td>
-							<td class="sub">/r/buckscountypa</td>
-						</tr>
-						<tr>
-							<td class="city">Carlisle</td>
-							<td class="sub">/r/carlisle</td>
-						</tr>
-						<tr>
-							<td class="city">Central Pennsylvania</td>
-							<td class="sub">/r/centralpa</td>
-						</tr>
-						<tr>
-							<td class="city">Downingtown</td>
-							<td class="sub">/r/downingtown</td>
-						</tr>
-						<tr>
-							<td class="city">Erie</td>
-							<td class="sub">/r/erie</td>
-						</tr>
-						<tr>
-							<td class="city">Harrisburg</td>
-							<td class="sub">/r/harrisburg</td>
-						</tr>
-						<tr>
-							<td class="city">Lancaster</td>
-							<td class="sub">/r/lancaster</td>
-						</tr>
-						<tr>
-							<td class="city">Lehigh Valley</td>
-							<td class="sub">/r/lehighvalley</td>
-						</tr>
-						<tr>
-							<td class="city">Montgomery County</td>
-							<td class="sub">/r/montco</td>
-						</tr>
-						<tr>
-							<td class="city">Pittsburgh</td>
-							<td class="sub">/r/pittsburgh</td>
-						</tr>
-						<tr>
-							<td class="city">Philadelphia</td>
-							<td class="sub">/r/philadelphia</td>
-						</tr>
-						<tr>
-							<td class="city">West Chester</td>
-							<td class="sub">/r/westchesterpa</td>
-						</tr>
-						<tr>
-							<td class="city">Rhode Island</td>
-							<td class="sub">/r/rhodeisland</td>
-						</tr>
-						<tr>
-							<td class="city">Newport</td>
-							<td class="sub">/r/newport</td>
-						</tr>
-						<tr>
-							<td class="city">Pawtucket</td>
-							<td class="sub">/r/pawtucket</td>
-						</tr>
-						<tr>
-							<td class="city">Providence</td>
-							<td class="sub">/r/providence</td>
-						</tr>
-						<tr>
-							<td class="city">South Carolina</td>
-							<td class="sub">/r/southcarolina</td>
-						</tr>
-						<tr>
-							<td class="city">Charleston</td>
-							<td class="sub">/r/charleston</td>
-						</tr>
-						<tr>
-							<td class="city">Clemson</td>
-							<td class="sub">/r/clemson</td>
-						</tr>
-						<tr>
-							<td class="city">Greenville</td>
-							<td class="sub">/r/greenville</td>
-						</tr>
-						<tr>
-							<td class="city">Myrtle Beach</td>
-							<td class="sub">/r/myrtlebeach</td>
-						</tr>
-						<tr>
-							<td class="city">Sioux Falls</td>
-							<td class="sub">/r/siouxfalls</td>
-						</tr>
-						<tr>
-							<td class="city">Tennessee</td>
-							<td class="sub">/r/tennessee</td>
-						</tr>
-						<tr>
-							<td class="city">Chattanooga</td>
-							<td class="sub">/r/chattanooga</td>
-						</tr>
-						<tr>
-							<td class="city">Knoxville</td>
-							<td class="sub">/r/knoxville</td>
-						</tr>
-						<tr>
-							<td class="city">Memphis</td>
-							<td class="sub">/r/memphis</td>
-						</tr>
-						<tr>
-							<td class="city">Murfreesboro</td>
-							<td class="sub">/r/murfreesboro</td>
-						</tr>
-						<tr>
-							<td class="city">Nashville</td>
-							<td class="sub">/r/nashville</td>
-						</tr>
-						<tr>
-							<td class="city">Texas</td>
-							<td class="sub">/r/texas</td>
-						</tr>
-						<tr>
-							<td class="city">Amarillo</td>
-							<td class="sub">/r/amarillo</td>
-						</tr>
-						<tr>
-							<td class="city">Arlington</td>
-							<td class="sub">/r/arlington</td>
-						</tr>
-						<tr>
-							<td class="city">Austin</td>
-							<td class="sub">/r/austin</td>
-						</tr>
-						<tr>
-							<td class="city">Beaumont</td>
-							<td class="sub">/r/beaumont</td>
-						</tr>
-						<tr>
-							<td class="city">Bedford</td>
-							<td class="sub">/r/bedford</td>
-						</tr>
-						<tr>
-							<td class="city">Cedar Park</td>
-							<td class="sub">/r/cedarpark</td>
-						</tr>
-						<tr>
-							<td class="city">Clearlake</td>
-							<td class="sub">/r/clearlake</td>
-						</tr>
-						<tr>
-							<td class="city">Conroe</td>
-							<td class="sub">/r/conroe</td>
-						</tr>
-						<tr>
-							<td class="city">Corpus (Christi</td>
-							<td class="sub">/r/corpus</td>
-						</tr>
-						<tr>
-							<td class="city">Dallas</td>
-							<td class="sub">/r/dallas</td>
-						</tr>
-						<tr>
-							<td class="city">Denton</td>
-							<td class="sub">/r/denton</td>
-						</tr>
-						<tr>
-							<td class="city">East Texas</td>
-							<td class="sub">/r/easttexas</td>
-						</tr>
-						<tr>
-							<td class="city">El Paso</td>
-							<td class="sub">/r/elpaso</td>
-						</tr>
-						<tr>
-							<td class="city">Fort Worth</td>
-							<td class="sub">/r/fortworth</td>
-						</tr>
-						<tr>
-							<td class="city">Frisco</td>
-							<td class="sub">/r/frisco</td>
-						</tr>
-						<tr>
-							<td class="city">Galveston</td>
-							<td class="sub">/r/galveston</td>
-						</tr>
-						<tr>
-							<td class="city">Houston</td>
-							<td class="sub">/r/houston</td>
-						</tr>
-						<tr>
-							<td class="city">Las Cruces</td>
-							<td class="sub">/r/lascruces</td>
-						</tr>
-						<tr>
-							<td class="city">Lubbock</td>
-							<td class="sub">/r/lubbock</td>
-						</tr>
-						<tr>
-							<td class="city">McKinney</td>
-							<td class="sub">/r/mckinney</td>
-						</tr>
-						<tr>
-							<td class="city">Midland Odessa</td>
-							<td class="sub">/r/midessa</td>
-						</tr>
-						<tr>
-							<td class="city">Pflugerville</td>
-							<td class="sub">/r/pflugerville</td>
-						</tr>
-						<tr>
-							<td class="city">Plano</td>
-							<td class="sub">/r/plano</td>
-						</tr>
-						<tr>
-							<td class="city">Rio Grande Valley</td>
-							<td class="sub">/r/riograndevalley</td>
-						</tr>
-						<tr>
-							<td class="city">Round Rock</td>
-							<td class="sub">/r/roundrock</td>
-						</tr>
-						<tr>
-							<td class="city">San Angelo</td>
-							<td class="sub">/r/san_angelo</td>
-						</tr>
-						<tr>
-							<td class="city">San Antonio</td>
-							<td class="sub">/r/sanantonio</td>
-						</tr>
-						<tr>
-							<td class="city">San Marcos</td>
-							<td class="sub">/r/sanmarcos</td>
-						</tr>
-						<tr>
-							<td class="city">Spring Branch</td>
-							<td class="sub">/r/springbranch</td>
-						</tr>
-						<tr>
-							<td class="city">Southeast Texas</td>
-							<td class="sub">/r/setx</td>
-						</tr>
-						<tr>
-							<td class="city">The Woodlands</td>
-							<td class="sub">/r/thewoodlands</td>
-						</tr>
-						<tr>
-							<td class="city">Waco</td>
-							<td class="sub">/r/waco</td>
-						</tr>
-						<tr>
-							<td class="city">Utah</td>
-							<td class="sub">/r/utah</td>
-						</tr>
-						<tr>
-							<td class="city">Logan</td>
-							<td class="sub">/r/logan</td>
-						</tr>
-						<tr>
-							<td class="city">Moab</td>
-							<td class="sub">/r/moab</td>
-						</tr>
-						<tr>
-							<td class="city">Ogden</td>
-							<td class="sub">/r/ogden</td>
-						</tr>
-						<tr>
-							<td class="city">Provo</td>
-							<td class="sub">/r/provoutah</td>
-						</tr>
-						<tr>
-							<td class="city">Salt Lake City</td>
-							<td class="sub">/r/saltlakecity</td>
-						</tr>
-						<tr>
-							<td class="city">Southern Utah</td>
-							<td class="sub">/r/southernutah</td>
-						</tr>
-						<tr>
-							<td class="city">Utah Valley</td>
-							<td class="sub">/r/utahvalley</td>
-						</tr>
-						<tr>
-							<td class="city">Vermont</td>
-							<td class="sub">/r/vermont</td>
-						</tr>
-						<tr>
-							<td class="city">Burlington</td>
-							<td class="sub">/r/burlington</td>
-						</tr>
-						<tr>
-							<td class="city">Virginia</td>
-							<td class="sub">/r/virginia</td>
-						</tr>
-						<tr>
-							<td class="city">Blacksburg</td>
-							<td class="sub">/r/blacksburg</td>
-						</tr>
-						<tr>
-							<td class="city">Charlottesville</td>
-							<td class="sub">/r/charlottesville</td>
-						</tr>
-						<tr>
-							<td class="city">Hampton Roads</td>
-							<td class="sub">/r/hamptonroads</td>
-						</tr>
-						<tr>
-							<td class="city">Fredericksburg</td>
-							<td class="sub">/r/fredericksburg</td>
-						</tr>
-						<tr>
-							<td class="city">Northern Virginia (NOVA</td>
-							<td class="sub">/r/nova</td>
-						</tr>
-						<tr>
-							<td class="city">Norfolk</td>
-							<td class="sub">/r/norfolk</td>
-						</tr>
-						<tr>
-							<td class="city">Richmond</td>
-							<td class="sub">/r/rva</td>
-						</tr>
-						<tr>
-							<td class="city">Roanoke</td>
-							<td class="sub">/r/roanoke</td>
-						</tr>
-						<tr>
-							<td class="city">Virginia Beach</td>
-							<td class="sub">/r/virginiabeach</td>
-						</tr>
-						<tr>
-							<td class="city">Winchester</td>
-							<td class="sub">/r/winchester</td>
-						</tr>
-						<tr>
-							<td class="city">Washington</td>
-							<td class="sub">/r/washington</td>
-						</tr>
-						<tr>
-							<td class="city">Bellevue</td>
-							<td class="sub">/r/bellevue</td>
-						</tr>
-						<tr>
-							<td class="city">Bellingham</td>
-							<td class="sub">/r/bellingham</td>
-						</tr>
-						<tr>
-							<td class="city">Eastside</td>
-							<td class="sub">/r/eastside</td>
-						</tr>
-						<tr>
-							<td class="city">Everett</td>
-							<td class="sub">/r/everett</td>
-						</tr>
-						<tr>
-							<td class="city">Federal Way</td>
-							<td class="sub">/r/federalway</td>
-						</tr>
-						<tr>
-							<td class="city">Issaquah</td>
-							<td class="sub">/r/issaquah</td>
-						</tr>
-						<tr>
-							<td class="city">Kitsap</td>
-							<td class="sub">/r/kitsap</td>
-						</tr>
-						<tr>
-							<td class="city">Lynnwood WA</td>
-							<td class="sub">/r/lynnwoodwa</td>
-						</tr>
-						<tr>
-							<td class="city">Olympia</td>
-							<td class="sub">/r/olympia</td>
-						</tr>
-						<tr>
-							<td class="city">Redmond</td>
-							<td class="sub">/r/redmond</td>
-						</tr>
-						<tr>
-							<td class="city">Renton</td>
-							<td class="sub">/r/renton</td>
-						</tr>
-						<tr>
-							<td class="city">Seattle</td>
-							<td class="sub">/r/seattle</td>
-						</tr>
-						<tr>
-							<td class="city">SeattleWA</td>
-							<td class="sub">/r/seattlewa</td>
-						</tr>
-						<tr>
-							<td class="city">Shoreline</td>
-							<td class="sub">/r/shoreline</td>
-						</tr>
-						<tr>
-							<td class="city">Snohomish County</td>
-							<td class="sub">/r/snohomishcounty</td>
-						</tr>
-						<tr>
-							<td class="city">Spokane</td>
-							<td class="sub">/r/spokane</td>
-						</tr>
-						<tr>
-							<td class="city">Tacoma</td>
-							<td class="sub">/r/tacoma</td>
-						</tr>
-						<tr>
-							<td class="city">Tricities</td>
-							<td class="sub">/r/tricitieswa</td>
-						</tr>
-						<tr>
-							<td class="city">Vancouver</td>
-							<td class="sub">/r/vancouverwa</td>
-						</tr>
-						<tr>
-							<td class="city">West Virginia</td>
-							<td class="sub">/r/westvirginia</td>
-						</tr>
-						<tr>
-							<td class="city">Morgantown</td>
-							<td class="sub">/r/morgantownwv</td>
-						</tr>
-						<tr>
-							<td class="city">Wisconsin</td>
-							<td class="sub">/r/wisconsin</td>
-						</tr>
-						<tr>
-							<td class="city">Door County</td>
-							<td class="sub">/r/doorcounty</td>
-						</tr>
-						<tr>
-							<td class="city">Eau_Claire</td>
-							<td class="sub">/r/eau_claire</td>
-						</tr>
-						<tr>
-							<td class="city">Green Bay</td>
-							<td class="sub">/r/greenbay</td>
-						</tr>
-						<tr>
-							<td class="city">Madison</td>
-							<td class="sub">/r/madisonwi</td>
-						</tr>
-						<tr>
-							<td class="city">Milwaukee</td>
-							<td class="sub">/r/milwaukee</td>
-						</tr>
-						<tr>
-							<td class="city">Waukesha</td>
-							<td class="sub">/r/waukesha</td>
-						</tr>
-						<tr>
-							<td class="city">Wyoming</td>
-							<td class="sub">/r/wyoming</td>
-						</tr>
-				</tbody>
-				</table>
-    </div>
-</div>
 
-<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDMeSZdpXm8LAB8sb3frzWwPrIeUhebUXw",
-    authDomain: "dotino-9fcb1.firebaseapp.com",
-    databaseURL: "https://dotino-9fcb1.firebaseio.com",
-    projectId: "dotino-9fcb1",
-    storageBucket: "dotino-9fcb1.appspot.com",
-    messagingSenderId: "168795162715"
-  };
-  firebase.initializeApp(config);
-</script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC9LVQx5nEGd9qbZnwOOUnY769Ar8CbOrE",
+        authDomain: "dotinoapp.firebaseapp.com",
+        databaseURL: "https://dotinoapp.firebaseio.com",
+        projectId: "dotinoapp",
+        storageBucket: "dotinoapp.appspot.com",
+        messagingSenderId: "946491618315"
+      };
+      firebase.initializeApp(config);
+    </script>
 
-<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
-<script src="js/list.min.js"></script>
-<script src="js/script.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/list.min.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,3 @@
+entrypoint: python hello.py
+env: flex
+runtime: python
