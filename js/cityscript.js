@@ -131,13 +131,11 @@ function createDot(csv, tempText, j, k) {
         case 2:
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
                     console.log(this.responseText);
-                }
             };
             xhttp.open("GET", "https://api.yelp.com/v3/businesses/thin-and-craft-san-diego", true);
             xhttp.setRequestHeader("Authorization", "Bearer V1EiegiHur2A14Qa9ll54v_I5_iS5SA3hSsIczZKBFj_GEV1kg4sJhAWb9FmeEa69vppLLFPpeio2mDmrVMxjA9-K8z6J1cs4thVJA05Vsq8U7I4CubaafvI3KjdWHYx");
-            xhttp.send();
+            xhttp.send(null);
             break;
     }
 }
