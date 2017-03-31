@@ -131,7 +131,7 @@ function createDot(csv, tempText, j, k) {
         case 2:
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                    console.log(this.responseText);
+                    //this.responseText;
             };
             xhttp.open("GET", "https://crossorigin.me/https://api.yelp.com/v3/businesses/thin-and-craft-san-diego", true);
             xhttp.send();
