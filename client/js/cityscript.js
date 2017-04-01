@@ -58,7 +58,7 @@ function timeConverter(UNIX_timestamp) {
 }
 
 function removeLink(link) {
-    return link.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '').replace(/\[|\]|\(|\)/g, ' ');
+    return link.replace(/(?:https?):\/\/[\S\n]+/g, '').replace(/\[|\]|\(|\)/g, ' ');
 }
 
 function createDot(csv, tempText, j, k) {
@@ -84,6 +84,9 @@ function createDot(csv, tempText, j, k) {
                             tempText.innerHTML = '/r/' + location.search.split('?')[1];
                             break;
                   }
+                } else {
+                    tempText.className = 'text-middle';
+                    tempText.innerHTML = '[deleted]';
                 }
             };
             xhttp.open("GET", "https://api.reddit.com/by_id/t3_" + csv[i]['parent'], true);
@@ -129,11 +132,27 @@ function createDot(csv, tempText, j, k) {
             }
             break;
         case 2:
+            var comment = csv[i]['comment'];
+            var regex = /yelp\.com\/biz\/(.+?(?=[^-\w]|$))/;
+            business = comment.match(regex)[1];
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                    //this.responseText;
+                switch (k) {
+                    case 0:
+                        tempText.className = 'text-top';
+                        tempText.innerHTML = this.responseText;
+                        break;
+                    case 1:
+                        tempText.className = 'text-middle';
+                        tempText.innerHTML = this.responseText;
+                        break;
+                    case 2:
+                        tempText.className = 'text-bottom';
+                        tempText.innerHTML = this.responseText;
+                        break;
+                }
             };
-            xhttp.open("GET", "https://crossorigin.me/https://api.yelp.com/v3/businesses/thin-and-craft-san-diego", true);
+            xhttp.open("GET", "https://api.dotino.com/yelp?business=" + business, true);
             xhttp.send();
             break;
     }

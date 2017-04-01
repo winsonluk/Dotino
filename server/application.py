@@ -1,10 +1,15 @@
-from bottle import route, run, default_app, static_file, request, template
+from bottle import route, run, default_app, static_file, request, template, hook, response
 import configparser
 
 import yelp
 
 
 application = default_app()
+
+
+@hook('after_request')
+def enable_cors():
+    response.headers['Access-Control-Allow-Origin'] = '*'
 
 
 @route('/yelp')
