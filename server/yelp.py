@@ -45,7 +45,7 @@ except ImportError:
 # You can find them on
 # https://www.yelp.com/developers/v3/manage_app
 config = configparser.ConfigParser()
-config.read('distConfig.ini')
+config.read('config.ini')
 CLIENT_ID = config.get('yelp', 'ID')
 CLIENT_SECRET = config.get('yelp', 'SECRET')
 

@@ -1,6 +1,8 @@
-from bottle import route, run, default_app
+from bottle import route, run, default_app, static_file
 from yelp import get_business
+
 application = default_app()
+
 @route('/hello')
 def hello():
     return "Hello World!"
