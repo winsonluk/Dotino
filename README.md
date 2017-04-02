@@ -1,30 +1,40 @@
-# Implementation
+# Dotino
 
-## Website
+**Restaurants when they are mentioned, not when they're marketed.**
+
+&nbsp;
+
+## Implementation
+
+### Website
 
 This website is hosted at https://dotino.com on [Google Firebase](https://firebase.google.com), with the domain registered on [NameBright](https://namebright.com). The frontend is written in JavaScript with jQuery. Dotino uses [D3.js](https://d3js.org) to parse the CSV file with Reddit comment information and [List.js](listjs.com) to search cities and subreddits. Cities and their corresponding subreddits were retrieved from [/r/LocationReddits](https://www.reddit.com/r/locationreddits), and all Reddit comments containing the string "yelp.com/biz/" were queried using SQL with [Google BigQuery](https://bigquery.cloud.google.com/table/fh-bigquery:reddit_comments.all) and saved as a flat CSV file. Only subreddits that are categorized as a "locational" subreddit **and** have at least one mention of "yelp.com/biz/" are included in this version of Dotino.
 
 The local CSV file only contains data regarding the comment itself, and not the question it was written as a reply to, so the question's data is retrieved from https://api.reddit.com using *by_id*. Restaurant data is retrieved from https://api.dotino.com, which uses the [Yelp Fusion API](https://www.yelp.com/developers).
 
-## API
+### API
 
 The server is hosted at https://api.dotino.com with [Google App Engine](https://cloud.google.com/appengine). The backend is written in Python with the [Flask](http://flask.pocoo.org) web framework and designed to work with the [Yelp Fusion API](https://www.yelp.com/developers). The SSL certificate was obtained from [LetsEncrypt](https://letsencrypt.org).
 
-## The Dotino Logo
+### The Dotino Logo
 
 The logo is an SVG created with [Sketch](https://www.sketchapp.com).
 
-# Usage
+&nbsp;
 
-## Website
+## Usage
+
+### Website
 
 Visit https://dotino.com (with Tracking Protection disabled to enable compatibility with the Reddit API) and search for your desired city. Find restaurants mentioned on social media and click the question or the comment to see its context. Click the Yelp dot for more information about the restaurant.
 
-## API
+Dotino has been optimized for desktop, tablet, and mobile usage. The motion background and navigation bar links to Privacy, Terms, and Contact are hidden on screen sizes 768 pixels and below to enhance mobile usability. Please access Dotino on a larger screen to experience the full website.
+
+### API
 
 **Obtain Yelp business information for a specific restaurant with its Yelp business ID.**
 
-GET from https://api.dotino.com/yelp?business=BUSINESS_ID_HERE to return Yelp restaurant info in JSON.
+GET from https://api.dotino.com/yelp?business=BUSINESS_ID_HERE to return Yelp restaurant info in JSON. https://api.dotino.com currently only accepts CORS from https://dotino.com.
 
 **Response Body ([from the Yelp Fusion API documentation](https://www.yelp.com/developers/documentation/v3))**
 ~~~~

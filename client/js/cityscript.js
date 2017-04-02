@@ -1,3 +1,13 @@
+var i = 0;  // Dot row to load
+var numRows = 25;  // Increasing this value may lead to more 503 errors
+
+// The arrays' index represents the dot row index, and increments when 1/3 of a dot is loaded
+//
+// When both dots are fully loaded (redditArray[i] == yelpArray[i] == 3),
+// display the entire row of three dots.
+var redditArray = Array.apply(null, Array(numRows)).map(Number.prototype.valueOf,0);
+var yelpArray = Array.apply(null, Array(numRows)).map(Number.prototype.valueOf,0);
+
 // Loads all Reddit and Yelp dots for one city with unique container and dot IDs
 $(document).ready(function() {
     document.getElementById("title").innerHTML = "/r/" + location.search.split('?')[1];
@@ -9,10 +19,10 @@ $(document).ready(function() {
         })
         length = csv.length;
 
-        // Create dots in format dotrowX > containerY > questiondotZ/redditdotZ/yelpdotZ
-        for (i = 0; i < length; i++) {
+        while (i < numRows && csv[i] != null) {
             tempRow = document.createElement('div');
             tempRow.className = 'dotrow';
+            tempRow.id = 'dotrow' + i;
             document.getElementsByTagName('body')[0].appendChild(tempRow);
             for (j = 0; j < 3; j++) {
                 tempContainer = document.createElement('div');
@@ -32,51 +42,62 @@ $(document).ready(function() {
                 }
                 for (k = 0; k < 3; k++) {
                     tempText = document.createElement('div');
-                    createDot(csv, tempText, j, k);
+                    createDot(csv, tempText, i, j, k);
                     tempDot.appendChild(tempText);
                 }
                 tempContainer.appendChild(tempDot);
                 tempRow.appendChild(tempContainer);
             }
+            i++;
         }
     });
 });
 
-function createDot(csv, tempText, j, k) {
+function createDot(csv, tempText, curr, j, k) {
+
     switch (j) {
+
+        // Create question dot
         case 0:
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var title = (JSON.parse(this.responseText))
-                                    ['data']['children'][0]['data']['title'];
-                    var url = (JSON.parse(this.responseText))
-                                    ['data']['children'][0]['data']['url'];
-                    var num_comments = (JSON.parse(this.responseText))
-                                    ['data']['children'][0]['data']['num_comments'];
-                    switch (k) {
-                        case 0:
-                            tempText.className = 'text-top';
-                            tempText.innerHTML = 'REPLIES:\<br\>' + num_comments;
-                            break;
-                        case 1:
-                            tempText.className = 'text-middle';
-                            tempText.innerHTML = '<a href=\''
-                                    + url.substring(0, url.length - 9)
-                                    + '\' target=\"_blank\">'
-                                    + title;
-                            break;
-                        case 2:
-                            tempText.className = 'text-bottom';
-                            tempText.innerHTML =
-                                    'SUBREDDIT:\<br\>/r/' + location.search.split('?')[1];
-                            break;
-                  }
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        var title = (JSON.parse(this.responseText))
+                                        ['data']['children'][0]['data']['title'];
+                        var url = (JSON.parse(this.responseText))
+                                        ['data']['children'][0]['data']['url'];
+                        var num_comments = (JSON.parse(this.responseText))
+                                        ['data']['children'][0]['data']['num_comments'];
+                        switch (k) {
+                            case 0:
+                                tempText.className = 'text-top';
+                                tempText.innerHTML = 'REPLIES:\<br\>' + num_comments;
+                                break;
+                            case 1:
+                                tempText.className = 'text-middle';
+                                tempText.innerHTML = '<a href=\''
+                                        + url.substring(0, url.length - 17)
+                                        + '\' target=\"_blank\">'
+                                        + title;
+                                break;
+                            case 2:
+                                tempText.className = 'text-bottom';
+                                tempText.innerHTML =
+                                        'SUBREDDIT:\<br\>/r/' + location.search.split('?')[1];
+                                break;
+                        }
+                        if (++redditArray[curr] == 3 && yelpArray[curr] == 3) {
+                            loadDots(curr);
+                        }
+                    }
                 }
             };
             xhttp.open("GET", "https://api.reddit.com/by_id/t3_" + csv[i]['parent'], true);
             xhttp.send();
             break;
+
+        // Create Reddit dot
         case 1:
             switch (k) {
                 case 0:
@@ -122,37 +143,44 @@ function createDot(csv, tempText, j, k) {
                     break;
             }
             break;
+
+        // Create Yelp dot
         case 2:
             var comment = csv[i]['comment'];
             var regex = /yelp\.com\/biz\/(.+?(?=[^-\w]|$))/;
             business = comment.match(regex)[1];
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var yelpData = JSON.parse(this.responseText);
-                    switch (k) {
-                        case 0:
-                            tempText.className = 'text-top';
-                            tempText.innerHTML = 'RATING:<br>' + yelpData['rating'];
-                            break;
-                        case 1:
-                            tempText.className = 'text-middle';
-                            tempText.style.textAlign = 'center';
-                            tempText.style.position = 'relative';
-                            tempText.style.top = '0%';
-                            tempText.innerHTML = '<h1><a href=\''
-                                    + yelpData['url'] + '\' target=\"_blank\">'
-                                    + yelpData['name'] + '<\/h1><br>'
-                                    + yelpData['location']['address1'] + '<br>'
-                                    + yelpData['location']['city'] + ", "
-                                    + yelpData['location']['state'] + " "
-                                    + yelpData['location']['zip_code'];
-                            break;
-                        case 2:
-                            tempText.className = 'text-bottom';
-                            tempText.style.paddingTop = '5%';
-                            tempText.innerHTML = 'PRICE:<br>' + yelpData['price'];
-                            break;
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        var yelpData = JSON.parse(this.responseText);
+                        switch (k) {
+                            case 0:
+                                tempText.className = 'text-top';
+                                tempText.innerHTML = 'RATING:<br>' + yelpData['rating'];
+                                break;
+                            case 1:
+                                tempText.className = 'text-middle';
+                                tempText.style.textAlign = 'center';
+                                tempText.style.position = 'relative';
+                                tempText.style.top = '0%';
+                                tempText.innerHTML = '<h1><a href=\''
+                                        + yelpData['url'] + '\' target=\"_blank\">'
+                                        + yelpData['name'] + '<\/h1><br>'
+                                        + yelpData['location']['address1'] + '<br>'
+                                        + yelpData['location']['city'] + ", "
+                                        + yelpData['location']['state'] + " "
+                                        + yelpData['location']['zip_code'];
+                                break;
+                            case 2:
+                                tempText.className = 'text-bottom';
+                                tempText.style.paddingTop = '0%';
+                                tempText.innerHTML = 'PRICE:<br>' + yelpData['price'];
+                                break;
+                        }
+                        if (++yelpArray[curr] == 3 && redditArray[curr] == 3) {
+                            loadDots(curr);
+                        }
                     }
                 }
             };
@@ -160,6 +188,12 @@ function createDot(csv, tempText, j, k) {
             xhttp.send();
             break;
     }
+}
+
+// Display one dot row when it is fully loaded
+function loadDots(rowToLoad) {
+    document.getElementById('dotrow' + rowToLoad).style.display = "block";
+    document.getElementById('spinner').style.display = "none";
 }
 
 // Converts Unix time to human-readable time
