@@ -1,3 +1,5 @@
-bottle==0.12.13
 configparser==3.5.0
+Flask==0.12
+Flask-Cors==3.0.2
+gunicorn==19.7.1
 requests==2.12.1

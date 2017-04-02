@@ -1,4 +1,0 @@
-entrypoint: python application.py
-env: flex
-runtime: python
-api_version: 1
