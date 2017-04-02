@@ -20,15 +20,20 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 
+
+/*--body styles start here--*/
 body {
   background-size: cover;
-  font-family: 'Arial', Helvetica, sans-serif;
   font-size: 100%;
   background-color: #000;
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 16px;
   font-weight: 400;
   text-rendering: optimizeLegibility;
+}
+
+a {
+  color: #fff;
 }
 
 #wrapper {
@@ -62,7 +67,6 @@ body {
   text-align: center;
   color: #fff;
   font-size: 30px;
-  font-family: Tahoma, Geneva, sans-serif;
   z-index: 9003;
   opacity: 0;
 }
@@ -115,100 +119,102 @@ body {
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #fff;
+	color:    #fff;
 }
 
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #fff;
+	color:    #fff;
 }
 
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #fff;
+	color:    #fff;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #fff;
+	color:    #fff;
 }
 
 #title {
-    top: 5px;
-    font-size: 200%;
-    position: fixed;
-    width: 40%;
-    margin: 0 30%;
-    padding: 0.5em 0em 0.5em 0em;
-    z-index: 9001;
-    color: #fff;
-    text-align: center;
+	top: 5px;
+	font-size: 200%;
+	position: fixed;
+	width: 40%;
+	margin: 0 30%;
+	padding: 0.5em 0em 0.5em 0em;
+	z-index: 9001;
+	color: #fff;
+	text-align: center;
 }
 
 .menu {
-    top: 30px;
-    font-size: 100%;
-    position: fixed;
-    width: 90%;
-    margin: 0 7%;
-    padding: 0.5em 0em 0.5em 0em;
-    z-index: 9001;
-    color: #fff;
-    text-align: right;
+	top: 30px;
+	font-size: 100%;
+	position: fixed;
+	width: 90%;
+	margin: 0 7%;
+	padding: 0.5em 0em 0.5em 0em;
+	z-index: 9001;
+	color: #fff;
+	text-align: right;
 }
 
 .menu a {
-    color: #999;
+	color: #999;
 }
 
 .dotrow {
-    margin: 5%;
+	margin: 5%;
 }
 
 .container {
-    display: inline-block;
-    position: relative;
-    width: 32%;
+	display: inline-block;
+	position: relative;
+	width: 32%;
 }
 
 .container:after {
-    content: '';
-    display: block;
-    margin-top: 100%;
+	content: '';
+	display: block;
+	margin-top: 100%;
 }
 
 .container .circle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: table-cell;
-    vertical-align: middle;
-    border-radius: 50%;
-    background-size: contain;
-    color: #fff;
-    opacity: 0.8;
-    font-family: "Lucida Console", Monaco, monospace;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: table-cell;
+	vertical-align: middle;
+	border-radius: 50%;
+	background-size: contain;
+	color: #fff;
+	opacity: 0.8;
 }
 
 .container .circle .text-top {
-    padding-top: 10%;
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
+	padding-top: 10%;
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .container .circle .text-middle {
-    top: 20%;
-    padding: 10%;
-    text-align: justify;
-    position: absolute;
-    overflow: scroll;
+	top: 20%;
+	padding: 10%;
+	text-align: justify;
+	position: absolute;
+}
+
+.container .circle .text-middle h1 {
+	font-size: 200%;
 }
 
 .container .circle .text-bottom {
-    padding-top: 60%;
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
+	padding-top: 60%;
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .fullscreen-bg {
@@ -288,6 +294,7 @@ button {
   padding: 0 0 0 5px;
 }
 
+
 /*--table styles start here--*/
 div.table-title {
   display: block;
@@ -302,7 +309,6 @@ div.table-title {
   font-size: 30px;
   font-weight: 400;
   font-style:normal;
-  font-family: Tahoma, Geneva, sans-serif;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   text-transform:uppercase;
 }
@@ -406,6 +412,7 @@ td.state {
 }
 /*--table styles end here--*/
 
+
 /*--media queries start here--*/
 @media(max-width:1280px){
   .s-bar input[type="text"] {
@@ -427,6 +434,9 @@ td.state {
   #logo_wide {
     display: none !important;
   }
+  .dotrow {
+      font-size: 75%;
+  }
 }
 
 @media(max-width:768px){
@@ -440,6 +450,12 @@ td.state {
   .s-bar input[type="text"] {
     width: 67%;
   }
+  .dotrow {
+      font-size: 50%;
+  }
+	.fullscreen-bg {
+			background: url('img/mobile_background.jpg') center center / cover no-repeat;
+	}
 }
 
 @media(max-width:667px){
@@ -483,16 +499,22 @@ td.state {
     width: 500% !important;
     left: -150% !important;
   }
+  .dotrow {
+		font-size: 40%;
+  }
 }
 
 @media(max-width:414px){
   .searchClass i {
     top: 16%;
     left: 13.5%;
-  }	
+  }
   .s-bar {
     width: 100%;
     margin: 0 0%;
+  }
+  .dotrow {
+		font-size: 30%;
   }
 }
 

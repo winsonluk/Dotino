@@ -13,7 +13,8 @@ function process() {
     $('table.table-fill tr').each(function(n, row) {
         var $row = $(row);
         var domRow = $(row)[0];
-        var city = "window.document.location='city.html?" + $row.find('td:eq(1)').text().replace(/\s+/g, '').substring(3) + "';";
+        var city = "window.document.location='city.html?"
+            + $row.find('td:eq(1)').text().replace(/\s+/g, '').substring(3) + "';";
         row.setAttribute("class", "clickable-row");
         row.setAttribute("onclick", city);
     });
@@ -73,10 +74,10 @@ window.onbeforeunload = function() {
 var reached = false;
 if (!reached) {
     $(document).on('scroll', function() {
-      if ($(this).scrollTop() >= 100 && !reached) {
-          reached = true;
-          $("#user_input").click();
-      }
+        if ($(this).scrollTop() >= 100 && !reached) {
+            reached = true;
+            $("#user_input").click();
+        }
     });
 }
 
@@ -95,12 +96,13 @@ $(function() {
 // Link to corresponding city page for cities in list
 $(function() {
     userList.on("updated", function() {
-    $('table.table-fill tr').each(function(n, row) {
-        var $row = $(row);
-        var domRow = $(row)[0];
-        var city = "window.document.location='city.html?" + $row.find('td:eq(0)').text().replace(/\s+/g, '') + "';";
-        row.setAttribute("class", "clickable-row");
-        row.setAttribute("onclick", city);
-    });
+        $('table.table-fill tr').each(function(n, row) {
+            var $row = $(row);
+            var domRow = $(row)[0];
+            var city = "window.document.location='city.html?"
+                + $row.find('td:eq(0)').text().replace(/\s+/g, '') + "';";
+            row.setAttribute("class", "clickable-row");
+            row.setAttribute("onclick", city);
+        });
     });
 });

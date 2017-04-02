@@ -1,35 +1,33 @@
+// Loads all Reddit and Yelp dots for one city with unique container and dot IDs
 $(document).ready(function() {
     document.getElementById("title").innerHTML = "/r/" + location.search.split('?')[1];
+
+    // yelp.csv contains rows 'comment', 'time', 'parent', 'score', 'child', 'subreddit', 'url'
     d3.csv("yelp.csv", function(csv) {
         csv = csv.filter(function(row) {
             return row['subreddit'] == location.search.split('?')[1].toLowerCase();
         })
         length = csv.length;
+
+        // Create dots in format dotrowX > containerY > questiondotZ/redditdotZ/yelpdotZ
         for (i = 0; i < length; i++) {
             tempRow = document.createElement('div');
             tempRow.className = 'dotrow';
-            var rowId = 'dotrow' + i;
-            tempRow.id = rowId;
             document.getElementsByTagName('body')[0].appendChild(tempRow);
             for (j = 0; j < 3; j++) {
                 tempContainer = document.createElement('div');
                 tempContainer.className = 'container';
-                containerId = rowId + '-container' + j;
-                tempContainer.id = containerId;
                 tempDot = document.createElement('div');
                 tempDot.className = 'circle';
                 switch (j) {
                     case 0:
                         tempDot.style.backgroundImage = 'url(img/circle_question.png)';
-                        tempDot.id = containerId + '-questiondot' + j;
                         break;
                     case 1:
                         tempDot.style.backgroundImage = 'url(img/circle_reddit.png)';
-                        tempDot.id = containerId + '-redditdot' + j;
                         break;
                     case 2:
                         tempDot.style.backgroundImage = 'url(img/circle_yelp.png)';
-                        tempDot.id = containerId + '-yelpdot' + j;
                         break;
                 }
                 for (k = 0; k < 3; k++) {
@@ -44,32 +42,18 @@ $(document).ready(function() {
     });
 });
 
-function timeConverter(UNIX_timestamp) {
-    var a = new Date(UNIX_timestamp * 1000);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    var year = a.getFullYear();
-    var month = months[a.getMonth()];
-    var date = a.getDate();
-    var hour = a.getHours();
-    var min = a.getMinutes() < 10 ? '0' + a.getMinutes() : a.getMinutes();
-    var sec = a.getSeconds() < 10 ? '0' + a.getSeconds() : a.getSeconds();
-    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-    return time;
-}
-
-function removeLink(link) {
-    return link.replace(/(?:https?):\/\/[\S\n]+/g, '').replace(/\[|\]|\(|\)/g, ' ');
-}
-
 function createDot(csv, tempText, j, k) {
     switch (j) {
         case 0:
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    var title = (JSON.parse(this.responseText))['data']['children'][0]['data']['title'];
-                    var url = (JSON.parse(this.responseText))['data']['children'][0]['data']['url'];
-                    var num_comments = (JSON.parse(this.responseText))['data']['children'][0]['data']['num_comments'];
+                    var title = (JSON.parse(this.responseText))
+                                    ['data']['children'][0]['data']['title'];
+                    var url = (JSON.parse(this.responseText))
+                                    ['data']['children'][0]['data']['url'];
+                    var num_comments = (JSON.parse(this.responseText))
+                                    ['data']['children'][0]['data']['num_comments'];
                     switch (k) {
                         case 0:
                             tempText.className = 'text-top';
@@ -77,16 +61,17 @@ function createDot(csv, tempText, j, k) {
                             break;
                         case 1:
                             tempText.className = 'text-middle';
-                            tempText.innerHTML = title;
+                            tempText.innerHTML = '<a href=\''
+                                    + url.substring(0, url.length - 9)
+                                    + '\' target=\"_blank\">'
+                                    + title;
                             break;
                         case 2:
                             tempText.className = 'text-bottom';
-                            tempText.innerHTML = '/r/' + location.search.split('?')[1];
+                            tempText.innerHTML =
+                                    'SUBREDDIT:\<br\>/r/' + location.search.split('?')[1];
                             break;
                   }
-                } else {
-                    tempText.className = 'text-middle';
-                    tempText.innerHTML = '[deleted]';
                 }
             };
             xhttp.open("GET", "https://api.reddit.com/by_id/t3_" + csv[i]['parent'], true);
@@ -120,9 +105,15 @@ function createDot(csv, tempText, j, k) {
                         if (upper < comment.length) {
                             comment = comment.substring(0, upper - 3) + "...";
                         }
-                        tempText.innerHTML = removeLink(comment.substring(lower, upper));
+                        tempText.innerHTML = '<a href=\''
+                                + csv[i]['url']
+                                + '\' target=\"_blank\">'
+                                + removeLink(comment.substring(lower, upper));
                     } else {
-                        tempText.innerHTML = removeLink(comment);
+                        tempText.innerHTML = '<a href=\''
+                                + csv[i]['url']
+                                + '\' target=\"_blank\">'
+                                + removeLink(comment);
                     }
                     break;
                 case 2:
@@ -137,23 +128,55 @@ function createDot(csv, tempText, j, k) {
             business = comment.match(regex)[1];
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                switch (k) {
-                    case 0:
-                        tempText.className = 'text-top';
-                        tempText.innerHTML = this.responseText;
-                        break;
-                    case 1:
-                        tempText.className = 'text-middle';
-                        tempText.innerHTML = this.responseText;
-                        break;
-                    case 2:
-                        tempText.className = 'text-bottom';
-                        tempText.innerHTML = this.responseText;
-                        break;
+                if (this.readyState == 4 && this.status == 200) {
+                    var yelpData = JSON.parse(this.responseText);
+                    switch (k) {
+                        case 0:
+                            tempText.className = 'text-top';
+                            tempText.innerHTML = 'RATING:<br>' + yelpData['rating'];
+                            break;
+                        case 1:
+                            tempText.className = 'text-middle';
+                            tempText.style.textAlign = 'center';
+                            tempText.style.position = 'relative';
+                            tempText.style.top = '0%';
+                            tempText.innerHTML = '<h1><a href=\''
+                                    + yelpData['url'] + '\' target=\"_blank\">'
+                                    + yelpData['name'] + '<\/h1><br>'
+                                    + yelpData['location']['address1'] + '<br>'
+                                    + yelpData['location']['city'] + ", "
+                                    + yelpData['location']['state'] + " "
+                                    + yelpData['location']['zip_code'];
+                            break;
+                        case 2:
+                            tempText.className = 'text-bottom';
+                            tempText.style.paddingTop = '5%';
+                            tempText.innerHTML = 'PRICE:<br>' + yelpData['price'];
+                            break;
+                    }
                 }
             };
             xhttp.open("GET", "https://api.dotino.com/yelp?business=" + business, true);
             xhttp.send();
             break;
     }
+}
+
+// Converts Unix time to human-readable time
+function timeConverter(UNIX_timestamp) {
+    var a = new Date(UNIX_timestamp * 1000);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes() < 10 ? '0' + a.getMinutes() : a.getMinutes();
+    var sec = a.getSeconds() < 10 ? '0' + a.getSeconds() : a.getSeconds();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min;
+    return time;
+}
+
+// Remove distracting Yelp links from Reddit comments
+function removeLink(link) {
+    return link.replace(/(?:https?):\/\/[\S\n]+/g, '').replace(/\[|\]|\(|\)/g, ' ');
 }

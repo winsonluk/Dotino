@@ -183,6 +183,7 @@ def query_api(term, location):
     pprint.pprint(response, indent=2)
 
 
+# Uncomment main() to run this from the command line
 '''
 def main():
     parser = argparse.ArgumentParser()

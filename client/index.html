@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-  <meta content="utf-8" http-equiv="encoding">
-  <title>Dotino</title>
-  <link href="css/style.css" rel="stylesheet">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Dotino</title>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -17,18 +17,29 @@
             </video>
         </div>
 
-        <div class="error_message" id="error_message">Sorry, your city is not in our database.<br><br>Try searching for a nearby city instead.</div>
+        <div class="error_message" id="error_message">
+            Sorry, your city is not in our database.<br><br>Try searching for a nearby city instead.
+        </div>
         <div class="searchClass" id="users">
             <img src="img/logo.svg" class="logo">
             <div class="s-bar">
-                <input class="search" type="text" autocomplete="off" placeholder="Search by City or Region" id="user_input" onclick="smoothScroll(document.getElementById('display'));">
+                <input class="search" type="text" autocomplete="off"
+                        placeholder="Search by City or Region" id="user_input"
+                        onclick="smoothScroll(document.getElementById('display'));">
                 <button type="submit" onclick="process();">Search</button>
                 <img src="img/logo_wide.svg" class="logo_wide" id="logo_wide">
-                <a class="alignleft" id="reddit">Implemented with <img src="img/reddit.png" style="top: 10px" ></a>
-                <a class="alignright" id="yelp">Powered by <img src="img/yelp.png" style="top: 10px"></a>
+                <a class="alignleft" id="reddit">
+                    Implemented with <img src="img/reddit.png" style="top: 10px" >
+                </a>
+                <a class="alignright" id="yelp">
+                    Powered by <img src="img/yelp.png" style="top: 10px">
+                </a>
             </div>
         </div>
 
+        <!-- Begin table of all city subreddits with at least one mention of "yelp.com/biz/" -->
+        <!-- IMPORTANT: This table cannot be loaded externally (from an HTML file or otherwise) -->
+        <!-- to maintain compatibility with List.js -->
         <div class="results" id="display">
             <br>
             <br>
@@ -2128,19 +2139,18 @@
         </div>
     </div>
 
-
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
     <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyC9LVQx5nEGd9qbZnwOOUnY769Ar8CbOrE",
-        authDomain: "dotinoapp.firebaseapp.com",
-        databaseURL: "https://dotinoapp.firebaseio.com",
-        projectId: "dotinoapp",
-        storageBucket: "dotinoapp.appspot.com",
-        messagingSenderId: "946491618315"
-      };
-      firebase.initializeApp(config);
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyC9LVQx5nEGd9qbZnwOOUnY769Ar8CbOrE",
+          authDomain: "dotinoapp.firebaseapp.com",
+          databaseURL: "https://dotinoapp.firebaseio.com",
+          projectId: "dotinoapp",
+          storageBucket: "dotinoapp.appspot.com",
+          messagingSenderId: "946491618315"
+        };
+        firebase.initializeApp(config);
     </script>
 
     <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
