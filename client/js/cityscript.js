@@ -1,5 +1,6 @@
 var i = 0;  // Dot row to load
-var numRows = 25;  // Increasing this value may lead to more 503 errors
+var numRows = 1000;  // Increasing this value may lead to more 502 errors
+var loadedCSV;
 
 // The arrays' index represents the dot row index, and increments when 1/3 of a dot is loaded
 //
@@ -9,51 +10,59 @@ var redditArray = Array.apply(null, Array(numRows)).map(Number.prototype.valueOf
 var yelpArray = Array.apply(null, Array(numRows)).map(Number.prototype.valueOf,0);
 
 // Loads all Reddit and Yelp dots for one city with unique container and dot IDs
-$(document).ready(function() {
+window.onload = function() {
     document.getElementById("title").innerHTML = "/r/" + location.search.split('?')[1];
 
-    // yelp.csv contains rows 'comment', 'time', 'parent', 'score', 'child', 'subreddit', 'url'
-    d3.csv("yelp.csv", function(csv) {
-        csv = csv.filter(function(row) {
-            return row['subreddit'] == location.search.split('?')[1].toLowerCase();
-        })
-        length = csv.length;
+    d3.queue().defer(function(callback) {
 
-        while (i < numRows && csv[i] != null) {
-            tempRow = document.createElement('div');
-            tempRow.className = 'dotrow';
-            tempRow.id = 'dotrow' + i;
-            document.getElementsByTagName('body')[0].appendChild(tempRow);
-            for (j = 0; j < 3; j++) {
-                tempContainer = document.createElement('div');
-                tempContainer.className = 'container';
-                tempDot = document.createElement('div');
-                tempDot.className = 'circle';
-                switch (j) {
-                    case 0:
-                        tempDot.style.backgroundImage = 'url(img/circle_question.png)';
-                        break;
-                    case 1:
-                        tempDot.style.backgroundImage = 'url(img/circle_reddit.png)';
-                        break;
-                    case 2:
-                        tempDot.style.backgroundImage = 'url(img/circle_yelp.png)';
-                        break;
-                }
-                for (k = 0; k < 3; k++) {
-                    tempText = document.createElement('div');
-                    createDot(csv, tempText, i, j, k);
-                    tempDot.appendChild(tempText);
-                }
-                tempContainer.appendChild(tempDot);
-                tempRow.appendChild(tempContainer);
+        // yelp.csv contains rows 'comment', 'time', 'parent', 'score', 'child', 'subreddit', 'url'
+        d3.csv("yelp.csv", function(csv) {
+            window.loadedCSV = csv.filter(function(row) {
+                return row['subreddit'] == location.search.split('?')[1].toLowerCase();
+            });
+            callback(null);
+        });
+    }).await(function() { loopDots(); });
+}
+
+function loopDots() {
+    setTimeout(function () {
+        tempRow = document.createElement('div');
+        tempRow.className = 'dotrow';
+        tempRow.id = 'dotrow' + i;
+        document.getElementsByTagName('body')[0].appendChild(tempRow);
+        for (j = 0; j < 3; j++) {
+            tempContainer = document.createElement('div');
+            tempContainer.className = 'container';
+            tempDot = document.createElement('div');
+            tempDot.className = 'circle';
+            switch (j) {
+                case 0:
+                    tempDot.style.backgroundImage = 'url(img/circle_question.png)';
+                    break;
+                case 1:
+                    tempDot.style.backgroundImage = 'url(img/circle_reddit.png)';
+                    break;
+                case 2:
+                    tempDot.style.backgroundImage = 'url(img/circle_yelp.png)';
+                    break;
             }
-            i++;
+            for (k = 0; k < 3; k++) {
+                tempText = document.createElement('div');
+                createDot(tempText, i, j, k);
+                tempDot.appendChild(tempText);
+            }
+            tempContainer.appendChild(tempDot);
+            tempRow.appendChild(tempContainer);
         }
-    });
-});
+        i++;
+        if (i < numRows && loadedCSV[i] != null) {
+            loopDots();
+        }
+    }, 5000);
+}
 
-function createDot(csv, tempText, curr, j, k) {
+function createDot(tempText, curr, j, k) {
 
     switch (j) {
 
@@ -93,7 +102,7 @@ function createDot(csv, tempText, curr, j, k) {
                     }
                 }
             };
-            xhttp.open("GET", "https://api.reddit.com/by_id/t3_" + csv[i]['parent'], true);
+            xhttp.open("GET", "https://api.reddit.com/by_id/t3_" + loadedCSV[curr]['parent'], true);
             xhttp.send();
             break;
 
@@ -102,11 +111,11 @@ function createDot(csv, tempText, curr, j, k) {
             switch (k) {
                 case 0:
                     tempText.className = 'text-top';
-                    tempText.innerHTML = 'SCORE:\<br\>' + csv[i]['score'];
+                    tempText.innerHTML = 'SCORE:\<br\>' + loadedCSV[curr]['score'];
                     break;
                 case 1:
                     tempText.className = 'text-middle';
-                    var comment = csv[i]['comment'];
+                    var comment = loadedCSV[curr]['comment'];
                     var totalChars = 300;
                     var halfNumChars = totalChars / 2;
                     if (comment.length > totalChars) {
@@ -127,26 +136,26 @@ function createDot(csv, tempText, curr, j, k) {
                             comment = comment.substring(0, upper - 3) + "...";
                         }
                         tempText.innerHTML = '<a href=\''
-                                + csv[i]['url']
+                                + loadedCSV[curr]['url']
                                 + '\' target=\"_blank\">'
                                 + removeLink(comment.substring(lower, upper));
                     } else {
                         tempText.innerHTML = '<a href=\''
-                                + csv[i]['url']
+                                + loadedCSV[curr]['url']
                                 + '\' target=\"_blank\">'
                                 + removeLink(comment);
                     }
                     break;
                 case 2:
                     tempText.className = 'text-bottom';
-                    tempText.innerHTML = 'POSTED:\<br\>' + timeConverter(csv[i]['time']);
+                    tempText.innerHTML = 'POSTED:\<br\>' + timeConverter(loadedCSV[curr]['time']);
                     break;
             }
             break;
 
         // Create Yelp dot
         case 2:
-            var comment = csv[i]['comment'];
+            var comment = loadedCSV[curr]['comment'];
             var regex = /yelp\.com\/biz\/(.+?(?=[^-\w]|$))/;
             business = comment.match(regex)[1];
             var xhttp = new XMLHttpRequest();
@@ -164,13 +173,17 @@ function createDot(csv, tempText, curr, j, k) {
                                 tempText.style.textAlign = 'center';
                                 tempText.style.position = 'relative';
                                 tempText.style.top = '0%';
-                                tempText.innerHTML = '<h1><a href=\''
-                                        + yelpData['url'] + '\' target=\"_blank\">'
-                                        + yelpData['name'] + '<\/h1><br>'
-                                        + yelpData['location']['address1'] + '<br>'
-                                        + yelpData['location']['city'] + ", "
-                                        + yelpData['location']['state'] + " "
-                                        + yelpData['location']['zip_code'];
+                                try {
+                                    tempText.innerHTML = '<h1><a href=\''
+                                            + yelpData['url'] + '\' target=\"_blank\">'
+                                            + yelpData['name'] + '<\/h1><br>'
+                                            + yelpData['location']['address1'] + '<br>'
+                                            + yelpData['location']['city'] + ", "
+                                            + yelpData['location']['state'] + " "
+                                            + yelpData['location']['zip_code'];
+                                } catch (error) {
+                                    tempText.innerHTML = 'Restaurant not found';
+                                }
                                 break;
                             case 2:
                                 tempText.className = 'text-bottom';
@@ -192,8 +205,10 @@ function createDot(csv, tempText, curr, j, k) {
 
 // Display one dot row when it is fully loaded
 function loadDots(rowToLoad) {
-    document.getElementById('dotrow' + rowToLoad).style.display = "block";
-    document.getElementById('spinner').style.display = "none";
+    var tempDotrow = 'dotrow' + rowToLoad;
+    var jTempDotrow = '#' + tempDotrow;
+    document.getElementById(tempDotrow).style.display = "block";
+    jQuery("#spinner").detach().appendTo(jTempDotrow);
 }
 
 // Converts Unix time to human-readable time
