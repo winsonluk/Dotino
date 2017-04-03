@@ -29,6 +29,11 @@ window.onload = function() {
 // Load a single row of dots and wait 5 seconds until next load to avoid 502 errors
 // (the essential Allow-Origin header from api.dotino.com is skipped if requests are too frequent)
 function loopDots() {
+    if (loadedCSV.length == 0) {
+        document.getElementById('spinner').style.display = "none";
+        alert('Sorry, this city is not yet in our database.');
+        return;
+    }
     setTimeout(function () {
         tempRow = document.createElement('div');
         tempRow.className = 'dotrow';
@@ -67,8 +72,10 @@ function loopDots() {
         // create dots until limit reached or no more comments for the subreddit are found
         if (i < numRows && loadedCSV[i] != null) {
             loopDots();
+        } else {
+            document.getElementById('spinner').style.display = "none";
         }
-    }, 5000);
+    }, 1000);
 }
 
 // Create a question (j = 0), Reddit (j = 1), or Yelp (j = 2) dot
@@ -82,47 +89,45 @@ function createDot(tempText, curr, j, k) {
         case 0:
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        var title = (JSON.parse(this.responseText))
-                                        ['data']['children'][0]['data']['title'];
-                        var url = (JSON.parse(this.responseText))
-                                        ['data']['children'][0]['data']['url'];
-                        var num_comments = (JSON.parse(this.responseText))
-                                        ['data']['children'][0]['data']['num_comments'];
-                        switch (k) {
+                if (this.readyState == 4 && this.status == 200) {
+                    var title = (JSON.parse(this.responseText))
+                                    ['data']['children'][0]['data']['title'];
+                    var url = (JSON.parse(this.responseText))
+                                    ['data']['children'][0]['data']['url'];
+                    var num_comments = (JSON.parse(this.responseText))
+                                    ['data']['children'][0]['data']['num_comments'];
+                    switch (k) {
 
-                            // number of replies to the question
-                            case 0:
-                                tempText.className = 'text-top';
-                                tempText.innerHTML = 'REPLIES:\<br\>' + num_comments;
-                                break;
+                        // number of replies to the question
+                        case 0:
+                            tempText.className = 'text-top';
+                            tempText.innerHTML = 'REPLIES:\<br\>' + num_comments;
+                            break;
 
-                            // the text of the question
-                            case 1:
-                                tempText.className = 'text-middle';
-                                tempText.innerHTML = '<h1><a href=\''
-                                        + url.substring(0, url.length - 17)
-                                        + '\' target=\"_blank\">'
-                                        + title + '<\/h1>';
-                                break;
+                        // the text of the question
+                        case 1:
+                            tempText.className = 'text-middle';
+                            tempText.innerHTML = '<h1><a href=\''
+                                    + url.substring(0, url.length - 17)
+                                    + '\' target=\"_blank\">'
+                                    + title + '<\/h1>';
+                            break;
 
-                            // subreddit the question was asked in
-                            case 2:
-                                tempText.className = 'text-bottom';
-                                tempText.innerHTML =
-                                        'SUBREDDIT:\<br\>/r/' + location.search.split('?')[1];
-                                break;
-                        }
+                        // subreddit the question was asked in
+                        case 2:
+                            tempText.className = 'text-bottom';
+                            tempText.innerHTML =
+                                    'SUBREDDIT:\<br\>/r/' + location.search.split('?')[1];
+                            break;
+                    }
 
-                        // load entire row if this dot and the Yelp dot are fully loaded
-                        if (++redditArray[curr] == 3 && yelpArray[curr] == 3) {
-                            loadDots(curr);
-                        }
+                    // load entire row if this dot and the Yelp dot are fully loaded
+                    if (++redditArray[curr] == 3 && yelpArray[curr] == 3) {
+                        loadDots(curr);
                     }
                 }
             };
-            xhttp.open("GET", "https://api.reddit.com/by_id/t3_" + loadedCSV[curr]['parent'], true);
+            xhttp.open("GET", "https://api.reddit.com/by_id/t3_" + loadedCSV[curr]['parent']);
             xhttp.send();
             break;
 
@@ -192,56 +197,57 @@ function createDot(tempText, curr, j, k) {
         case 2:
             var comment = loadedCSV[curr]['comment'];
             var regex = /yelp\.com\/biz\/(.+?(?=[^-\w]|$))/;
+            if (comment.match(regex) == null) {
+                return;
+            }
             business = comment.match(regex)[1];
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        var yelpData = JSON.parse(this.responseText);
-                        switch (k) {
+                if (this.readyState == 4 && this.status == 200) {
+                    var yelpData = JSON.parse(this.responseText);
+                    switch (k) {
 
-                            // Yelp rating (0-5)
-                            case 0:
-                                tempText.className = 'text-top';
-                                tempText.innerHTML = 'RATING:<br>' + yelpData['rating'];
-                                break;
+                        // Yelp rating (0-5)
+                        case 0:
+                            tempText.className = 'text-top';
+                            tempText.innerHTML = 'RATING:<br>' + yelpData['rating'];
+                            break;
 
 
-                            // Restaurant name (in <h1>) and address
-                            case 1:
-                                tempText.className = 'text-middle';
-                                tempText.style.textAlign = 'center';
-                                tempText.style.position = 'relative';
-                                tempText.style.top = '0%';
-                                try {
-                                    tempText.innerHTML = '<h1><a href=\''
-                                            + yelpData['url'] + '\' target=\"_blank\">'
-                                            + yelpData['name'] + '<\/h1><br>'
-                                            + yelpData['location']['address1'] + '<br>'
-                                            + yelpData['location']['city'] + ", "
-                                            + yelpData['location']['state'] + " "
-                                            + yelpData['location']['zip_code'];
-                                } catch (error) {
-                                    tempText.innerHTML = 'Restaurant not found';
-                                }
-                                break;
+                        // Restaurant name (in <h1>) and address
+                        case 1:
+                            tempText.className = 'text-middle';
+                            tempText.style.textAlign = 'center';
+                            tempText.style.position = 'relative';
+                            tempText.style.top = '0%';
+                            try {
+                                tempText.innerHTML = '<h1><a href=\''
+                                        + yelpData['url'] + '\' target=\"_blank\">'
+                                        + yelpData['name'] + '<\/h1><br>'
+                                        + yelpData['location']['address1'] + '<br>'
+                                        + yelpData['location']['city'] + ", "
+                                        + yelpData['location']['state'] + " "
+                                        + yelpData['location']['zip_code'];
+                            } catch (error) {
+                                tempText.innerHTML = 'Restaurant not found';
+                            }
+                            break;
 
-                            // Yelp price ($ to $$$$)
-                            case 2:
-                                tempText.className = 'text-bottom';
-                                tempText.style.paddingTop = '0%';
-                                tempText.innerHTML = 'PRICE:<br>' + yelpData['price'];
-                                break;
-                        }
+                        // Yelp price ($ to $$$$)
+                        case 2:
+                            tempText.className = 'text-bottom';
+                            tempText.style.paddingTop = '0%';
+                            tempText.innerHTML = 'PRICE:<br>' + yelpData['price'];
+                            break;
+                    }
 
-                        // load entire row if this dot and the Reddit dot are fully loaded
-                        if (++yelpArray[curr] == 3 && redditArray[curr] == 3) {
-                            loadDots(curr);
-                        }
+                    // load entire row if this dot and the Reddit dot are fully loaded
+                    if (++yelpArray[curr] == 3 && redditArray[curr] == 3) {
+                        loadDots(curr);
                     }
                 }
             };
-            xhttp.open("GET", "https://api.dotino.com/yelp?business=" + business, true);
+            xhttp.open("GET", "https://api.dotino.com/yelp?business=" + business);
             xhttp.send();
             break;
     }

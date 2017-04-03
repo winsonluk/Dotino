@@ -3,4 +3,4 @@ env: flex
 runtime: python
 api_version: 1
 manual_scaling:
-  instances: 5
+  instances: 10
