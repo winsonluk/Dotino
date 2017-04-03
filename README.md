@@ -4,7 +4,7 @@
   </a>
   <br>
   <br>
-  **Restaurants when they're mentioned. Not when they're marketed.**
+  <b>Restaurants when they're mentioned. Not when they're marketed.</b>
 </p>
 
 
