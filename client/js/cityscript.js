@@ -1,6 +1,6 @@
 var i = 0;  // Dot row to load
 var numRows = 1000;  // Increasing this value may lead to more 502 errors
-var loadedCSV;
+var loadedCSV;  // csv with 'comment', 'time', 'parent', 'score', 'child', 'subreddit', 'url'
 
 // The arrays' index represents the dot row index, and increments when 1/3 of a dot is loaded
 //
@@ -13,6 +13,7 @@ var yelpArray = Array.apply(null, Array(numRows)).map(Number.prototype.valueOf,0
 window.onload = function() {
     document.getElementById("title").innerHTML = "/r/" + location.search.split('?')[1];
 
+    // finish loading csv before loading dots
     d3.queue().defer(function(callback) {
 
         // yelp.csv contains rows 'comment', 'time', 'parent', 'score', 'child', 'subreddit', 'url'
@@ -25,12 +26,16 @@ window.onload = function() {
     }).await(function() { loopDots(); });
 }
 
+// Load a single row of dots and wait 5 seconds until next load to avoid 502 errors
+// (the essential Allow-Origin header from api.dotino.com is skipped if requests are too frequent)
 function loopDots() {
     setTimeout(function () {
         tempRow = document.createElement('div');
         tempRow.className = 'dotrow';
         tempRow.id = 'dotrow' + i;
         document.getElementsByTagName('body')[0].appendChild(tempRow);
+
+        // create three dots (Question (j = 0), Reddit (j = 1), and Yelp (j = 2))
         for (j = 0; j < 3; j++) {
             tempContainer = document.createElement('div');
             tempContainer.className = 'container';
@@ -47,6 +52,8 @@ function loopDots() {
                     tempDot.style.backgroundImage = 'url(img/circle_yelp.png)';
                     break;
             }
+
+            // create top (k = 0), middle (k = 1), and bottom (k = 2) divs of a single dot
             for (k = 0; k < 3; k++) {
                 tempText = document.createElement('div');
                 createDot(tempText, i, j, k);
@@ -56,12 +63,17 @@ function loopDots() {
             tempRow.appendChild(tempContainer);
         }
         i++;
+
+        // create dots until limit reached or no more comments for the subreddit are found
         if (i < numRows && loadedCSV[i] != null) {
             loopDots();
         }
     }, 5000);
 }
 
+// Create a question (j = 0), Reddit (j = 1), or Yelp (j = 2) dot
+// with top (k = 0), middle (k = 1), and bottom (k = 2) texts
+// for a specified row number (curr)
 function createDot(tempText, curr, j, k) {
 
     switch (j) {
@@ -79,23 +91,31 @@ function createDot(tempText, curr, j, k) {
                         var num_comments = (JSON.parse(this.responseText))
                                         ['data']['children'][0]['data']['num_comments'];
                         switch (k) {
+
+                            // number of replies to the question
                             case 0:
                                 tempText.className = 'text-top';
                                 tempText.innerHTML = 'REPLIES:\<br\>' + num_comments;
                                 break;
+
+                            // the text of the question
                             case 1:
                                 tempText.className = 'text-middle';
-                                tempText.innerHTML = '<a href=\''
+                                tempText.innerHTML = '<h1><a href=\''
                                         + url.substring(0, url.length - 17)
                                         + '\' target=\"_blank\">'
-                                        + title;
+                                        + title + '<\/h1>';
                                 break;
+
+                            // subreddit the question was asked in
                             case 2:
                                 tempText.className = 'text-bottom';
                                 tempText.innerHTML =
                                         'SUBREDDIT:\<br\>/r/' + location.search.split('?')[1];
                                 break;
                         }
+
+                        // load entire row if this dot and the Yelp dot are fully loaded
                         if (++redditArray[curr] == 3 && yelpArray[curr] == 3) {
                             loadDots(curr);
                         }
@@ -109,10 +129,22 @@ function createDot(tempText, curr, j, k) {
         // Create Reddit dot
         case 1:
             switch (k) {
+
+                // score of the Reddit comment (may be negative)
                 case 0:
                     tempText.className = 'text-top';
                     tempText.innerHTML = 'SCORE:\<br\>' + loadedCSV[curr]['score'];
                     break;
+
+                // The text of the comment or totalChars, whichever is greater,
+                // but the eventual excerpt will be LESS THAN totalChars after
+                // links are removed.
+                //
+                // The excerpt is centered by iterating index from 0 to n
+                // until the index is centered on "yelp.com/biz/" with a padding
+                // of totalChars / 2 before and after index.
+                //
+                // This algorithm is O(n).
                 case 1:
                     tempText.className = 'text-middle';
                     var comment = loadedCSV[curr]['comment'];
@@ -146,6 +178,9 @@ function createDot(tempText, curr, j, k) {
                                 + removeLink(comment);
                     }
                     break;
+
+
+                // date and time the comment was posted (in human-readable form)
                 case 2:
                     tempText.className = 'text-bottom';
                     tempText.innerHTML = 'POSTED:\<br\>' + timeConverter(loadedCSV[curr]['time']);
@@ -164,10 +199,15 @@ function createDot(tempText, curr, j, k) {
                     if (this.status == 200) {
                         var yelpData = JSON.parse(this.responseText);
                         switch (k) {
+
+                            // Yelp rating (0-5)
                             case 0:
                                 tempText.className = 'text-top';
                                 tempText.innerHTML = 'RATING:<br>' + yelpData['rating'];
                                 break;
+
+
+                            // Restaurant name (in <h1>) and address
                             case 1:
                                 tempText.className = 'text-middle';
                                 tempText.style.textAlign = 'center';
@@ -185,12 +225,16 @@ function createDot(tempText, curr, j, k) {
                                     tempText.innerHTML = 'Restaurant not found';
                                 }
                                 break;
+
+                            // Yelp price ($ to $$$$)
                             case 2:
                                 tempText.className = 'text-bottom';
                                 tempText.style.paddingTop = '0%';
                                 tempText.innerHTML = 'PRICE:<br>' + yelpData['price'];
                                 break;
                         }
+
+                        // load entire row if this dot and the Reddit dot are fully loaded
                         if (++yelpArray[curr] == 3 && redditArray[curr] == 3) {
                             loadDots(curr);
                         }

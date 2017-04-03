@@ -1,6 +1,8 @@
-# Dotino
+<a align="center" href="client/img/dotino.png">
+    <img src="client/img/dotino.png" height="200" />
+</a>
 
-**Restaurants when they are mentioned, not when they're marketed.**
+# Restaurants when they are mentioned, not when they're marketed.
 
 &nbsp;
 
