@@ -1,0 +1,233 @@
+<p align="center">
+  <a href="img/dotino.png">
+    <img src="img/dotino.png" height="200" />
+  </a>
+  <br>
+  <br>
+  <b>Restaurants when they're mentioned. Not when they're marketed.</b>
+</p>
+
+
+
+<p> </p>
+<h1 id="implementation">Implementation</h1>
+<h2 id="website">Website</h2>
+<p>This website is hosted at <a href="https://dotino.com">https://dotino.com</a> on <a href="https://firebase.google.com">Google Firebase</a>, with the domain registered on <a href="https://namebright.com">NameBright</a>. The frontend is written in JavaScript with jQuery. Dotino uses <a href="https://d3js.org">D3.js</a> to parse the CSV file with Reddit comment information and <a href="listjs.com">List.js</a> to search cities and subreddits. Cities and their corresponding subreddits were retrieved from <a href="https://www.reddit.com/r/locationreddits">/r/LocationReddits</a>, and all Reddit comments containing the string &quot;yelp.com/biz/&quot; were queried using SQL with <a href="https://bigquery.cloud.google.com/table/fh-bigquery:reddit_comments.all">Google BigQuery</a> and saved as a flat CSV file. Only subreddits that are categorized as a &quot;locational&quot; subreddit <strong>and</strong> have at least one mention of &quot;yelp.com/biz/&quot; are included in this version of Dotino.</p>
+<p>The local CSV file only contains data regarding the comment itself, and not the question it was written as a reply to, so the question's data is retrieved from <a href="https://api.reddit.com">https://api.reddit.com</a> using <em>by_id</em>. Restaurant data is retrieved from <a href="https://api.dotino.com">https://api.dotino.com</a>, which uses the <a href="https://www.yelp.com/developers">Yelp Fusion API</a>.</p>
+<h2 id="api">API</h2>
+<p>The server is hosted at <a href="https://api.dotino.com">https://api.dotino.com</a> with <a href="https://cloud.google.com/appengine">Google App Engine</a>. The backend is written in Python with the <a href="http://flask.pocoo.org">Flask</a> web framework and designed to work with the <a href="https://www.yelp.com/developers">Yelp Fusion API</a>. The SSL certificate was obtained from <a href="https://letsencrypt.org">LetsEncrypt</a>.</p>
+<h2 id="the-dotino-logo">The Dotino Logo</h2>
+<p>The logo is an SVG created with <a href="https://www.sketchapp.com">Sketch</a>.</p>
+<p> </p>
+<h1 id="usage">Usage</h1>
+<h2 id="website-1">Website</h2>
+<p>Visit <a href="https://dotino.com">https://dotino.com</a> (<strong>with Tracking Protection disabled</strong> to enable compatibility with the Reddit API) and search for your desired city. Find restaurants mentioned on social media and click the question or the comment to see its context. Click the Yelp dot for more information about the restaurant.</p>
+<p>Dotino has been optimized for desktop, tablet, and mobile usage. The motion background and navigation bar links to Privacy, Terms, and Contact are hidden on screen sizes 768 pixels and below to enhance mobile usability. Please access Dotino on a larger screen to experience the full website.</p>
+<h2 id="api-1">API</h2>
+<p><strong>Obtain Yelp business information for a specific restaurant with its Yelp business ID.</strong></p>
+<p>GET from <a href="https://api.dotino.com/yelp?business=BUSINESS_ID_HERE">https://api.dotino.com/yelp?business=BUSINESS_ID_HERE</a> to return Yelp restaurant info in JSON. <a href="https://api.dotino.com">https://api.dotino.com</a> currently only accepts CORS Access-Control-Allow-Origin from <a href="https://dotino.com">https://dotino.com</a>.</p>
+<p> </p>
+<p><strong>Response Body (<a href="https://www.yelp.com/developers/documentation/v3">from the Yelp Fusion API documentation</a>)</strong><br />~~~~<br />{<br /> &quot;id&quot;: &quot;gary-danko-san-francisco&quot;,<br /> &quot;name&quot;: &quot;Gary Danko&quot;,<br /> &quot;image_url&quot;: &quot;<a href="https://s3-media4.fl.yelpcdn.com/bphoto/">https://s3-media4.fl.yelpcdn.com/bphoto/</a>--8oiPVp0AsjoWHqaY1rDQ/o.jpg&quot;,<br /> &quot;is_claimed&quot;: false,<br /> &quot;is_closed&quot;: false,<br /> &quot;url&quot;: &quot;<a href="https://www.yelp.com/biz/gary-danko-san-francisco">https://www.yelp.com/biz/gary-danko-san-francisco</a>&quot;,<br /> &quot;price&quot;: &quot;$$$$&quot;,<br /> &quot;rating&quot;: 4.5,<br /> &quot;review_count&quot;: 4521,<br /> &quot;phone&quot;: &quot;+14152520800&quot;,<br /> &quot;photos&quot;: [<br /> &quot;<a href="http://s3-media3.fl.yelpcdn.com/bphoto/">http://s3-media3.fl.yelpcdn.com/bphoto/</a>--8oiPVp0AsjoWHqaY1rDQ/o.jpg&quot;,<br /> &quot;<a href="http://s3-media2.fl.yelpcdn.com/bphoto/ybXbObsm7QGw3SGPA1_WXA/o.jpg">http://s3-media2.fl.yelpcdn.com/bphoto/ybXbObsm7QGw3SGPA1_WXA/o.jpg</a>&quot;,<br /> &quot;<a href="http://s3-media3.fl.yelpcdn.com/bphoto/7rZ061Wm4tRZ-iwAhkRSFA/o.jpg">http://s3-media3.fl.yelpcdn.com/bphoto/7rZ061Wm4tRZ-iwAhkRSFA/o.jpg</a>&quot;<br /> ],<br /> &quot;hours&quot;: [<br /> {<br /> &quot;hours_type&quot;: &quot;REGULAR&quot;,<br /> &quot;open&quot;: [<br /> {<br /> &quot;is_overnight&quot;: false,<br /> &quot;end&quot;: &quot;2200&quot;,<br /> &quot;day&quot;: 0,<br /> &quot;start&quot;: &quot;1730&quot;<br /> },<br /> {<br /> &quot;is_overnight&quot;: false,<br /> &quot;end&quot;: &quot;2200&quot;,<br /> &quot;day&quot;: 1,<br /> &quot;start&quot;: &quot;1730&quot;<br /> },<br /> {<br /> &quot;is_overnight&quot;: false,<br /> &quot;end&quot;: &quot;2200&quot;,<br /> &quot;day&quot;: 2,<br /> &quot;start&quot;: &quot;1730&quot;<br /> },<br /> {<br /> &quot;is_overnight&quot;: false,<br /> &quot;end&quot;: &quot;2200&quot;,<br /> &quot;day&quot;: 3,<br /> &quot;start&quot;: &quot;1730&quot;<br /> },<br /> {<br /> &quot;is_overnight&quot;: false,<br /> &quot;end&quot;: &quot;2200&quot;,<br /> &quot;day&quot;: 4,<br /> &quot;start&quot;: &quot;1730&quot;<br /> },<br /> {<br /> &quot;is_overnight&quot;: false,<br /> &quot;end&quot;: &quot;2200&quot;,<br /> &quot;day&quot;: 5,<br /> &quot;start&quot;: &quot;1730&quot;<br /> },<br /> {<br /> &quot;is_overnight&quot;: false,<br /> &quot;end&quot;: &quot;2200&quot;,<br /> &quot;day&quot;: 6,<br /> &quot;start&quot;: &quot;1730&quot;<br /> }<br /> ],<br /> &quot;is_open_now&quot;: false<br /> }<br /> ],<br /> &quot;categories&quot;: [<br /> {<br /> &quot;alias&quot;: &quot;newamerican&quot;,<br /> &quot;title&quot;: &quot;American (New)&quot;<br /> }<br /> ],<br /> &quot;coordinates&quot;: {<br /> &quot;latitude&quot;: 37.80587,<br /> &quot;longitude&quot;: -122.42058<br /> },</p>
+<p>&quot;location&quot;: {<br /> &quot;address1&quot;: &quot;800 N Point St&quot;,<br /> &quot;address2&quot;: &quot;&quot;,<br /> &quot;address3&quot;: &quot;&quot;,<br /> &quot;city&quot;: &quot;San Francisco&quot;,<br /> &quot;state&quot;: &quot;CA&quot;,<br /> &quot;zip_code&quot;: &quot;94109&quot;,<br /> &quot;country&quot;: &quot;US&quot;,<br /> &quot;display_address&quot;: [<br /> &quot;800 N Point St&quot;,<br /> &quot;San Francisco, CA 94109&quot;<br /> ],<br /> &quot;cross_streets&quot;: &quot;Hyde St &amp; Larkin St&quot;<br /> },<br /> &quot;transactions&quot;: [&quot;restaurant_reservation&quot;]<br />}<br />~~~~</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>Name</strong></th>
+<th align="center"><strong>Type</strong></th>
+<th align="center"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">categories</td>
+<td align="center">object[]</td>
+<td align="center">A list of category title and alias pairs associated with this business.</td>
+</tr>
+<tr class="even">
+<td align="center">categories[x].alias</td>
+<td align="center">string</td>
+<td align="center">Alias of a category, when searching for business in certain categories, use alias rather than the title.</td>
+</tr>
+<tr class="odd">
+<td align="center">categories[x].title</td>
+<td align="center">string</td>
+<td align="center">Title of a category for display purpose.</td>
+</tr>
+<tr class="even">
+<td align="center">coordinates</td>
+<td align="center">object</td>
+<td align="center">The coordinates of this business.</td>
+</tr>
+<tr class="odd">
+<td align="center">coordinates.latitude</td>
+<td align="center">decimal</td>
+<td align="center">The latitude of this business.</td>
+</tr>
+<tr class="even">
+<td align="center">coordinates.longitude</td>
+<td align="center">decimal</td>
+<td align="center">The longitude of this business.</td>
+</tr>
+<tr class="odd">
+<td align="center">display_phone</td>
+<td align="center">string</td>
+<td align="center">Phone number of the business formatted nicely to be displayed to users. The format is the standard phone number format for the business's country.</td>
+</tr>
+<tr class="even">
+<td align="center">hours</td>
+<td align="center">object[]</td>
+<td align="center">Opening hours of the business.</td>
+</tr>
+<tr class="odd">
+<td align="center">hours[x].is_open_now</td>
+<td align="center">boolean</td>
+<td align="center">Whether the business is currently open or not.</td>
+</tr>
+<tr class="even">
+<td align="center">hours[x].hours_type</td>
+<td align="center">string</td>
+<td align="center">The type of the opening hours information. Right now, always return REGULAR.</td>
+</tr>
+<tr class="odd">
+<td align="center">hours[x].open</td>
+<td align="center">object[]</td>
+<td align="center">The detailed opening hours of each day in a week.</td>
+</tr>
+<tr class="even">
+<td align="center">hours[x].open[x].day</td>
+<td align="center">int</td>
+<td align="center">From 0 to 6, representing day of the week from Monday to Sunday. Notice that you may get the same day of the week more than once if the business has more than one opening time slots.</td>
+</tr>
+<tr class="odd">
+<td align="center">hours[x].open[x].start</td>
+<td align="center">string</td>
+<td align="center">Start of the opening hours in a day, in 24-hour clock notation, like 1000 means 10 AM.</td>
+</tr>
+<tr class="even">
+<td align="center">hours[x].open[x].start</td>
+<td align="center">string</td>
+<td align="center">Start of the opening hours in a day, in 24-hour clock notation, like 1000 means 10 AM.</td>
+</tr>
+<tr class="odd">
+<td align="center">hours[x].open[x].end</td>
+<td align="center">string</td>
+<td align="center">End of the opening hours in a day, in 24-hour clock notation, like 2130 means 9:30 PM.</td>
+</tr>
+<tr class="even">
+<td align="center">hours[x].open[x].is_overnight</td>
+<td align="center">boolean</td>
+<td align="center">Whether the business opens overnight or not. When this is true, the end time will be lower than the start time.</td>
+</tr>
+<tr class="odd">
+<td align="center">id</td>
+<td align="center">string</td>
+<td align="center">Yelp ID of this business.</td>
+</tr>
+<tr class="even">
+<td align="center">image_url</td>
+<td align="center">string</td>
+<td align="center">URL of photo for this business.</td>
+</tr>
+<tr class="odd">
+<td align="center">is_claimed</td>
+<td align="center">bool</td>
+<td align="center">Whether business has been claimed by a business owner</td>
+</tr>
+<tr class="even">
+<td align="center">is_closed</td>
+<td align="center">bool</td>
+<td align="center">Whether business has been (permanently) closed</td>
+</tr>
+<tr class="odd">
+<td align="center">location</td>
+<td align="center">object</td>
+<td align="center">The location of this business, including address, city, state, zip code and country.</td>
+</tr>
+<tr class="even">
+<td align="center">location.address1</td>
+<td align="center">string</td>
+<td align="center">Street address of this business.</td>
+</tr>
+<tr class="odd">
+<td align="center">location.address2</td>
+<td align="center">string</td>
+<td align="center">Street address of this business, continued.</td>
+</tr>
+<tr class="even">
+<td align="center">location.address3</td>
+<td align="center">string</td>
+<td align="center">Street address of this business, continued.</td>
+</tr>
+<tr class="odd">
+<td align="center">location.city</td>
+<td align="center">string</td>
+<td align="center">City of this business.</td>
+</tr>
+<tr class="even">
+<td align="center">location.country</td>
+<td align="center">string</td>
+<td align="center">ISO 3166-1 alpha-2 country code of this business.</td>
+</tr>
+<tr class="odd">
+<td align="center">location.cross_streets</td>
+<td align="center">string</td>
+<td align="center">Cross streets for this business.</td>
+</tr>
+<tr class="even">
+<td align="center">location.display_address</td>
+<td align="center">string[]</td>
+<td align="center">Array of strings that if organized vertically give an address that is in the standard address format for the business's country.</td>
+</tr>
+<tr class="odd">
+<td align="center">location.state</td>
+<td align="center">string</td>
+<td align="center">ISO 3166-2 State code of this business.</td>
+</tr>
+<tr class="even">
+<td align="center">location.zip_code</td>
+<td align="center">string</td>
+<td align="center">Zip code of this business.</td>
+</tr>
+<tr class="odd">
+<td align="center">name</td>
+<td align="center">string</td>
+<td align="center">Name of this business.</td>
+</tr>
+<tr class="even">
+<td align="center">phone</td>
+<td align="center">string</td>
+<td align="center">Phone number of the business.</td>
+</tr>
+<tr class="odd">
+<td align="center">photos</td>
+<td align="center">object[]</td>
+<td align="center">URLs of up to three photos of the business.</td>
+</tr>
+<tr class="even">
+<td align="center">price</td>
+<td align="center">string</td>
+<td align="center">Price level of the business. Value is one of $, $$, $$$ and $$$$.</td>
+</tr>
+<tr class="odd">
+<td align="center">rating</td>
+<td align="center">decimal</td>
+<td align="center">Rating for this business (value ranges from 1, 1.5, ... 4.5, 5).</td>
+</tr>
+<tr class="even">
+<td align="center">review_count</td>
+<td align="center">int</td>
+<td align="center">Number of reviews for this business.</td>
+</tr>
+<tr class="odd">
+<td align="center">url</td>
+<td align="center">string</td>
+<td align="center">URL for business page on Yelp.</td>
+</tr>
+<tr class="even">
+<td align="center">transactions</td>
+<td align="center">string[]</td>
+<td align="center">A list of Yelp transactions that the business is registered for. Current supported values are &quot;pickup&quot;, &quot;delivery&quot;, and &quot;restaurant_reservation&quot;.</td>
+</tr>
+</tbody>
+</table>
+<p><em>If you would like to host your own API, add your Yelp Fusion API key to config.ini.EXAMPLE and rename the file to config.ini.</em></p>

@@ -1,5 +1,5 @@
 var i = 0;  // Dot row to load
-var numRows = 1000;  // Increasing this value may lead to more 502 errors
+var numRows = 100;  // Increasing this value may lead to more 502 errors
 var loadedCSV;  // csv with 'comment', 'time', 'parent', 'score', 'child', 'subreddit', 'url'
 
 // The arrays' index represents the dot row index, and increments when 1/3 of a dot is loaded
