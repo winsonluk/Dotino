@@ -21,6 +21,9 @@ def get_business():
     resp.headers['Access-Control-Allow-Origin'] = 'https://dotino.com'
     return resp
 
+@app.route('/.well-known/acme-challenge/Qyk_ybc8y4UAJpm59tzehEk0t7BbebpevBtVUwMItQs')
+def verification():
+    return 'Qyk_ybc8y4UAJpm59tzehEk0t7BbebpevBtVUwMItQs.hzO8b2WnaBC-iG7q-iIt4EFY9QFz6awFmEInonlRo-g'
 
 @app.route('/')
 def home():
