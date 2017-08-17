@@ -1,5 +1,7 @@
+import base64
 import configparser
 import json
+import urllib2
 
 
 from flask import Flask, request, Response
@@ -18,6 +20,23 @@ def get_business():
     bearer_token = yelp.obtain_bearer_token(yelp.API_HOST, yelp.TOKEN_PATH)
     toReturn = json.dumps(yelp.get_business(bearer_token, business))
     resp = Response(toReturn, mimetype='text/plain')
+    resp.headers['Access-Control-Allow-Origin'] = 'https://dotino.com'
+    return resp
+
+@app.route('/reddit', methods=['GET'])
+def get_reddit():
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    client_id = config.get('reddit', 'ID')
+    client_secret = config.get('reddit', 'SECRET')
+    query = request.args.get('qstring')
+    oauthRequest = urllib2.Request("https://www.reddit.com/api/v1/access_token")
+    base64string = base64.b64encode('%s:%s' % (client_id, client_secret))
+    oauthRequest.add_header("Authentication", "Basic %s" % base64string)
+    oauthRequest.add_header("grant_type", "client_credentials")
+    dataRequest = urllib2.Request("https://oauth.reddit.com/" + query,
+    headers={"Authentication" : urllib2.urlopen(oauthRequest).read()})
+    resp = urllib2.urlopen(dataRequest).read()
     resp.headers['Access-Control-Allow-Origin'] = 'https://dotino.com'
     return resp
 

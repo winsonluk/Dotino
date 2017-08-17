@@ -127,7 +127,8 @@ function createDot(tempText, curr, j, k) {
                     }
                 }
             };
-            xhttp.open("GET", "https://api.reddit.com/by_id/t3_" + loadedCSV[curr]['parent']);
+            xhttp.open("GET", "https://api.dotino.com/reddit?qstring=by_id/t3_"
+            + loadedCSV[curr]['parent']);
             xhttp.send();
             break;
 

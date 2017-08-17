@@ -1,5 +1,9 @@
-// Add your Yelp Fusion App ID and App Secret, then rename this file to config.ini
+// Add your Yelp Fusion and Reddit App ID and App Secret, then rename this file to config.ini
 
 [yelp]
 ID: <your Yelp Fusion App ID>
 SECRET: <your Yelp Fusion App Secret>
+
+[reddit]
+ID: <your Reddit App ID>
+SECRET: <your Reddit App Secret>
