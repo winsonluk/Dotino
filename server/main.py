@@ -32,11 +32,11 @@ def get_reddit():
     query = request.args.get('qstring')
     oauthRequest = urllib2.Request("https://www.reddit.com/api/v1/access_token")
     base64string = base64.b64encode('%s:%s' % (client_id, client_secret))
-    oauthRequest.add_header("Authentication", "Basic %s" % base64string)
+    oauthRequest.add_header("Authorization", "Basic %s" % base64string)
     oauthRequest.add_header("grant_type", "client_credentials")
     dataRequest = urllib2.Request("https://oauth.reddit.com/" + query,
-    headers={"Authentication" : urllib2.urlopen(oauthRequest).read()})
-    resp = urllib2.urlopen(dataRequest).read()
+    headers={"Authorization" : "bearer " + urllib2.urlopen(oauthRequest).read()})
+    resp = Response(urllib2.urlopen(dataRequest).read(), mimetype='text/plain')
     resp.headers['Access-Control-Allow-Origin'] = 'https://dotino.com'
     return resp
 
