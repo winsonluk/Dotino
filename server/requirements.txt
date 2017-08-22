@@ -1,5 +1,4 @@
-base64
 configparser==3.5.0
 Flask==0.12
 requests==2.12.1
-urllib2
+urllib2==1498656401.94
