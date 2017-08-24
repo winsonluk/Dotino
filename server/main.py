@@ -20,7 +20,7 @@ def get_business():
     bearer_token = yelp.obtain_bearer_token(yelp.API_HOST, yelp.TOKEN_PATH)
     toReturn = json.dumps(yelp.get_business(bearer_token, business))
     resp = Response(toReturn, mimetype='text/plain')
-    resp.headers['Access-Control-Allow-Origin'] = 'https://dotino.com'
+    resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp
 
 @app.route('/reddit', methods=['GET'])
@@ -37,7 +37,7 @@ def get_reddit():
     dataRequest = urllib2.Request("https://oauth.reddit.com/" + query,
     headers={"Authorization" : "bearer " + urllib2.urlopen(oauthRequest).read()})
     resp = Response(urllib2.urlopen(dataRequest).read(), mimetype='text/plain')
-    resp.headers['Access-Control-Allow-Origin'] = 'https://dotino.com'
+    resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp
 
 @app.route('/.well-known/acme-challenge/Qyk_ybc8y4UAJpm59tzehEk0t7BbebpevBtVUwMItQs')
