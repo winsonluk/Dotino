@@ -4,7 +4,7 @@
   </a>
   <br>
   <br>
-  <b>Restaurants when they're mentioned. Not when they're marketed.</b>
+  <b>Local businesses when they're mentioned. Not when they're marketed.</b>
 </p>
 
 
@@ -14,13 +14,13 @@
 
 ## Website
 
-This website is hosted at https://dotino.com on [Google Firebase](https://firebase.google.com), with the domain registered on [NameBright](https://namebright.com). The frontend is written in JavaScript with jQuery. Dotino uses [D3.js](https://d3js.org) to parse the CSV file with Reddit comment information and [List.js](listjs.com) to search cities and subreddits. Cities and their corresponding subreddits were retrieved from [/r/LocationReddits](https://www.reddit.com/r/locationreddits), and all Reddit comments containing the string "yelp.com/biz/" were queried using SQL with [Google BigQuery](https://bigquery.cloud.google.com/table/fh-bigquery:reddit_comments.all) and saved as a flat CSV file. Only subreddits that are categorized as a "locational" subreddit **and** have at least one mention of "yelp.com/biz/" are included in this version of Dotino.
+This website is hosted at https://dotino.com on S3 with distribution by CloudFront and DNS management with Route 53. The frontend is written in JavaScript with jQuery. Dotino uses [D3.js](https://d3js.org) to parse the CSV file with Reddit comment information and [List.js](listjs.com) to search cities and subreddits. Cities and their corresponding subreddits were retrieved from [/r/LocationReddits](https://www.reddit.com/r/locationreddits), and all Reddit comments containing the string "yelp.com/biz/" were queried using SQL with [Google BigQuery](https://bigquery.cloud.google.com/table/fh-bigquery:reddit_comments.all) and saved as a flat CSV file. Only subreddits that are categorized as a "locational" subreddit **and** have at least one mention of "yelp.com/biz/" are included in this version of Dotino.
 
 The local CSV file only contains data regarding the comment itself, and not the question it was written as a reply to, so the question's data is retrieved from https://api.reddit.com using *by_id*. Restaurant data is retrieved from https://api.dotino.com, which uses the [Yelp Fusion API](https://www.yelp.com/developers).
 
 ## API
 
-The server is hosted at https://api.dotino.com with [Google App Engine](https://cloud.google.com/appengine). The backend is written in Python with the [Flask](http://flask.pocoo.org) web framework and designed to work with the [Yelp Fusion API](https://www.yelp.com/developers). The SSL certificate was obtained from [LetsEncrypt](https://letsencrypt.org).
+The server is hosted at https://api.dotino.com with Elastic Beanstalk. The backend is written in Python with the [Flask](http://flask.pocoo.org) web framework and designed to work with the [Yelp Fusion API](https://www.yelp.com/developers). The SSL certificate was obtained from Amazon Certificate Manager.
 
 ## The Dotino Logo
 
