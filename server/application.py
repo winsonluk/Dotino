@@ -5,23 +5,22 @@ import urllib2
 
 
 from flask import Flask, request, Response
+from flask_cors import CORS
 
 
 import yelp
 
 
 application = Flask(__name__)
+CORS(application)
 
 
 # GET from https://api.dotino.com/yelp?business=RESTAURANT_ID_HERE to return Yelp restaurant info
 @application.route('/yelp', methods=['GET'])
 def get_business():
     business = request.args.get('business')
-    bearer_token = yelp.obtain_bearer_token(yelp.API_HOST, yelp.TOKEN_PATH)
-    toReturn = json.dumps(yelp.get_business(bearer_token, business))
-    resp = Response(toReturn, mimetype='text/plain')
-    resp.headers['Access-Control-Allow-Origin'] = '*'
-    return resp
+    toReturn = json.dumps(yelp.get_business(business))
+    return Response(toReturn, mimetype='text/plain')
 
 #@application.route('/reddit', methods=['GET'])
 #def get_reddit():
